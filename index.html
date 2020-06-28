@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -25,7 +25,7 @@
 <meta property="og:title" content="Give me five">
 <meta property="og:url" content="http://louis-cai.github.io/index.html">
 <meta property="og:site_name" content="Give me five">
-<meta property="og:locale" content="zh">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Louis Cai">
 <meta name="twitter:card" content="summary">
 
@@ -38,12 +38,21 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'zh'
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>Give me five</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128599571-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-128599571-1');
+      }
+    </script>
 
 
 
@@ -82,7 +91,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -112,12 +121,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
   </ul>
@@ -146,7 +155,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/ios-device-ID/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -169,10 +178,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 17:38:12 / Modified: 17:42:57" itemprop="dateCreated datePublished" datetime="2020-06-28T17:38:12+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 17:38:12 / 修改时间：17:46:20" itemprop="dateCreated datePublished" datetime="2020-06-28T17:38:12+08:00">2020-06-28</time>
             </span>
 
           
@@ -186,11 +195,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="每次启动APP都会变更"><a href="#每次启动APP都会变更" class="headerlink" title="每次启动APP都会变更"></a>每次启动APP都会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *uuid = \[\[<span class="built_in">NSUUID</span> UUID\] UUIDString\]</span><br></pre></td></tr></table></figure>
+          <h3 id="每次启动APP都会变更"><a href="#每次启动APP都会变更" class="headerlink" title="每次启动APP都会变更"></a>每次启动APP都会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *uuid = [[<span class="built_in">NSUUID</span> UUID] UUIDString]</span><br></pre></td></tr></table></figure>
 
-<h3 id="每次安装APP都会变更"><a href="#每次安装APP都会变更" class="headerlink" title="每次安装APP都会变更"></a>每次安装APP都会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *idfv = \[\[<span class="built_in">UIDevice</span> currentDevice\].identifierForVendor UUIDString\];</span><br></pre></td></tr></table></figure>
+<h3 id="每次安装APP都会变更"><a href="#每次安装APP都会变更" class="headerlink" title="每次安装APP都会变更"></a>每次安装APP都会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *idfv = [[<span class="built_in">UIDevice</span> currentDevice].identifierForVendor UUIDString];</span><br></pre></td></tr></table></figure>
 
-<h3 id="跟随广告设置，新启动和新安装都不会变更"><a href="#跟随广告设置，新启动和新安装都不会变更" class="headerlink" title="跟随广告设置，新启动和新安装都不会变更"></a>跟随广告设置，新启动和新安装都不会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;AdSupport/ASIdentifierManager.h&gt;  </span></span></span><br><span class="line">ASIdentifierManager *asIM = \[\[ASIdentifierManager alloc\] init\];  </span><br><span class="line"><span class="built_in">NSString</span> *idfa = \[asIM.advertisingIdentifier UUIDString\];</span><br></pre></td></tr></table></figure>
+<h3 id="跟随广告设置，新启动和新安装都不会变更"><a href="#跟随广告设置，新启动和新安装都不会变更" class="headerlink" title="跟随广告设置，新启动和新安装都不会变更"></a>跟随广告设置，新启动和新安装都不会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;AdSupport/ASIdentifierManager.h&gt;  </span></span></span><br><span class="line">ASIdentifierManager *asIM = [[ASIdentifierManager alloc] init];  </span><br><span class="line"><span class="built_in">NSString</span> *idfa = [asIM.advertisingIdentifier UUIDString];</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -208,7 +217,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/%E6%AD%A3%E9%9D%A2%E7%AE%A1%E6%95%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,10 +240,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 17:34:39 / Modified: 17:36:52" itemprop="dateCreated datePublished" datetime="2020-06-28T17:34:39+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 17:34:39 / 修改时间：17:36:52" itemprop="dateCreated datePublished" datetime="2020-06-28T17:34:39+08:00">2020-06-28</time>
             </span>
 
           
@@ -808,7 +817,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/Synergize-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -831,16 +840,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 17:30:35 / Modified: 17:33:12" itemprop="dateCreated datePublished" datetime="2020-06-28T17:30:35+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 17:30:35 / 修改时间：17:33:12" itemprop="dateCreated datePublished" datetime="2020-06-28T17:30:35+08:00">2020-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
                 </span>
@@ -886,7 +895,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -909,16 +918,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 17:28:12 / Modified: 17:29:38" itemprop="dateCreated datePublished" datetime="2020-06-28T17:28:12+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 17:28:12 / 修改时间：17:29:38" itemprop="dateCreated datePublished" datetime="2020-06-28T17:28:12+08:00">2020-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
                 </span>
@@ -989,7 +998,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/Think-win-win-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1012,16 +1021,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 12:42:25 / Modified: 12:45:10" itemprop="dateCreated datePublished" datetime="2020-06-28T12:42:25+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 12:42:25 / 修改时间：12:45:10" itemprop="dateCreated datePublished" datetime="2020-06-28T12:42:25+08:00">2020-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
                 </span>
@@ -1097,7 +1106,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1120,16 +1129,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 12:38:52 / Modified: 12:41:54" itemprop="dateCreated datePublished" datetime="2020-06-28T12:38:52+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 12:38:52 / 修改时间：12:41:54" itemprop="dateCreated datePublished" datetime="2020-06-28T12:38:52+08:00">2020-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
                 </span>
@@ -1186,7 +1195,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1209,16 +1218,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 12:36:03 / Modified: 12:39:16" itemprop="dateCreated datePublished" datetime="2020-06-28T12:36:03+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 12:36:03 / 修改时间：12:39:16" itemprop="dateCreated datePublished" datetime="2020-06-28T12:36:03+08:00">2020-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
                 </span>
@@ -1305,7 +1314,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/Be-proactive-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1328,16 +1337,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="Created: 2020-06-28 12:30:52 / Modified: 12:35:13" itemprop="dateCreated datePublished" datetime="2020-06-28T12:30:52+08:00">2020-06-28</time>
+              <time title="创建时间：2020-06-28 12:30:52 / 修改时间：12:35:13" itemprop="dateCreated datePublished" datetime="2020-06-28T12:30:52+08:00">2020-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%B9%A6%E8%AF%84/" itemprop="url" rel="index"><span itemprop="name">书评</span></a>
                 </span>
@@ -1391,7 +1400,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/27/Grid-Trading-%E2%80%93-Hedged-Grid-Strategy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1414,22 +1423,22 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-06-27 17:56:18" itemprop="dateCreated datePublished" datetime="2020-06-27T17:56:18+08:00">2020-06-27</time>
+              <time title="创建时间：2020-06-27 17:56:18" itemprop="dateCreated datePublished" datetime="2020-06-27T17:56:18+08:00">2020-06-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 12:25:57" itemprop="dateModified" datetime="2020-06-28T12:25:57+08:00">2020-06-28</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-28 12:25:57" itemprop="dateModified" datetime="2020-06-28T12:25:57+08:00">2020-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">交易策略</span></a>
                 </span>
@@ -1880,10 +1889,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -1903,16 +1912,16 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">9</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -1944,7 +1953,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Louis Cai</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         
