@@ -165,6 +165,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/29/%E4%BD%BF%E7%94%A8Python%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/29/%E4%BD%BF%E7%94%A8Python%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7docker/" class="post-title-link" itemprop="url">使用Python脚本监控docker</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-29 17:42:51 / 修改时间：17:48:52" itemprop="dateCreated datePublished" datetime="2020-06-29T17:42:51+08:00">2020-06-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">软件开发</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/29/%E4%BD%BF%E7%94%A8Python%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7docker/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/29/%E4%BD%BF%E7%94%A8Python%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7docker/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>因为仅需要监控docker容器的状态，所以直接用Python脚本配合Linux的crontab定时检查即可实现需求。</code></pre><p>脚本如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> yagmail</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">docker_status_discovery</span><span class="params">(docker_status_finder)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> containerid <span class="keyword">in</span> docker_status_finder.readlines():</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'xxxxx'</span> <span class="keyword">in</span> containerid:</span><br><span class="line">            mail(subject=<span class="string">'%s Exited'</span> % containerid, text=<span class="string">'containerid:%s Exited.'</span> % containerid)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail</span><span class="params">(subject=<span class="string">''</span>, text=<span class="string">''</span>)</span>:</span></span><br><span class="line">    Me = <span class="string">'xxxxx@163.com'</span></span><br><span class="line">    PWD = <span class="string">'xxxxx'</span></span><br><span class="line">    SMTP_HOST = <span class="string">'smtp.163.com'</span></span><br><span class="line">    yagmail.SMTP(Me, PWD, SMTP_HOST).send(Me, subject=subject, contents=text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    docker_status_finder = os.popen(<span class="string">"""sudo docker ps -a |grep 'Exited'|awk &#123;'print $NF'&#125; """</span>)</span><br><span class="line">    docker_status_discovery(docker_status_finder)</span><br></pre></td></tr></table></figure>
+
+<h2 id="结合linux的crontab工具定时地检测制定docker容器"><a href="#结合linux的crontab工具定时地检测制定docker容器" class="headerlink" title="结合linux的crontab工具定时地检测制定docker容器"></a>结合linux的crontab工具定时地检测制定docker容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * sleep 30;python &#x2F;root&#x2F;peer0.py</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/2020/06/28/ios-device-ID/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2112,7 +2196,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2125,7 +2209,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
