@@ -1049,6 +1049,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/WKWebView-fix-pit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/WKWebView-fix-pit/" class="post-title-link" itemprop="url">踩坑WKWebView</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-12 19:56:45" itemprop="dateCreated datePublished" datetime="2018-12-12T19:56:45+08:00">2018-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-12-15 18:01:32" itemprop="dateModified" datetime="2018-12-15T18:01:32+08:00">2018-12-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/WKWebView-fix-pit/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/WKWebView-fix-pit/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近为了提升公司app的性能，计划使用登场已久的WKWebView。<br>话说WKWebView刚出来时，神坑无数，一直不敢用，这次提前也有心理准备，but坑还是踩了一遍<del>泪奔</del></p>
+<h1 id="cookie坑"><a href="#cookie坑" class="headerlink" title="cookie坑"></a>cookie坑</h1><ul>
+<li><p>WKWebView的cookie管理与NSHTTPCookieStorage是不共享的，网上有大量的文章，各种同步方法。<br>我们用了一个简单暴力的方法，引用第三方库<a href="https://github.com/GaoGuohao/GGWkCookie" target="_blank" rel="noopener">GGWkCookie</a>管理cookie。</p>
+</li>
+<li><p>我们项目在WKWebsiteDataStore调用removeDataOfTypes后，会导致正在使用中的业内cookie丢失，解决办法就是reload一下页面。</p>
+</li>
+</ul>
+<h1 id="缓存坑"><a href="#缓存坑" class="headerlink" title="缓存坑"></a>缓存坑</h1><ul>
+<li><p>WKWebView实现的了HTML5的Application Cache特性，但是Application Cache过于暴力，不够灵活被广为诟病，请谨慎使用。</p>
+</li>
+<li><p>如果使用NSURLProtocol一些缓存处理，在WKWebView不起作用，我可以愉快的告诉你，WKWebView是不走NSURLProtocol的。</p>
+</li>
+</ul>
+<h1 id="后台白屏坑"><a href="#后台白屏坑" class="headerlink" title="后台白屏坑"></a>后台白屏坑</h1><p>在1G内存的设备上，由于一个WKWebView的对象使用内存过多，会重载其他WKWebView对象，导致白屏出现，WKWebView是独立于APP的进程运行，导致如果WKWebView crash或者重载，APP是不知情的。</p>
+<p>解决办法就是判断title还有没有，如果没有说明被重载了，WKWebView reload一下即可。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>踩过了这些坑，基本上WKWebView就可以用的很溜了，剩下就是一些代理方法的使用，网上资料无数。</p>
+<p>收工。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Synergize-The-7-Habits-of-Highly-Effective-People/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1073,14 +1168,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-12-06 17:30:35" itemprop="dateCreated datePublished" datetime="2018-12-06T17:30:35+08:00">2018-12-06</time>
+              <time title="创建时间：2018-12-07 17:40:32" itemprop="dateCreated datePublished" datetime="2018-12-07T17:40:32+08:00">2018-12-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-30 20:20:43" itemprop="dateModified" datetime="2020-06-30T20:20:43+08:00">2020-06-30</time>
+                <time title="修改时间：2020-07-06 16:18:14" itemprop="dateModified" datetime="2020-07-06T16:18:14+08:00">2020-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1117,15 +1212,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="什么是统合综效"><a href="#什么是统合综效" class="headerlink" title="什么是统合综效"></a><a href="#什么是统合综效" title="什么是统合综效"></a>什么是统合综效</h1><p>统合综效就是整合资源达到”1+1&gt;2”的效果。</p>
+          <h1 id="什么是统合综效"><a href="#什么是统合综效" class="headerlink" title="什么是统合综效"></a>什么是统合综效</h1><p>统合综效就是整合资源达到”1+1&gt;2”的效果。</p>
 <hr>
-<h1 id="如何做到统合综效"><a href="#如何做到统合综效" class="headerlink" title="如何做到统合综效"></a><a href="#如何做到统合综效" title="如何做到统合综效"></a>如何做到统合综效</h1><p>统合综效精髓就是判断和尊重差异，取长补短。</p>
-<p>统合综效最直接的应用就是多人沟通协作。<br>沟通的层次与信任度成正比。<br><img src="https://i.loli.net/2018/12/11/5c0f9a1aa982f.png" alt="沟通的层次" title="沟通的层次"></p>
-<h2 id="尊重差异"><a href="#尊重差异" class="headerlink" title="尊重差异"></a><a href="#尊重差异" title="尊重差异"></a>尊重差异</h2><pre><code>三人行，必有我师焉。</code></pre><p>要做到统合综效的沟通，首先就是摒弃偏见，尊重差异。</p>
+<h1 id="如何做到统合综效"><a href="#如何做到统合综效" class="headerlink" title="如何做到统合综效"></a>如何做到统合综效</h1><p>统合综效精髓就是判断和尊重差异，取长补短。</p>
+<p>统合综效最直接的应用就是多人沟通协作。<br>沟通的层次与信任度成正比。<br><img src="https://i.loli.net/2018/12/11/5c0f9a1aa982f.png" alt="沟通的层次"></p>
+<h2 id="尊重差异"><a href="#尊重差异" class="headerlink" title="尊重差异"></a>尊重差异</h2><pre><code>三人行，必有我师焉。</code></pre><p>要做到统合综效的沟通，首先就是摒弃偏见，尊重差异。</p>
 <p>每个人都是独一无二的，对事物的角度和看法也各不相同，这是客观规律，所以与人合作最重要的就是重视不同个体的不同心理、情绪与智能，以及个人眼中所见到的不同世界。</p>
-<h2 id="化阻力为动力"><a href="#化阻力为动力" class="headerlink" title="化阻力为动力"></a><a href="#化阻力为动力" title="化阻力为动力"></a>化阻力为动力</h2><pre><code>不设法削减阻力，只一味增加推力，就仿佛施力于弹簧上，终有一天引起反弹。</code></pre><p><img src="https://i.loli.net/2018/12/11/5c0fa1ee30c7e.png" alt="&quot;力场分析&quot;模型" title="&#39;力场分析&#39;模型"></p>
-<p><strong>“力场分析”模型</strong></p>
-<p>动力通常是积极、合理、自觉、符合经济效益的力量。<br>阻力多半是消极、负面、不合逻辑、情绪化、不自觉，等社会性与心理性因素。</p>
+<h2 id="化阻力为动力"><a href="#化阻力为动力" class="headerlink" title="化阻力为动力"></a>化阻力为动力</h2><pre><code>不设法削减阻力，只一味增加推力，就仿佛施力于弹簧上，终有一天引起反弹。</code></pre><p><img src="https://i.loli.net/2018/12/11/5c0fa1ee30c7e.png" alt="&quot;力场分析&quot;模型"><strong><center>“力场分析”模型</center></strong><br>动力通常是积极、合理、自觉、符合经济效益的力量。<br>阻力多半是消极、负面、不合逻辑、情绪化、不自觉，等社会性与心理性因素。</p>
 <h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
 <li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
 <li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
@@ -1178,14 +1271,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-12-06 17:28:12" itemprop="dateCreated datePublished" datetime="2018-12-06T17:28:12+08:00">2018-12-06</time>
+              <time title="创建时间：2018-12-06 17:13:32" itemprop="dateCreated datePublished" datetime="2018-12-06T17:13:32+08:00">2018-12-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-30 20:20:14" itemprop="dateModified" datetime="2020-06-30T20:20:14+08:00">2020-06-30</time>
+                <time title="修改时间：2020-07-06 16:18:25" itemprop="dateModified" datetime="2020-07-06T16:18:25+08:00">2020-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1222,40 +1315,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="知彼解己是人际交往的重要原则"><a href="#知彼解己是人际交往的重要原则" class="headerlink" title="知彼解己是人际交往的重要原则"></a><a href="#知彼解己是人际交往的重要原则" title="知彼解己是人际交往的重要原则"></a>知彼解己是人际交往的重要原则</h1><h2 id="聆听的重要性"><a href="#聆听的重要性" class="headerlink" title="聆听的重要性"></a><a href="#聆听的重要性" title="聆听的重要性"></a>聆听的重要性</h2><p>沟通是生活中最重要的技能，包括读、写、听、说。</p>
+          <h1 id="知彼解己是人际交往的重要原则"><a href="#知彼解己是人际交往的重要原则" class="headerlink" title="知彼解己是人际交往的重要原则"></a>知彼解己是人际交往的重要原则</h1><h2 id="聆听的重要性"><a href="#聆听的重要性" class="headerlink" title="聆听的重要性"></a>聆听的重要性</h2><p>沟通是生活中最重要的技能，包括读、写、听、说。</p>
 <p>我们在上学时多接受的是读、写和少量说的教育，而关于听的训练却很少，尤其是从对方的立场聆听。</p>
 <p>听懂了别人的话，别人才能对你产生信任，进一步加深交流。</p>
-<h3 id="移情聆听"><a href="#移情聆听" class="headerlink" title="移情聆听"></a><a href="#移情聆听" title="移情聆听"></a>移情聆听</h3><h4 id="聆听的层次"><a href="#聆听的层次" class="headerlink" title="聆听的层次"></a><a href="#聆听的层次" title="聆听的层次"></a>聆听的层次</h4><ol>
+<h3 id="移情聆听"><a href="#移情聆听" class="headerlink" title="移情聆听"></a>移情聆听</h3><h4 id="聆听的层次"><a href="#聆听的层次" class="headerlink" title="聆听的层次"></a>聆听的层次</h4><ol>
 <li>充耳不闻，压根就不听别人说话；</li>
 <li>装模作样， “是的！嗯！没错！”；</li>
 <li>选择性接收，只听一部分，通常学龄前儿童的喋喋不休会让我们采取这种方式；</li>
 <li>聚精会神，努力听到每一个字；</li>
 <li>移情聆听，聆听的最高层次，很少有人会达到这个层次；</li>
 </ol>
-<h4 id="聆听的要求"><a href="#聆听的要求" class="headerlink" title="聆听的要求"></a><a href="#聆听的要求" title="聆听的要求"></a>聆听的要求</h4><p>移情聆听是以<strong>理解</strong>为目的聆听，而非同情。<br>移情聆听是在情感和理智上充分而深入地理解对方，而非为了赞同对方。</p>
+<h4 id="聆听的要求"><a href="#聆听的要求" class="headerlink" title="聆听的要求"></a>聆听的要求</h4><p>移情聆听是以<strong>理解</strong>为目的聆听，而非同情。<br>移情聆听是在情感和理智上充分而深入地理解对方，而非为了赞同对方。</p>
 <p>移情聆听不只是理解个别的词句而已。</p>
 <pre><code>据专家估计，人际沟通仅有10%通过语言来进行，30%取决于语调与声音，其余60%则得靠肢体语言。</code></pre><p>聆听不仅要耳到，还要眼到、心到；用眼睛去观察，用心灵去体会。</p>
-<h4 id="心理空气"><a href="#心理空气" class="headerlink" title="心理空气"></a><a href="#心理空气" title="心理空气"></a>心理空气</h4><p>除了物质，人类最大的生存需求源自心理，即被人理解、肯定、认可和欣赏。<br>移情聆听的“理解”能够满足对方的心理需求，等于是提供“心理空气”。<br>这是一种很好的感情投资。</p>
+<h4 id="心理空气"><a href="#心理空气" class="headerlink" title="心理空气"></a>心理空气</h4><p>除了物质，人类最大的生存需求源自心理，即被人理解、肯定、认可和欣赏。<br>移情聆听的“理解”能够满足对方的心理需求，等于是提供“心理空气”。<br>这是一种很好的感情投资。</p>
 <hr>
-<h2 id="如何有效聆听"><a href="#如何有效聆听" class="headerlink" title="如何有效聆听"></a><a href="#如何有效聆听" title="如何有效聆听"></a>如何有效聆听</h2><h3 id="先诊断，后开方"><a href="#先诊断，后开方" class="headerlink" title="先诊断，后开方"></a><a href="#先诊断，后开方" title="先诊断，后开方"></a>先诊断，后开方</h3><p>首先充分了解对方的情况和立场背景，避免武断。</p>
-<h3 id="有效回应"><a href="#有效回应" class="headerlink" title="有效回应"></a><a href="#有效回应" title="有效回应"></a>有效回应</h3><p>克服“以己度人”的冲动，避免“自传式回应”。</p>
-<h4 id="常见自传式回应"><a href="#常见自传式回应" class="headerlink" title="常见自传式回应"></a><a href="#常见自传式回应" title="常见自传式回应"></a>常见自传式回应</h4><ol>
+<h2 id="如何有效聆听"><a href="#如何有效聆听" class="headerlink" title="如何有效聆听"></a>如何有效聆听</h2><h3 id="先诊断，后开方"><a href="#先诊断，后开方" class="headerlink" title="先诊断，后开方"></a>先诊断，后开方</h3><p>首先充分了解对方的情况和立场背景，避免武断。</p>
+<h3 id="有效回应"><a href="#有效回应" class="headerlink" title="有效回应"></a>有效回应</h3><p>克服“以己度人”的冲动，避免“自传式回应”。</p>
+<h4 id="常见自传式回应"><a href="#常见自传式回应" class="headerlink" title="常见自传式回应"></a>常见自传式回应</h4><ol>
 <li>价值判断 —— 对旁人的意见只有接受或不接受。</li>
 <li>追根究底 —— 依自己的价值观探查别人的隐私。</li>
 <li>好为人师 —— 以自己的经验提供忠告。</li>
 <li>自以为是 —— 根据自己的行为与动机衡量别人的行为与动机。</li>
 </ol>
 <p>价值判断令人不能畅所欲言，追根究底则令人无法开诚布公。</p>
-<h4 id="移情聆听，至少包括四个阶段"><a href="#移情聆听，至少包括四个阶段" class="headerlink" title="移情聆听，至少包括四个阶段"></a><a href="#移情聆听，至少包括四个阶段" title="移情聆听，至少包括四个阶段"></a>移情聆听，至少包括四个阶段</h4><ul>
+<h4 id="移情聆听，至少包括四个阶段"><a href="#移情聆听，至少包括四个阶段" class="headerlink" title="移情聆听，至少包括四个阶段"></a>移情聆听，至少包括四个阶段</h4><ul>
 <li>第一阶段是复述语句，这至少能使人专心聆听。</li>
 <li>第二阶段加入解释，完全用自己的词句表达，但仍用左脑的逻辑思维去理解。</li>
 <li>第三阶段渗入个人的感觉，右脑发挥作用。此时听者所注意的已不止于言语，也开始体会对方的心情。</li>
 <li>第四阶段是既加以解释，又带有感情，左右脑并用。</li>
 </ul>
-<h3 id="理解和感知"><a href="#理解和感知" class="headerlink" title="理解和感知"></a><a href="#理解和感知" title="理解和感知"></a>理解和感知</h3><p>我们生活的环境中，每个人的思维模式、看待问题的角度以及对事物的感知各不相同，甚至天壤之别，所以理解好感知每个人观点是十分必要的。</p>
+<h3 id="理解和感知"><a href="#理解和感知" class="headerlink" title="理解和感知"></a>理解和感知</h3><p>我们生活的环境中，每个人的思维模式、看待问题的角度以及对事物的感知各不相同，甚至天壤之别，所以理解好感知每个人观点是十分必要的。</p>
 <p>人人都渴望知音，适时扮演知音，是很好的感情投资。</p>
-<h3 id="有效表达"><a href="#有效表达" class="headerlink" title="有效表达"></a><a href="#有效表达" title="有效表达"></a>有效表达</h3><pre><code>古希腊人有一种很经典的哲学观点，即品德第一，感情第二，理性第三。</code></pre><p>首先是自己的品德，进而建立关系，然后诉诸理性。<br>表达也要讲技巧，表达并非自吹自擂，而是要根据对他人的了解来组织语言和内容表达观点。</p>
-<h3 id="一对一沟通"><a href="#一对一沟通" class="headerlink" title="一对一沟通"></a><a href="#一对一沟通" title="一对一沟通"></a>一对一沟通</h3><p>经常一对一的沟通，甚至只是单纯的认真聆听，有助于扩大影响圈。</p>
+<h3 id="有效表达"><a href="#有效表达" class="headerlink" title="有效表达"></a>有效表达</h3><pre><code>古希腊人有一种很经典的哲学观点，即品德第一，感情第二，理性第三。</code></pre><p>首先是自己的品德，进而建立关系，然后诉诸理性。<br>表达也要讲技巧，表达并非自吹自擂，而是要根据对他人的了解来组织语言和内容表达观点。</p>
+<h3 id="一对一沟通"><a href="#一对一沟通" class="headerlink" title="一对一沟通"></a>一对一沟通</h3><p>经常一对一的沟通，甚至只是单纯的认真聆听，有助于扩大影响圈。</p>
 <h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
 <li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
 <li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
@@ -1265,6 +1358,102 @@
 <li><a href="/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/" title="知彼解己">知彼解己</a></li>
 <li><a href="/Synergize-The-7-Habits-of-Highly-Effective-People/" title="统合综效">统合综效</a></li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/html5-app-cache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/html5-app-cache/" class="post-title-link" itemprop="url">html5 app cache</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-04 12:46:47" itemprop="dateCreated datePublished" datetime="2018-12-04T12:46:47+08:00">2018-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-12-11 20:04:05" itemprop="dateModified" datetime="2018-12-11T20:04:05+08:00">2018-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/html5-app-cache/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/html5-app-cache/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="重点一"><a href="#重点一" class="headerlink" title="重点一"></a>重点一</h1><p>manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">manifest</span>=<span class="string">‘demo.appcache</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。<br>当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFEST所指向的资源就不需要重新进行加载了，但是问题是，当前的html页面也会跟着cache直接读出来了，可能会造成即使 我们的页面更新了，但是用户还是看的老旧版本页面（因为更新mainfest的时候，页面加载已经开始了，但是缓存更新却尚未完成，浏览器还是会使用缓存的资源，当浏览器检测到了Application Cache有更新时，本次不会使用新的资源，下一次才会进行使用）</p>
+<p>解决方案：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.addEventListener(<span class="string">"updateready"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    applicationCache.swapCache();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.reload();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
+<h1 id="重点三"><a href="#重点三" class="headerlink" title="重点三"></a>重点三</h1><p>永远不要使用传统 GET 参数(例如 other-cached-page.html?parameterName=value) 来访问缓存文件。这会使浏览器绕过缓存，直接从网络获取。<br>若想链接一个参数需要在 JavaScript 中解析的资源，你可以将参数放到链接的 hash 部分，例如 other-cached-page.html#whatever?parameterName=value。<br>注：需要额外的解析</p>
+<h1 id="重点四"><a href="#重点四" class="headerlink" title="重点四"></a>重点四</h1><p>当应用被缓存后，仅仅更新在 web 页面中使用的资源(文件)还不足以更新被缓存的文件。<br>你需要在浏览器获取和使用更新的文件前，去更新缓存清单文件本身。<br>你可以使用 window.applicationCache.swapCache() 以编程的方式完成上述目的，虽然这无法影响到已经加载完毕的资源。<br>为了保证资源从应用缓存的最新版本中加载，最理想的办法就是刷新页面。</p>
 
       
     </div>
@@ -1308,14 +1497,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-12-03 12:42:25" itemprop="dateCreated datePublished" datetime="2018-12-03T12:42:25+08:00">2018-12-03</time>
+              <time title="创建时间：2018-12-03 19:36:17" itemprop="dateCreated datePublished" datetime="2018-12-03T19:36:17+08:00">2018-12-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-30 20:19:47" itemprop="dateModified" datetime="2020-06-30T20:19:47+08:00">2020-06-30</time>
+                <time title="修改时间：2020-07-06 16:18:31" itemprop="dateModified" datetime="2020-07-06T16:18:31+08:00">2020-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1354,9 +1543,9 @@
       
           <p>在生活中经常被提及要有双赢思维，但大家的理解和实践往往都停滞在字面意思上。</p>
 <hr>
-<h1 id="人际交往的六种模式"><a href="#人际交往的六种模式" class="headerlink" title="人际交往的六种模式"></a><a href="#人际交往的六种模式" title="人际交往的六种模式"></a>人际交往的六种模式</h1><p>双赢不是什么技巧，而是人际交往的哲学，是六个交往模式之一，这六个模式分别是：</p>
+<h1 id="人际交往的六种模式"><a href="#人际交往的六种模式" class="headerlink" title="人际交往的六种模式"></a>人际交往的六种模式</h1><p>双赢不是什么技巧，而是人际交往的哲学，是六个交往模式之一，这六个模式分别是：</p>
 <ul>
-<li>利人利己（双赢）</li>
+<li>利人利己（双赢） </li>
 <li>损人利己（赢/输）</li>
 <li>舍己为人（输/赢）</li>
 <li>两败俱伤（输/输）</li>
@@ -1365,14 +1554,14 @@
 </ul>
 <p>不难看出最好的模式当然是双赢模式，但其实最好是依情况而定，关键是认清形式，而不是教条的把某一模式应用的各种情况中。<br>当然，大部分情况下双赢模式是最好的选择，如果实在不能达成共识，好聚好散也是不错的选择，再不行就只有做一定的妥协。</p>
 <hr>
-<h1 id="实践双赢思维的五个要领"><a href="#实践双赢思维的五个要领" class="headerlink" title="实践双赢思维的五个要领"></a><a href="#实践双赢思维的五个要领" title="实践双赢思维的五个要领"></a>实践双赢思维的五个要领</h1><pre><code>“双赢品德”是基础，接着建立“双赢关系”，由此衍生“双赢协议”，以“双赢体系”为培养环境，通过“双赢过程”实现双赢。</code></pre><h2 id="双赢品德"><a href="#双赢品德" class="headerlink" title="双赢品德"></a><a href="#双赢品德" title="双赢品德"></a>双赢品德</h2><h3 id="特征一：诚信"><a href="#特征一：诚信" class="headerlink" title="特征一：诚信"></a><a href="#特征一：诚信" title="特征一：诚信"></a>特征一：诚信</h3><p>诚信是双赢品德的基础。</p>
-<h3 id="特征二：成熟"><a href="#特征二：成熟" class="headerlink" title="特征二：成熟"></a><a href="#特征二：成熟" title="特征二：成熟"></a>特征二：成熟</h3><pre><code>“成熟就是在表达自己的情感和信念的同时又能体谅他人的想法和感受的能力。”
+<h1 id="实践双赢思维的五个要领"><a href="#实践双赢思维的五个要领" class="headerlink" title="实践双赢思维的五个要领"></a>实践双赢思维的五个要领</h1><pre><code>“双赢品德”是基础，接着建立“双赢关系”，由此衍生“双赢协议”，以“双赢体系”为培养环境，通过“双赢过程”实现双赢。</code></pre><h2 id="双赢品德"><a href="#双赢品德" class="headerlink" title="双赢品德"></a>双赢品德</h2><h3 id="特征一：诚信"><a href="#特征一：诚信" class="headerlink" title="特征一：诚信"></a>特征一：诚信</h3><p>诚信是双赢品德的基础。</p>
+<h3 id="特征二：成熟"><a href="#特征二：成熟" class="headerlink" title="特征二：成熟"></a>特征二：成熟</h3><pre><code>“成熟就是在表达自己的情感和信念的同时又能体谅他人的想法和感受的能力。”
     —— 赫兰德·萨克森年（Hrand Saxenian）教授</code></pre><p>成熟，是敢作敢为与善解人意之间的一种平衡状态。<br>这种平衡能力是人际交往、管理和领导能力的精髓，是产出/产能平衡的深度表现。</p>
-<h3 id="特征三：知足"><a href="#特征三：知足" class="headerlink" title="特征三：知足"></a><a href="#特征三：知足" title="特征三：知足"></a>特征三：知足</h3><p>知足，即相信资源充足，人人有份。</p>
+<h3 id="特征三：知足"><a href="#特征三：知足" class="headerlink" title="特征三：知足"></a>特征三：知足</h3><p>知足，即相信资源充足，人人有份。</p>
 <p>匮乏心态（Scarcity Mentality），担心资源稀缺，认为世界如同一块大饼，并非人人得而食之。</p>
 <p>富足的心态（Abundance Mentality），源自厚实的个人价值观与安全感。</p>
-<h2 id="双赢关系"><a href="#双赢关系" class="headerlink" title="双赢关系"></a><a href="#双赢关系" title="双赢关系"></a>双赢关系</h2><p>基于双赢品德才能建立双赢关系。<strong>双赢关系的精髓是信用，即情感账户</strong>。</p>
-<h2 id="双赢协议"><a href="#双赢协议" class="headerlink" title="双赢协议"></a><a href="#双赢协议" title="双赢协议"></a>双赢协议</h2><p>在双赢协议中，对以下五要素应该有明确的规定：</p>
+<h2 id="双赢关系"><a href="#双赢关系" class="headerlink" title="双赢关系"></a>双赢关系</h2><p>基于双赢品德才能建立双赢关系。<strong>双赢关系的精髓是信用，即情感账户</strong>。</p>
+<h2 id="双赢协议"><a href="#双赢协议" class="headerlink" title="双赢协议"></a>双赢协议</h2><p>在双赢协议中，对以下五要素应该有明确的规定：</p>
 <ul>
 <li>预期结果：确认目标和时限，方法不计。</li>
 <li>指导方针：确认实现目标的原则、方针和行为限度。</li>
@@ -1380,8 +1569,8 @@
 <li>任务考核：建立业绩评估标准和时间。</li>
 <li>奖惩制度：根据任务考核确定奖惩。</li>
 </ul>
-<h2 id="双赢体系"><a href="#双赢体系" class="headerlink" title="双赢体系"></a><a href="#双赢体系" title="双赢体系"></a>双赢体系</h2><h3 id="双赢管理培训"><a href="#双赢管理培训" class="headerlink" title="双赢管理培训"></a><a href="#双赢管理培训" title="双赢管理培训"></a>双赢管理培训</h3><h3 id="双赢绩效协议"><a href="#双赢绩效协议" class="headerlink" title="双赢绩效协议"></a><a href="#双赢绩效协议" title="双赢绩效协议"></a>双赢绩效协议</h3><p>双赢体系是为双赢协议创造环境。</p>
-<h2 id="双赢过程"><a href="#双赢过程" class="headerlink" title="双赢过程"></a><a href="#双赢过程" title="双赢过程"></a>双赢过程</h2><p>双赢过程的四个步骤：</p>
+<h2 id="双赢体系"><a href="#双赢体系" class="headerlink" title="双赢体系"></a>双赢体系</h2><h3 id="双赢管理培训"><a href="#双赢管理培训" class="headerlink" title="双赢管理培训"></a>双赢管理培训</h3><h3 id="双赢绩效协议"><a href="#双赢绩效协议" class="headerlink" title="双赢绩效协议"></a>双赢绩效协议</h3><p>双赢体系是为双赢协议创造环境。</p>
+<h2 id="双赢过程"><a href="#双赢过程" class="headerlink" title="双赢过程"></a>双赢过程</h2><p>双赢过程的四个步骤：</p>
 <ul>
 <li>首先，从对方的角度看问题。真正理解对方的想法、需要和顾虑，有时甚至比对方理解得更透彻。</li>
 <li>其次，认清主要问题和顾虑（而非立场）。</li>
@@ -1443,14 +1632,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-11-15 12:38:52" itemprop="dateCreated datePublished" datetime="2018-11-15T12:38:52+08:00">2018-11-15</time>
+              <time title="创建时间：2018-11-15 16:26:12" itemprop="dateCreated datePublished" datetime="2018-11-15T16:26:12+08:00">2018-11-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-30 20:19:16" itemprop="dateModified" datetime="2020-06-30T20:19:16+08:00">2020-06-30</time>
+                <time title="修改时间：2020-07-06 16:18:35" itemprop="dateModified" datetime="2020-07-06T16:18:35+08:00">2020-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1488,18 +1677,17 @@
 
       
           <pre><code>自我意识、想象力和良知三天赋拟定计划，独立意识实施计划。</code></pre><p><strong>要事为先</strong>是自我管理的基本原则</p>
-<h1 id="四象限时间管理法"><a href="#四象限时间管理法" class="headerlink" title="四象限时间管理法"></a><a href="#四象限时间管理法" title="四象限时间管理法"></a>四象限时间管理法</h1><p><strong>时间管理矩阵</strong></p>
-<p><img src="https://i.loli.net/2018/11/17/5befc3ab7311f.png" alt="时间管理矩阵" title="时间管理矩阵"></p>
+<h1 id="四象限时间管理法"><a href="#四象限时间管理法" class="headerlink" title="四象限时间管理法"></a>四象限时间管理法</h1><p><strong><center>时间管理矩阵</center></strong><img src="https://i.loli.net/2018/11/17/5befc3ab7311f.png" alt="时间管理矩阵"></p>
 <hr>
-<h1 id="自我管理四步骤"><a href="#自我管理四步骤" class="headerlink" title="自我管理四步骤"></a><a href="#自我管理四步骤" title="自我管理四步骤"></a>自我管理四步骤</h1><p>以原则为基础，<strong>以第二类事务为生活中心</strong>，对<strong>一周内</strong>的事务进行具体安排。</p>
-<h2 id="确认角色"><a href="#确认角色" class="headerlink" title="确认角色"></a><a href="#确认角色" title="确认角色"></a>确认角色</h2><p>只需要确定下周的关键角色和任务即可</p>
-<h2 id="选择目标"><a href="#选择目标" class="headerlink" title="选择目标"></a><a href="#选择目标" title="选择目标"></a>选择目标</h2><p>思考下一个周计划中每一任务栏下你最想做的一两件要事，作为你选定的目标，最好包括几个第二类事务，尽量让这些短期目标与长期目标相关联。</p>
-<h2 id="安排进度"><a href="#安排进度" class="headerlink" title="安排进度"></a><a href="#安排进度" title="安排进度"></a>安排进度</h2><p>为每一项目标安排具体的实施时间。</p>
-<h2 id="每日调整"><a href="#每日调整" class="headerlink" title="每日调整"></a><a href="#每日调整" title="每日调整"></a>每日调整</h2><p>具体实施的时候，突发事件之类的会对每天的要务适当调整。</p>
+<h1 id="自我管理四步骤"><a href="#自我管理四步骤" class="headerlink" title="自我管理四步骤"></a>自我管理四步骤</h1><p>以原则为基础，<strong>以第二类事务为生活中心</strong>，对<strong>一周内</strong>的事务进行具体安排。</p>
+<h2 id="确认角色"><a href="#确认角色" class="headerlink" title="确认角色"></a>确认角色</h2><p>只需要确定下周的关键角色和任务即可</p>
+<h2 id="选择目标"><a href="#选择目标" class="headerlink" title="选择目标"></a>选择目标</h2><p>思考下一个周计划中每一任务栏下你最想做的一两件要事，作为你选定的目标，最好包括几个第二类事务，尽量让这些短期目标与长期目标相关联。</p>
+<h2 id="安排进度"><a href="#安排进度" class="headerlink" title="安排进度"></a>安排进度</h2><p>为每一项目标安排具体的实施时间。</p>
+<h2 id="每日调整"><a href="#每日调整" class="headerlink" title="每日调整"></a>每日调整</h2><p>具体实施的时候，突发事件之类的会对每天的要务适当调整。</p>
 <hr>
-<h1 id="授权"><a href="#授权" class="headerlink" title="授权"></a><a href="#授权" title="授权"></a>授权</h1><p>授权是提高效率或效能的秘诀之一。</p>
-<h2 id="指令型授权"><a href="#指令型授权" class="headerlink" title="指令型授权"></a><a href="#指令型授权" title="指令型授权"></a>指令型授权</h2><p>指令型授权是让别人“去做这个，去做那个，做完告诉我”。</p>
-<h2 id="责任型授权"><a href="#责任型授权" class="headerlink" title="责任型授权"></a><a href="#责任型授权" title="责任型授权"></a>责任型授权</h2><p>责任型授权的关注重点是最终的结果。需要双方就一下五个方面达成共识，并做出承诺：</p>
+<h1 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h1><p>授权是提高效率或效能的秘诀之一。</p>
+<h2 id="指令型授权"><a href="#指令型授权" class="headerlink" title="指令型授权"></a>指令型授权</h2><p>指令型授权是让别人“去做这个，去做那个，做完告诉我”。</p>
+<h2 id="责任型授权"><a href="#责任型授权" class="headerlink" title="责任型授权"></a>责任型授权</h2><p>责任型授权的关注重点是最终的结果。需要双方就一下五个方面达成共识，并做出承诺：</p>
 <ul>
 <li>预期结果</li>
 <li>指导方针</li>
@@ -1531,266 +1719,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Louis Cai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Give me five">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" class="post-title-link" itemprop="url">以终为始原则 - 《高效能人士的七个习惯》</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-11-15 12:36:03" itemprop="dateCreated datePublished" datetime="2018-11-15T12:36:03+08:00">2018-11-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-30 20:18:47" itemprop="dateModified" datetime="2020-06-30T20:18:47+08:00">2020-06-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="以终为始"><a href="#以终为始" class="headerlink" title="以终为始"></a><a href="#以终为始" title="以终为始"></a>以终为始</h1><p>“以终为始”说明做任何事之前，都要先认清方向。以免误入歧途、白费功夫。重点强调的是目标感，其中目标的”根节点”是自己的个人使命宣言。</p>
-<h1 id="两次创造"><a href="#两次创造" class="headerlink" title="两次创造"></a><a href="#两次创造" title="两次创造"></a>两次创造</h1><blockquote>
-<p>我们做任何事都是先在头脑中构思，即智力上的或第一次的创造（Mental/First Creation），然后付诸实践，即体力上的或第二次的创造（Physical/Second Creation）。</p>
-</blockquote>
-<p>两次创造是以终为始的基础，在第一次创造的时候践行使命宣言影响修正构思。</p>
-<h1 id="领导与管理"><a href="#领导与管理" class="headerlink" title="领导与管理"></a><a href="#领导与管理" title="领导与管理"></a>领导与管理</h1><p>领导即做什么事情，是第一次创造；<br>管理即怎么做事情，是第二次创造。</p>
-<p>个人生活也是可以领导和管理的，特别要重视个人领导意识。</p>
-<hr>
-<h1 id="生活中心"><a href="#生活中心" class="headerlink" title="生活中心"></a><a href="#生活中心" title="生活中心"></a>生活中心</h1><p>人人都有生活中心，常见的有：</p>
-<ul>
-<li>以配偶为中心</li>
-<li>以家庭为中心</li>
-<li>以金钱为中心</li>
-<li>以工作为中心</li>
-<li>以名利为中心</li>
-<li>以享乐为中心</li>
-<li>以朋友为中心</li>
-<li>以敌人为中心</li>
-<li>以宗教为中心</li>
-<li>以自我为中心</li>
-</ul>
-<p>一般说来，我们的<strong>生活中心是以上某几种中心的混合体</strong>，依环境不同而有所变化。大多数人的生活受到多种因素的影响，可能今天以朋友为中心，明天又变为以配偶为中心。</p>
-<p>生活中心如此摇摆不定，情绪上难免起起落落，一会儿意气风发，一会儿颓唐沮丧；一会儿斗志昂扬，一会儿又落魄消沉。缺乏固定的人生方向，没有持久的智慧，也没有稳定的力量或自我评价。</p>
-<p>所以，最理想的状况还是建立清晰明确的生活中心，由此才能产生高度的安全感、人生方向、智慧和力量，使人生更积极，更和谐。</p>
-<p>原则是深刻的、实在的、经典的真理，是人类共有的财富。它们准确无误，始终如一，完美无瑕，强而有力，贯穿生活的方方面面。<strong>以永恒不变的原则作为生活中心</strong>，就能建立高效能的思维定式，也就能正确审视所有其他的生活中心。</p>
-<hr>
-<h1 id="善用大脑"><a href="#善用大脑" class="headerlink" title="善用大脑"></a><a href="#善用大脑" title="善用大脑"></a>善用大脑</h1><p>自我意识有助于我们审视个人使命宣言。</p>
-<h2 id="左右大脑"><a href="#左右大脑" class="headerlink" title="左右大脑"></a><a href="#左右大脑" title="左右大脑"></a>左右大脑</h2><p>研究结果显示，人的大脑可分为左右两部分：</p>
-<ul>
-<li>左脑主司逻辑思考与语言能力，右脑执掌创造力与直觉；</li>
-<li>左脑处理文字，右脑擅长图像；</li>
-<li>左脑重局部与分析，右脑重整体与整合。</li>
-</ul>
-<p>善用左右脑，尤其是右脑功能能够增强我们设计人生的能力。</p>
-<p>开发右脑有两个主要途径：</p>
-<ul>
-<li>扩宽思路</li>
-<li>心灵演练与确认</li>
-</ul>
-<h2 id="心灵演练与确认"><a href="#心灵演练与确认" class="headerlink" title="心灵演练与确认"></a><a href="#心灵演练与确认" title="心灵演练与确认"></a>心灵演练与确认</h2><p>心灵演练是运用想象提前预演生活中的各种情形，通过使命宣言核验自己构思。</p>
-<p>因为提前预演过各种情形，化被动为主动，自己的反应也就是经过推敲核验过的，更加符合自己的使命宣言，只需要确认及践行演练即可。</p>
-<hr>
-<h1 id="践行"><a href="#践行" class="headerlink" title="践行"></a><a href="#践行" title="践行"></a>践行</h1><ol>
-<li>确定角色与目标</li>
-<li>撰写使命宣言</li>
-<li>修正生活中心</li>
-</ol>
-<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
-<li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
-<li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
-<li><a href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" title="以终为始原则">以终为始原则</a></li>
-<li><a href="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/" title="要事为先原则">要事为先原则</a></li>
-<li><a href="/Think-win-win-The-7-Habits-of-Highly-Effective-People/" title="双赢思维">双赢思维</a></li>
-<li><a href="/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/" title="知彼解己">知彼解己</a></li>
-<li><a href="/Synergize-The-7-Habits-of-Highly-Effective-People/" title="统合综效">统合综效</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Be-proactive-The-7-Habits-of-Highly-Effective-People/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Louis Cai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Give me five">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" class="post-title-link" itemprop="url">积极主动原则 - 《高效能人士的七个习惯》</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-11-14 12:30:52" itemprop="dateCreated datePublished" datetime="2018-11-14T12:30:52+08:00">2018-11-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-30 20:18:13" itemprop="dateModified" datetime="2020-06-30T20:18:13+08:00">2020-06-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="选择的自由"><a href="#选择的自由" class="headerlink" title="选择的自由"></a><a href="#选择的自由" title="选择的自由"></a>选择的自由</h1><h2 id="刺激与回应"><a href="#刺激与回应" class="headerlink" title="刺激与回应"></a><a href="#刺激与回应" title="刺激与回应"></a>刺激与回应</h2><p>我们的行为都可以总结为“刺激与回应”，参考巴甫洛夫实验。</p>
-<p>“刺激”作为外部环境，多属于不可控的范围，而“回应”多属于我们可控范围。弗洛伊德认为完整的人格结构由三大部分组成，即本我、自我和超我。对于回应的选择，我们多是处于本我的控制下，无意识或者下意识的进行回应。</p>
-<p>弗兰克尔运用人类独有的自我意识，发掘了人性最根本的原则，即在<strong>刺激与回应之间，人有选择的自由。</strong></p>
-<p>选择的自由包括人类特有的四种天赋。除自我意识（self-awareness）外，我们还拥有“想象力（Imagination）”，即超越当前现实而在头脑中进行创造的能力；“良知（Conscience）”，即明辨是非，坚持行为原则，判断思想、言行正确与否的能力； “独立意志（Independent Will）”，即基于自我意识、不受外力影响而自行其是的能力。</p>
-<p>对于回应的选择，我们在上面四个方面都是自由的。面对刺激的时候，我们不该放弃选择的机会，让“本我”来回应，而应该积极主动的以对自己负责任的态度进行回应。例：说话过脑子。</p>
-<hr>
-<h1 id="影响圈和关注圈"><a href="#影响圈和关注圈" class="headerlink" title="影响圈和关注圈"></a><a href="#影响圈和关注圈" title="影响圈和关注圈"></a>影响圈和关注圈</h1><p>不难理解，每个人都有格外关注的事务，这些就可以纳入关注圈。关注圈里的事务，有些可以被掌控，有些则不行，前者属于”影响圈”的范围。</p>
-<p>我们面对的问题可以分为三类：</p>
-<ul>
-<li>可直接控制的（问题与自身的行为有关）</li>
-<li>可间接控制的（问题与他人的行为有关）</li>
-<li>无法控制的（我们无能为力的问题，例如我们的过去或现实的环境）</li>
-</ul>
-<p>对于这三类问题，积极主动的人都是由影响圈着手，加以解决。从心理学上说，经常把失败的不可控因素归因到自己，会导致习得性无助，从而会让人更加的消极被动。</p>
-<hr>
-<h1 id="践行"><a href="#践行" class="headerlink" title="践行"></a><a href="#践行" title="践行"></a>践行</h1><p>有选择就有结果，如果选择错误，积极主动的承认，并改正。</p>
-<p>从影响力的中心去工作，积极扩大它。<br>做出承诺，并信守诺言，这是影响圈的核心。</p>
-<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
-<li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
-<li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
-<li><a href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" title="以终为始原则">以终为始原则</a></li>
-<li><a href="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/" title="要事为先原则">要事为先原则</a></li>
-<li><a href="/Think-win-win-The-7-Habits-of-Highly-Effective-People/" title="双赢思维">双赢思维</a></li>
-<li><a href="/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/" title="知彼解己">知彼解己</a></li>
-<li><a href="/Synergize-The-7-Habits-of-Highly-Effective-People/" title="统合综效">统合综效</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1856,20 +1788,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
