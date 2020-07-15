@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"louis-cai.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"louis-cai.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
   <meta name="description" content="我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。Yt &#x3D; Yt-1 + α 使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为 然后，我们使用波动率将价格Z转换为标准单位变量，以便与逐步过程进行比较。据此，我们为不同的时间范围创建了一组曲线。 从本质上讲，时间间隔越长，波动性越">
 <meta property="og:type" content="article">
@@ -236,7 +236,7 @@
 
       
         <p>我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。<br>Yt = Yt-1 + α</p>
-<p>使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为<br><img src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png" alt=""></p>
+<p>使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为<br><img data-src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png" alt=""></p>
 <p>然后，我们使用波动率将价格Z转换为标准单位变量，以便与逐步过程进行比较。据此，我们为不同的时间范围创建了一组曲线。</p>
 <p>从本质上讲，时间间隔越长，波动性越大，价格可以从现有水平移动得越远。</p>
 <p>从这些我们可以计算出在任何时间长度内价格变动的可能性。</p>
@@ -245,7 +245,7 @@
 <p>One of the simplest market models we have for forex is the random step process or random walk.</p>
 <p>This just means that in every interval, the market moves by a random step value. The price can slant towards an uptrend or a downtrend with a drift parameter.</p>
 <p>Yt = Yt-1 + α</p>
-<p>Using a discrete unitary step function to model these price moves, the probability that price reaches a certain maximum at any time can be found as<br><img src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png" alt=""></p>
+<p>Using a discrete unitary step function to model these price moves, the probability that price reaches a certain maximum at any time can be found as<br><img data-src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png" alt=""></p>
 <p>We then transform the price Z, using the volatility into a standard unit variable for comparison against the step process. From this we create a set of curves for different timeframes.</p>
 <p>In essence, the longer the time interval and the greater the volatility, the further the price can move from the existing level.</p>
 <p>From these we can calculate the probability of a price change over any length of time. </p>
@@ -456,6 +456,7 @@
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
