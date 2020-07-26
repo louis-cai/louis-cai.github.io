@@ -20,12 +20,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"louis-cai.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <meta name="description" content="重点一manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即 1&lt;meta manifest&#x3D;‘demo.appcache&#39;&gt; 标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIF">
+  <meta name="description" content="重点一manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即1&lt;meta manifest&#x3D;‘demo.appcache&#39;&gt;标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFES">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html5 app cache">
 <meta property="og:url" content="http://louis-cai.github.io/html5-app-cache/index.html">
 <meta property="og:site_name" content="Give me five">
-<meta property="og:description" content="重点一manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即 1&lt;meta manifest&#x3D;‘demo.appcache&#39;&gt; 标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIF">
+<meta property="og:description" content="重点一manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即1&lt;meta manifest&#x3D;‘demo.appcache&#39;&gt;标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFES">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-12-04T04:46:47.000Z">
 <meta property="article:modified_time" content="2018-12-11T12:04:05.000Z">
@@ -239,13 +239,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="重点一"><a href="#重点一" class="headerlink" title="重点一"></a>重点一</h1><p>manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">manifest</span>=<span class="string">‘demo.appcache</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-<p>标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。<br>当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFEST所指向的资源就不需要重新进行加载了，但是问题是，当前的html页面也会跟着cache直接读出来了，可能会造成即使 我们的页面更新了，但是用户还是看的老旧版本页面（因为更新mainfest的时候，页面加载已经开始了，但是缓存更新却尚未完成，浏览器还是会使用缓存的资源，当浏览器检测到了Application Cache有更新时，本次不会使用新的资源，下一次才会进行使用）</p>
+        <h1 id="重点一"><a href="#重点一" class="headerlink" title="重点一"></a>重点一</h1><p>manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">manifest</span>=<span class="string">‘demo.appcache</span>'&gt;</span></span><br></pre></td></tr></table></figure><br>标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。<br>当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFEST所指向的资源就不需要重新进行加载了，但是问题是，当前的html页面也会跟着cache直接读出来了，可能会造成即使 我们的页面更新了，但是用户还是看的老旧版本页面（因为更新mainfest的时候，页面加载已经开始了，但是缓存更新却尚未完成，浏览器还是会使用缓存的资源，当浏览器检测到了Application Cache有更新时，本次不会使用新的资源，下一次才会进行使用）</p>
 <p>解决方案：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.addEventListener(<span class="string">"updateready"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    applicationCache.swapCache();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.reload();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.addEventListener(<span class="string">"updateready"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    applicationCache.swapCache();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.reload();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></h2><h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
 <h1 id="重点三"><a href="#重点三" class="headerlink" title="重点三"></a>重点三</h1><p>永远不要使用传统 GET 参数(例如 other-cached-page.html?parameterName=value) 来访问缓存文件。这会使浏览器绕过缓存，直接从网络获取。<br>若想链接一个参数需要在 JavaScript 中解析的资源，你可以将参数放到链接的 hash 部分，例如 other-cached-page.html#whatever?parameterName=value。<br>注：需要额外的解析</p>
 <h1 id="重点四"><a href="#重点四" class="headerlink" title="重点四"></a>重点四</h1><p>当应用被缓存后，仅仅更新在 web 页面中使用的资源(文件)还不足以更新被缓存的文件。<br>你需要在浏览器获取和使用更新的文件前，去更新缓存清单文件本身。<br>你可以使用 window.applicationCache.swapCache() 以编程的方式完成上述目的，虽然这无法影响到已经加载完毕的资源。<br>为了保证资源从应用缓存的最新版本中加载，最理想的办法就是刷新页面。</p>
 
@@ -370,7 +366,15 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重点一"><span class="nav-number">1.</span> <span class="nav-text">重点一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点二"><span class="nav-number">2.</span> <span class="nav-text">重点二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点三"><span class="nav-number">3.</span> <span class="nav-text">重点三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点四"><span class="nav-number">4.</span> <span class="nav-text">重点四</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重点一"><span class="nav-number">1.</span> <span class="nav-text">重点一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">1
+2
+3
+4
+applicationCache.addEventListener(&quot;updateready&quot;,function()&amp;#123;
+    applicationCache.swapCache();      &#x2F;&#x2F; 手工更新本地缓存
+    location.reload();    &#x2F;&#x2F;重新加载页面页面
+&amp;#125;,true);
+</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点二"><span class="nav-number">2.</span> <span class="nav-text">重点二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点三"><span class="nav-number">3.</span> <span class="nav-text">重点三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点四"><span class="nav-number">4.</span> <span class="nav-text">重点四</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -485,6 +489,8 @@
 
 
 
+
+  
 
   
 

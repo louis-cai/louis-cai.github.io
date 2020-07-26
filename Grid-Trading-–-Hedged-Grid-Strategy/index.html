@@ -266,6 +266,7 @@
 <p>对冲网格是市场中立的策略。无论市场是上升还是下降，利润都是完全一样的。这种交易方式的吸引力在于，您无需预测任何方向趋势。</p>
 <p>但是，如果设置正确，您仍然可以在看跌或看涨的反弹中获利。让我们看一下基本的网格配置。</p>
 <h2 id="网格配置-EURUSD示例"><a href="#网格配置-EURUSD示例" class="headerlink" title="网格配置-EURUSD示例"></a>网格配置-EURUSD示例</h2><p>假设我们要在EURUSD上建立一个网格，当前价格为1.3500。首先，我们的订单簿应如下所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -278,7 +279,8 @@
 <th>Hedge</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1</td>
 <td>Buy Stop</td>
 <td>1.3515</td>
@@ -323,7 +325,9 @@
 <td></td>
 <td>-300</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>为创建网格，我使用15个点的间隔大小，并在起点的上方和下方使用了4个级别。这里没有明确的规则。您可以使用枢轴线或任何其他支撑/阻力指示器设置水平。</p>
 <p>您还可以根据需要随意增加或减少交易数量，并更改时间间隔并根据自己的喜好获利。但是请记住，增加间隔的大小并添加更多的级别会增加最大的损失。</p>
 <p>如果价格高于入门水平，则触发止损订单，如果价格低于入门水平，则触发止损订单。因此，我们总是使用该系统将订单打开到趋势中。参见图1。</p>
@@ -332,6 +336,7 @@
 <h2 id="运行网格"><a href="#运行网格" class="headerlink" title="运行网格"></a>运行网格</h2><p>如果价格直线上升60个点，它将执行所有买入订单，而不执行卖出订单。因此，我们将获得90点（45 + 30 + 15）的利润。同样，如果价格直线下跌60个点，那么我们将执行所有卖出订单，最后再获得90个点的利润。</p>
 <p>不过，更可能发生的是价格将上下波动，导致我们的一些买卖订单在不同的时间执行。假设价格跌至1.3500以下，并且我们的第一个卖单被执行。</p>
 <p>现在，如果我们出现逆转和看涨反弹，会发生什么？假设价格上涨到足以达到网格中最后一个买入订单的水平。那是1.3560。因此，我们的损益表如下所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -345,7 +350,8 @@
 <th>P/L</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1</td>
 <td>Buy Stop</td>
 <td>1.3515</td>
@@ -385,7 +391,9 @@
 <td>1.3485</td>
 <td>-75</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>由于级别4 / -1的交易对的损益表都处于打开状态，因此现在已锁定。但是我们仍然可以从剩余的三个购买订单中获利。</p>
 <h2 id="何时“关闭”网格"><a href="#何时“关闭”网格" class="headerlink" title="何时“关闭”网格"></a>何时“关闭”网格</h2><p>为简单起见，我宁愿在交易总额达到我选择的利润水平后就关闭整个网格。在上面的网格中，最大损失为300点。因此，我们可以说350点作为目标利润，然后离开网格运行。</p>
 <p>通常，对于网格交易，最好将整个设置视为“单个系统”。而不是试图单独管理每个交易。这种方法可以简化交易管理。</p>
@@ -410,6 +418,7 @@
 <p>下载链接位于页面底部。</p>
 <h3 id="模拟＃1"><a href="#模拟＃1" class="headerlink" title="模拟＃1"></a>模拟＃1</h3><p>第一个模拟给一个接近理想的测试案例。价格开始上涨，触发了我们所有的买单。我在图表上用虚线标记了订单级别。高于1.3500的是<a href="https://forexop.com/learning/make-the-most-of-forex-order-types/" target="_blank" rel="noopener">买入止损订单</a>，低于的是<a href="https://forexop.com/learning/make-the-most-of-forex-order-types/" target="_blank" rel="noopener">卖出止损订单</a>。就是说，它们进入了优势趋势。参见图2。</p>
 <p>价格保持在上半部，仅达到这些水平，因此没有卖出订单。我们的网格最终获得了以下利润：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -428,7 +437,8 @@
 <th>Net</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Buy</td>
 <td>1.3515</td>
 <td>1.3865</td>
@@ -501,11 +511,13 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="模拟＃2"><a href="#模拟＃2" class="headerlink" title="模拟＃2"></a>模拟＃2</h3><p>这次用最坏的情况。在此过程中，价格行为非常不稳定，并设法达到网格上的所有级别（请参见图3）。最终盈亏为-316点。网格的最大损失为300点，额外16点损失为滑价导致。</p>
 <p><img data-src="https://forexop.com/assets/uploads/2018/10/grid_example_loss.png" alt="图3：波动市场情况下可能发生损失的示例。" title="图3：波动市场情况下可能发生损失的示例。"></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -524,7 +536,8 @@
 <th>Net</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Buy</td>
 <td>1.3515</td>
 <td>1.3865</td>
@@ -599,7 +612,9 @@
 <td></td>
 <td>-808.2</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>在非常波动的市场中，当所有水平都可能被击穿时，则采用反向策略–“单一”网格是首选。有关更多信息和比较，<a href="https://forexop.com/trading-news-economic-events/" target="_blank" rel="noopener">请参见此处</a>。</p>
 <p>对于趋势市场，另一种选择是使用<a href="https://forexop.com/strategy/trend-following-axis-grid/" target="_blank" rel="noopener">垂直网格</a>来汇总价格以利用趋势。</p>
 <blockquote>
@@ -857,6 +872,8 @@
 
 
 
+
+  
 
   
 

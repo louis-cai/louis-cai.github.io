@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://louis-cai.github.io/The-Random-Walk/</loc>
+    <lastmod>2020-07-26</lastmod>
+  </url>  <url>
     <loc>http://louis-cai.github.io/How-to-Place-Stop-Losses-and-Take-Profits-Using-a-Maximal-Strategy/</loc>
-    <lastmod>2020-07-15</lastmod>
+    <lastmod>2020-07-26</lastmod>
   </url>  <url>
     <loc>http://louis-cai.github.io/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-15</lastmod>
@@ -23,9 +26,6 @@
     <lastmod>2020-07-06</lastmod>
   </url>  <url>
     <loc>http://louis-cai.github.io/%E4%BD%BF%E7%94%A8Python%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7docker/</loc>
-    <lastmod>2020-06-30</lastmod>
-  </url>  <url>
-    <loc>http://louis-cai.github.io/The-Random-Walk/</loc>
     <lastmod>2020-06-30</lastmod>
   </url>  <url>
     <loc>http://louis-cai.github.io/ios-device-ID/</loc>

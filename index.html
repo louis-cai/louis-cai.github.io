@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-15 20:39:09" itemprop="dateModified" datetime="2020-07-15T20:39:09+08:00">2020-07-15</time>
+                <time title="修改时间：2020-07-26 11:57:02" itemprop="dateModified" datetime="2020-07-26T11:57:02+08:00">2020-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,6 @@
 
       
           <blockquote><footer><strong>原文地址</strong><cite><a href="https://forexop.com/strategy/stop-loss-profit-placements-max-returns/" target="_blank" rel="noopener">How to Place Stop Losses and Take Profits Using a Maximal Strategy</a></cite></footer></blockquote>
-
 <p>进行交易时，如何选择止损和止盈值是一个问题。该决策将直接影响您的交易盈利能力。实际上，设置退出位对盈利能力的影响远大于决策交易方向的能力。</p>
 <p><img data-src="https://forexop.com/assets/uploads/2018/11/stop_loss_take_profit_maximals3-304x198.png" alt="如何选择止损和获利" title="如何选择止损和获利"></p>
 <p>在动荡的外汇市场上，这确实是事实。鉴于这一决定的重要性，令人惊讶的是，我们中的许多人很少对此方面给予任何考虑。</p>
@@ -327,6 +326,7 @@
 <p>这表明欧元/美元有一定的机会在我的交易时间内达到目标价格/止损水平。但这并没有告诉我先到达哪个。</p>
 <p>我还想看到的是，该交易实际产生利润或损失的可能性。价格可以先到达止损位，然后才能止盈。在这种情况下，我的交易将亏损。它可以替代地先达到止盈，在这种情况下获胜。或者，它既不能达到止损位，也不能达到获利水平，在这种情况下，交易保持开放。</p>
 <p>基于此分析，我可以使用标准概率论得出交易的每个结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -336,7 +336,8 @@
 <th>Trend-</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>p(win)</td>
 <td>63%</td>
 <td>42%</td>
@@ -360,7 +361,9 @@
 <td>47%</td>
 <td>90%</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>如果短期趋势反转，即市场上涨并使我的购买获利，我的最佳结果就会发生。如果趋势沿相同方向（趋势+）持续，则结果最差。在这种情况下，我有42％的机会以利润结束交易，而有47％的机会以亏损结束交易。</p>
 <p>当我进行交易时，我会发现一些值，使得达到止盈的机会至少是达到止损的机会的1.5倍。获胜率将达到70％左右或更高。</p>
 <p>请记住，如果您在交易开放时移动止损或获利，则会给您带来不同的结果。</p>
@@ -430,10 +433,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-30 08:55:34 / 修改时间：20:20:50" itemprop="dateCreated datePublished" datetime="2020-06-30T08:55:34+08:00">2020-06-30</time>
+              <time title="创建时间：2020-06-30 08:55:34" itemprop="dateCreated datePublished" datetime="2020-06-30T08:55:34+08:00">2020-06-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-26 12:53:40" itemprop="dateModified" datetime="2020-07-26T12:53:40+08:00">2020-07-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -469,9 +478,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。<br>Yt = Yt-1 + α</p>
-<p>使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为<br><img data-src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png" alt=""></p>
-<p>然后，我们使用波动率将价格Z转换为标准单位变量，以便与逐步过程进行比较。据此，我们为不同的时间范围创建了一组曲线。</p>
+          <p>我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。</p>
+<script type="math/tex; mode=display">\ce{Y_t = Y_{t-1} + α}</script><p>使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为</p>
+<script type="math/tex; mode=display">\ce{p(Y_n = m) = \left(\frac{(m + n)^n}{2}\right){\frac{1}{2^n}}}</script><p>然后，我们使用波动率将价格Z转换为标准单位变量，以便与逐步过程进行比较。据此，我们为不同的时间范围创建了一组曲线。</p>
 <p>从本质上讲，时间间隔越长，波动性越大，价格可以从现有水平移动得越远。</p>
 <p>从这些我们可以计算出在任何时间长度内价格变动的可能性。</p>
 <hr>
@@ -592,6 +601,7 @@
 <p>对冲网格是市场中立的策略。无论市场是上升还是下降，利润都是完全一样的。这种交易方式的吸引力在于，您无需预测任何方向趋势。</p>
 <p>但是，如果设置正确，您仍然可以在看跌或看涨的反弹中获利。让我们看一下基本的网格配置。</p>
 <h2 id="网格配置-EURUSD示例"><a href="#网格配置-EURUSD示例" class="headerlink" title="网格配置-EURUSD示例"></a>网格配置-EURUSD示例</h2><p>假设我们要在EURUSD上建立一个网格，当前价格为1.3500。首先，我们的订单簿应如下所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -604,7 +614,8 @@
 <th>Hedge</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1</td>
 <td>Buy Stop</td>
 <td>1.3515</td>
@@ -649,7 +660,9 @@
 <td></td>
 <td>-300</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>为创建网格，我使用15个点的间隔大小，并在起点的上方和下方使用了4个级别。这里没有明确的规则。您可以使用枢轴线或任何其他支撑/阻力指示器设置水平。</p>
 <p>您还可以根据需要随意增加或减少交易数量，并更改时间间隔并根据自己的喜好获利。但是请记住，增加间隔的大小并添加更多的级别会增加最大的损失。</p>
 <p>如果价格高于入门水平，则触发止损订单，如果价格低于入门水平，则触发止损订单。因此，我们总是使用该系统将订单打开到趋势中。参见图1。</p>
@@ -658,6 +671,7 @@
 <h2 id="运行网格"><a href="#运行网格" class="headerlink" title="运行网格"></a>运行网格</h2><p>如果价格直线上升60个点，它将执行所有买入订单，而不执行卖出订单。因此，我们将获得90点（45 + 30 + 15）的利润。同样，如果价格直线下跌60个点，那么我们将执行所有卖出订单，最后再获得90个点的利润。</p>
 <p>不过，更可能发生的是价格将上下波动，导致我们的一些买卖订单在不同的时间执行。假设价格跌至1.3500以下，并且我们的第一个卖单被执行。</p>
 <p>现在，如果我们出现逆转和看涨反弹，会发生什么？假设价格上涨到足以达到网格中最后一个买入订单的水平。那是1.3560。因此，我们的损益表如下所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -671,7 +685,8 @@
 <th>P/L</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1</td>
 <td>Buy Stop</td>
 <td>1.3515</td>
@@ -711,7 +726,9 @@
 <td>1.3485</td>
 <td>-75</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>由于级别4 / -1的交易对的损益表都处于打开状态，因此现在已锁定。但是我们仍然可以从剩余的三个购买订单中获利。</p>
 <h2 id="何时“关闭”网格"><a href="#何时“关闭”网格" class="headerlink" title="何时“关闭”网格"></a>何时“关闭”网格</h2><p>为简单起见，我宁愿在交易总额达到我选择的利润水平后就关闭整个网格。在上面的网格中，最大损失为300点。因此，我们可以说350点作为目标利润，然后离开网格运行。</p>
 <p>通常，对于网格交易，最好将整个设置视为“单个系统”。而不是试图单独管理每个交易。这种方法可以简化交易管理。</p>
@@ -736,6 +753,7 @@
 <p>下载链接位于页面底部。</p>
 <h3 id="模拟＃1"><a href="#模拟＃1" class="headerlink" title="模拟＃1"></a>模拟＃1</h3><p>第一个模拟给一个接近理想的测试案例。价格开始上涨，触发了我们所有的买单。我在图表上用虚线标记了订单级别。高于1.3500的是<a href="https://forexop.com/learning/make-the-most-of-forex-order-types/" target="_blank" rel="noopener">买入止损订单</a>，低于的是<a href="https://forexop.com/learning/make-the-most-of-forex-order-types/" target="_blank" rel="noopener">卖出止损订单</a>。就是说，它们进入了优势趋势。参见图2。</p>
 <p>价格保持在上半部，仅达到这些水平，因此没有卖出订单。我们的网格最终获得了以下利润：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -754,7 +772,8 @@
 <th>Net</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Buy</td>
 <td>1.3515</td>
 <td>1.3865</td>
@@ -827,11 +846,13 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="模拟＃2"><a href="#模拟＃2" class="headerlink" title="模拟＃2"></a>模拟＃2</h3><p>这次用最坏的情况。在此过程中，价格行为非常不稳定，并设法达到网格上的所有级别（请参见图3）。最终盈亏为-316点。网格的最大损失为300点，额外16点损失为滑价导致。</p>
 <p><img data-src="https://forexop.com/assets/uploads/2018/10/grid_example_loss.png" alt="图3：波动市场情况下可能发生损失的示例。" title="图3：波动市场情况下可能发生损失的示例。"></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -850,7 +871,8 @@
 <th>Net</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Buy</td>
 <td>1.3515</td>
 <td>1.3865</td>
@@ -925,7 +947,9 @@
 <td></td>
 <td>-808.2</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>在非常波动的市场中，当所有水平都可能被击穿时，则采用反向策略–“单一”网格是首选。有关更多信息和比较，<a href="https://forexop.com/trading-news-economic-events/" target="_blank" rel="noopener">请参见此处</a>。</p>
 <p>对于趋势市场，另一种选择是使用<a href="https://forexop.com/strategy/trend-following-axis-grid/" target="_blank" rel="noopener">垂直网格</a>来汇总价格以利用趋势。</p>
 <blockquote>
@@ -1033,9 +1057,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <pre><code>因为仅需要监控docker容器的状态，所以直接用Python脚本配合Linux的crontab定时检查即可实现需求。</code></pre><p>脚本如下:</p>
+          <pre><code>因为仅需要监控docker容器的状态，所以直接用Python脚本配合Linux的crontab定时检查即可实现需求。
+</code></pre><p>脚本如下:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> yagmail</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">docker_status_discovery</span><span class="params">(docker_status_finder)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> containerid <span class="keyword">in</span> docker_status_finder.readlines():</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'xxxxx'</span> <span class="keyword">in</span> containerid:</span><br><span class="line">            mail(subject=<span class="string">'%s Exited'</span> % containerid, text=<span class="string">'containerid:%s Exited.'</span> % containerid)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail</span><span class="params">(subject=<span class="string">''</span>, text=<span class="string">''</span>)</span>:</span></span><br><span class="line">    Me = <span class="string">'xxxxx@163.com'</span></span><br><span class="line">    PWD = <span class="string">'xxxxx'</span></span><br><span class="line">    SMTP_HOST = <span class="string">'smtp.163.com'</span></span><br><span class="line">    yagmail.SMTP(Me, PWD, SMTP_HOST).send(Me, subject=subject, contents=text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    docker_status_finder = os.popen(<span class="string">"""sudo docker ps -a |grep 'Exited'|awk &#123;'print $NF'&#125; """</span>)</span><br><span class="line">    docker_status_discovery(docker_status_finder)</span><br></pre></td></tr></table></figure>
-
 <h2 id="结合linux的crontab工具定时地检测制定docker容器"><a href="#结合linux的crontab工具定时地检测制定docker容器" class="headerlink" title="结合linux的crontab工具定时地检测制定docker容器"></a>结合linux的crontab工具定时地检测制定docker容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * sleep 30;python &#x2F;root&#x2F;peer0.py</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -1114,7 +1138,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近为了提升公司app的性能，计划使用登场已久的WKWebView。<br>话说WKWebView刚出来时，神坑无数，一直不敢用，这次提前也有心理准备，but坑还是踩了一遍<del>泪奔</del></p>
+          <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>最近为了提升公司app的性能，计划使用登场已久的WKWebView。<br>话说WKWebView刚出来时，神坑无数，一直不敢用，这次提前也有心理准备，but坑还是踩了一遍~泪奔~</p>
 <h1 id="cookie坑"><a href="#cookie坑" class="headerlink" title="cookie坑"></a>cookie坑</h1><ul>
 <li><p>WKWebView的cookie管理与NSHTTPCookieStorage是不共享的，网上有大量的文章，各种同步方法。<br>我们用了一个简单暴力的方法，引用第三方库<a href="https://github.com/GaoGuohao/GGWkCookie" target="_blank" rel="noopener">GGWkCookie</a>管理cookie。</p>
 </li>
@@ -1222,9 +1246,11 @@
 <hr>
 <h1 id="如何做到统合综效"><a href="#如何做到统合综效" class="headerlink" title="如何做到统合综效"></a>如何做到统合综效</h1><p>统合综效精髓就是判断和尊重差异，取长补短。</p>
 <p>统合综效最直接的应用就是多人沟通协作。<br>沟通的层次与信任度成正比。<br><img data-src="https://i.loli.net/2018/12/11/5c0f9a1aa982f.png" alt="沟通的层次"></p>
-<h2 id="尊重差异"><a href="#尊重差异" class="headerlink" title="尊重差异"></a>尊重差异</h2><pre><code>三人行，必有我师焉。</code></pre><p>要做到统合综效的沟通，首先就是摒弃偏见，尊重差异。</p>
+<h2 id="尊重差异"><a href="#尊重差异" class="headerlink" title="尊重差异"></a>尊重差异</h2><pre><code>三人行，必有我师焉。
+</code></pre><p>要做到统合综效的沟通，首先就是摒弃偏见，尊重差异。</p>
 <p>每个人都是独一无二的，对事物的角度和看法也各不相同，这是客观规律，所以与人合作最重要的就是重视不同个体的不同心理、情绪与智能，以及个人眼中所见到的不同世界。</p>
-<h2 id="化阻力为动力"><a href="#化阻力为动力" class="headerlink" title="化阻力为动力"></a>化阻力为动力</h2><pre><code>不设法削减阻力，只一味增加推力，就仿佛施力于弹簧上，终有一天引起反弹。</code></pre><p><img data-src="https://i.loli.net/2018/12/11/5c0fa1ee30c7e.png" alt="&quot;力场分析&quot;模型"><strong><center>“力场分析”模型</center></strong><br>动力通常是积极、合理、自觉、符合经济效益的力量。<br>阻力多半是消极、负面、不合逻辑、情绪化、不自觉，等社会性与心理性因素。</p>
+<h2 id="化阻力为动力"><a href="#化阻力为动力" class="headerlink" title="化阻力为动力"></a>化阻力为动力</h2><pre><code>不设法削减阻力，只一味增加推力，就仿佛施力于弹簧上，终有一天引起反弹。
+</code></pre><p><img data-src="https://i.loli.net/2018/12/11/5c0fa1ee30c7e.png" alt="&quot;力场分析&quot;模型"><strong><center>"力场分析"模型</center></strong><br>动力通常是积极、合理、自觉、符合经济效益的力量。<br>阻力多半是消极、负面、不合逻辑、情绪化、不自觉，等社会性与心理性因素。</p>
 <h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
 <li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
 <li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
@@ -1333,7 +1359,8 @@
 </ol>
 <h4 id="聆听的要求"><a href="#聆听的要求" class="headerlink" title="聆听的要求"></a>聆听的要求</h4><p>移情聆听是以<strong>理解</strong>为目的聆听，而非同情。<br>移情聆听是在情感和理智上充分而深入地理解对方，而非为了赞同对方。</p>
 <p>移情聆听不只是理解个别的词句而已。</p>
-<pre><code>据专家估计，人际沟通仅有10%通过语言来进行，30%取决于语调与声音，其余60%则得靠肢体语言。</code></pre><p>聆听不仅要耳到，还要眼到、心到；用眼睛去观察，用心灵去体会。</p>
+<pre><code>据专家估计，人际沟通仅有10%通过语言来进行，30%取决于语调与声音，其余60%则得靠肢体语言。
+</code></pre><p>聆听不仅要耳到，还要眼到、心到；用眼睛去观察，用心灵去体会。</p>
 <h4 id="心理空气"><a href="#心理空气" class="headerlink" title="心理空气"></a>心理空气</h4><p>除了物质，人类最大的生存需求源自心理，即被人理解、肯定、认可和欣赏。<br>移情聆听的“理解”能够满足对方的心理需求，等于是提供“心理空气”。<br>这是一种很好的感情投资。</p>
 <hr>
 <h2 id="如何有效聆听"><a href="#如何有效聆听" class="headerlink" title="如何有效聆听"></a>如何有效聆听</h2><h3 id="先诊断，后开方"><a href="#先诊断，后开方" class="headerlink" title="先诊断，后开方"></a>先诊断，后开方</h3><p>首先充分了解对方的情况和立场背景，避免武断。</p>
@@ -1353,7 +1380,8 @@
 </ul>
 <h3 id="理解和感知"><a href="#理解和感知" class="headerlink" title="理解和感知"></a>理解和感知</h3><p>我们生活的环境中，每个人的思维模式、看待问题的角度以及对事物的感知各不相同，甚至天壤之别，所以理解好感知每个人观点是十分必要的。</p>
 <p>人人都渴望知音，适时扮演知音，是很好的感情投资。</p>
-<h3 id="有效表达"><a href="#有效表达" class="headerlink" title="有效表达"></a>有效表达</h3><pre><code>古希腊人有一种很经典的哲学观点，即品德第一，感情第二，理性第三。</code></pre><p>首先是自己的品德，进而建立关系，然后诉诸理性。<br>表达也要讲技巧，表达并非自吹自擂，而是要根据对他人的了解来组织语言和内容表达观点。</p>
+<h3 id="有效表达"><a href="#有效表达" class="headerlink" title="有效表达"></a>有效表达</h3><pre><code>古希腊人有一种很经典的哲学观点，即品德第一，感情第二，理性第三。
+</code></pre><p>首先是自己的品德，进而建立关系，然后诉诸理性。<br>表达也要讲技巧，表达并非自吹自擂，而是要根据对他人的了解来组织语言和内容表达观点。</p>
 <h3 id="一对一沟通"><a href="#一对一沟通" class="headerlink" title="一对一沟通"></a>一对一沟通</h3><p>经常一对一的沟通，甚至只是单纯的认真聆听，有助于扩大影响圈。</p>
 <h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
 <li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
@@ -1451,13 +1479,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="重点一"><a href="#重点一" class="headerlink" title="重点一"></a>重点一</h1><p>manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">manifest</span>=<span class="string">‘demo.appcache</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-<p>标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。<br>当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFEST所指向的资源就不需要重新进行加载了，但是问题是，当前的html页面也会跟着cache直接读出来了，可能会造成即使 我们的页面更新了，但是用户还是看的老旧版本页面（因为更新mainfest的时候，页面加载已经开始了，但是缓存更新却尚未完成，浏览器还是会使用缓存的资源，当浏览器检测到了Application Cache有更新时，本次不会使用新的资源，下一次才会进行使用）</p>
+          <h1 id="重点一"><a href="#重点一" class="headerlink" title="重点一"></a>重点一</h1><p>manifest除了缓存manifest.appcache文件所指定的资源外，还必定会缓存当前的html页面，即<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">manifest</span>=<span class="string">‘demo.appcache</span>'&gt;</span></span><br></pre></td></tr></table></figure><br>标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。<br>当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFEST所指向的资源就不需要重新进行加载了，但是问题是，当前的html页面也会跟着cache直接读出来了，可能会造成即使 我们的页面更新了，但是用户还是看的老旧版本页面（因为更新mainfest的时候，页面加载已经开始了，但是缓存更新却尚未完成，浏览器还是会使用缓存的资源，当浏览器检测到了Application Cache有更新时，本次不会使用新的资源，下一次才会进行使用）</p>
 <p>解决方案：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.addEventListener(<span class="string">"updateready"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    applicationCache.swapCache();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.reload();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.addEventListener(<span class="string">"updateready"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    applicationCache.swapCache();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.reload();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></h2><h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
 <h1 id="重点三"><a href="#重点三" class="headerlink" title="重点三"></a>重点三</h1><p>永远不要使用传统 GET 参数(例如 other-cached-page.html?parameterName=value) 来访问缓存文件。这会使浏览器绕过缓存，直接从网络获取。<br>若想链接一个参数需要在 JavaScript 中解析的资源，你可以将参数放到链接的 hash 部分，例如 other-cached-page.html#whatever?parameterName=value。<br>注：需要额外的解析</p>
 <h1 id="重点四"><a href="#重点四" class="headerlink" title="重点四"></a>重点四</h1><p>当应用被缓存后，仅仅更新在 web 页面中使用的资源(文件)还不足以更新被缓存的文件。<br>你需要在浏览器获取和使用更新的文件前，去更新缓存清单文件本身。<br>你可以使用 window.applicationCache.swapCache() 以编程的方式完成上述目的，虽然这无法影响到已经加载完毕的资源。<br>为了保证资源从应用缓存的最新版本中加载，最理想的办法就是刷新页面。</p>
 
@@ -1560,9 +1584,11 @@
 </ul>
 <p>不难看出最好的模式当然是双赢模式，但其实最好是依情况而定，关键是认清形式，而不是教条的把某一模式应用的各种情况中。<br>当然，大部分情况下双赢模式是最好的选择，如果实在不能达成共识，好聚好散也是不错的选择，再不行就只有做一定的妥协。</p>
 <hr>
-<h1 id="实践双赢思维的五个要领"><a href="#实践双赢思维的五个要领" class="headerlink" title="实践双赢思维的五个要领"></a>实践双赢思维的五个要领</h1><pre><code>“双赢品德”是基础，接着建立“双赢关系”，由此衍生“双赢协议”，以“双赢体系”为培养环境，通过“双赢过程”实现双赢。</code></pre><h2 id="双赢品德"><a href="#双赢品德" class="headerlink" title="双赢品德"></a>双赢品德</h2><h3 id="特征一：诚信"><a href="#特征一：诚信" class="headerlink" title="特征一：诚信"></a>特征一：诚信</h3><p>诚信是双赢品德的基础。</p>
+<h1 id="实践双赢思维的五个要领"><a href="#实践双赢思维的五个要领" class="headerlink" title="实践双赢思维的五个要领"></a>实践双赢思维的五个要领</h1><pre><code>“双赢品德”是基础，接着建立“双赢关系”，由此衍生“双赢协议”，以“双赢体系”为培养环境，通过“双赢过程”实现双赢。
+</code></pre><h2 id="双赢品德"><a href="#双赢品德" class="headerlink" title="双赢品德"></a>双赢品德</h2><h3 id="特征一：诚信"><a href="#特征一：诚信" class="headerlink" title="特征一：诚信"></a>特征一：诚信</h3><p>诚信是双赢品德的基础。</p>
 <h3 id="特征二：成熟"><a href="#特征二：成熟" class="headerlink" title="特征二：成熟"></a>特征二：成熟</h3><pre><code>“成熟就是在表达自己的情感和信念的同时又能体谅他人的想法和感受的能力。”
-    —— 赫兰德·萨克森年（Hrand Saxenian）教授</code></pre><p>成熟，是敢作敢为与善解人意之间的一种平衡状态。<br>这种平衡能力是人际交往、管理和领导能力的精髓，是产出/产能平衡的深度表现。</p>
+    —— 赫兰德·萨克森年（Hrand Saxenian）教授
+</code></pre><p>成熟，是敢作敢为与善解人意之间的一种平衡状态。<br>这种平衡能力是人际交往、管理和领导能力的精髓，是产出/产能平衡的深度表现。</p>
 <h3 id="特征三：知足"><a href="#特征三：知足" class="headerlink" title="特征三：知足"></a>特征三：知足</h3><p>知足，即相信资源充足，人人有份。</p>
 <p>匮乏心态（Scarcity Mentality），担心资源稀缺，认为世界如同一块大饼，并非人人得而食之。</p>
 <p>富足的心态（Abundance Mentality），源自厚实的个人价值观与安全感。</p>
@@ -1586,7 +1612,8 @@
 <pre><code>双赢来自诚信、成熟和知足的人格，是高度互信的结果；
 它体现在能有效阐明并管理人们的期望和成就的协议中；
 在起支持作用的双赢体系里蓬勃生长；
-经由必要的双赢过程来实现。</code></pre><h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
+经由必要的双赢过程来实现。
+</code></pre><h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
 <li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
 <li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
 <li><a href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" title="以终为始原则">以终为始原则</a></li>
@@ -1682,7 +1709,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <pre><code>自我意识、想象力和良知三天赋拟定计划，独立意识实施计划。</code></pre><p><strong>要事为先</strong>是自我管理的基本原则</p>
+          <pre><code>自我意识、想象力和良知三天赋拟定计划，独立意识实施计划。
+</code></pre><p><strong>要事为先</strong>是自我管理的基本原则</p>
 <h1 id="四象限时间管理法"><a href="#四象限时间管理法" class="headerlink" title="四象限时间管理法"></a>四象限时间管理法</h1><p><strong><center>时间管理矩阵</center></strong><img data-src="https://i.loli.net/2020/07/15/T49HLgAPdhcuQar.png" alt="时间管理矩阵"></p>
 <hr>
 <h1 id="自我管理四步骤"><a href="#自我管理四步骤" class="headerlink" title="自我管理四步骤"></a>自我管理四步骤</h1><p>以原则为基础，<strong>以第二类事务为生活中心</strong>，对<strong>一周内</strong>的事务进行具体安排。</p>
@@ -1897,6 +1925,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
