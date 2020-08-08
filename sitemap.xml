@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://louis-cai.github.io/Grid-Trading-%E2%80%93-Hedged-Grid-Strategy/</loc>
+    
+    <lastmod>2020-08-08T02:10:03.822Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://louis-cai.github.io/The-Random-Walk/</loc>
     
     <lastmod>2020-07-26T04:53:40.921Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://louis-cai.github.io/%E6%AD%A3%E9%9D%A2%E7%AE%A1%E6%95%99/</loc>
     
     <lastmod>2020-06-30T12:17:06.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://louis-cai.github.io/Grid-Trading-%E2%80%93-Hedged-Grid-Strategy/</loc>
-    
-    <lastmod>2020-06-29T10:44:49.141Z</lastmod>
     
   </url>
   
