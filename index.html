@@ -165,6 +165,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/CleanGatesTrojan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/CleanGatesTrojan/" class="post-title-link" itemprop="url">CleanGatesTrojan</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-12-18 17:41:09 / 修改时间：18:11:28" itemprop="dateCreated datePublished" datetime="2020-12-18T17:41:09+08:00">2020-12-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">软件开发</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/CleanGatesTrojan/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/CleanGatesTrojan/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Gates-Trojan-盖茨-木马"><a href="#Gates-Trojan-盖茨-木马" class="headerlink" title="Gates Trojan(盖茨)木马"></a>Gates Trojan(盖茨)木马</h1><pre><code>阿里云报警服务器有木马，用ps进程。按着这个线索找资料手动清理改木马.
+</code></pre><h2 id="一、查"><a href="#一、查" class="headerlink" title="一、查"></a>一、查</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls -lh /usr/bin/bsd-port</span><br><span class="line">ls -lh /usr/bin/dpkgd</span><br><span class="line">ls -lh /etc/rc.d/init.d/</span><br><span class="line">ls -lh /etc/rc[1-5].d/DbSecuritySpt</span><br><span class="line">ls -lh /etc/rc[1-5].d/S97VsystemsshMdt</span><br><span class="line">ls -lh /etc/rc[1-5].d/S99selinux</span><br></pre></td></tr></table></figure>
+<p>查看大小是否正常(篡改大小后均为1.2M)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls -lh /bin/netstat</span><br><span class="line">ls -lh /bin/ps</span><br><span class="line">ls -lh /bin/ss</span><br><span class="line">ls -lh /usr/sbin/netstat</span><br><span class="line">ls -lh /usr/sbin/ps</span><br><span class="line">ls -lh /usr/sbin/lsof</span><br><span class="line">ls -lh /usr/sbin/ss</span><br></pre></td></tr></table></figure></p>
+<p>stat命令查看文件修改记录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stat</span> /bin/netstat</span><br><span class="line"><span class="built_in">stat</span> /bin/ps</span><br><span class="line"><span class="built_in">stat</span> /bin/ss</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、杀"><a href="#二、杀" class="headerlink" title="二、杀"></a>二、杀</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 守护进程木马文件，首先应该被干掉</span></span><br><span class="line">rm /usr/bin/.sshd</span><br><span class="line"><span class="comment"># 主功能木马文件，直接删除</span></span><br><span class="line"><span class="comment"># 木马残留文件直接删除</span></span><br><span class="line">/root/chattr -i rm -r /usr/bin/bsd-port</span><br><span class="line">rm /usr/bin/bsd-port/getty</span><br><span class="line">rm /usr/bin/bsd-port/getty.lock</span><br><span class="line">rm /usr/bin/bsd-port/knerl</span><br><span class="line">rm /usr/bin/bsd-port/knerl.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 过滤功能木马文件，通过文件大小可判断 /bin /usr/bin</span></span><br><span class="line"><span class="comment"># 删除被篡改的命令文件</span></span><br><span class="line">/root/chattr -i /bin/pythno &amp; rm /bin/pythno</span><br><span class="line">/root/chattr -i /bin/ps &amp; rm /bin/ps</span><br><span class="line">rm /bin/netstat</span><br><span class="line"></span><br><span class="line">rm /usr/bin/pythno</span><br><span class="line">rm /usr/bin/netstat</span><br><span class="line">rm /usr/bin/ps</span><br><span class="line">rm -r /usr/bin/dpkgd</span><br><span class="line"></span><br><span class="line">rm /usr/sbin/netstat</span><br><span class="line">rm /usr/sbin/ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装功能木马文件，直接删除</span></span><br><span class="line">rm /tmp/os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自启动配置文件，清理掉里面的含有木马路径的 /etc/rc.local</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自启动配置文件，直接删除</span></span><br><span class="line">rm /etc/init.d/DbSecuritySpt</span><br><span class="line">rm /etc/rc[1-5].d/S97DbSecuritySpt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自启动配置文件，直接删除</span></span><br><span class="line">rm -f /etc/init.d/selinux</span><br><span class="line">rm /etc/rc[1-5].d/S99selinux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自启动配置文件，直接删除</span></span><br><span class="line">rm -f /etc/init.d/VsystemsshMdt</span><br><span class="line">rm -f /etc/rc[1-5].d/S97VsystemsshMdt</span><br></pre></td></tr></table></figure>
+<h2 id="三、修"><a href="#三、修" class="headerlink" title="三、修"></a>三、修</h2><p>从干净的机器上拷贝ps，netstat，ss，lsof到root下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;bin&#x2F;ps &amp;&amp; rm &#x2F;bin&#x2F;ps -f </span><br><span class="line">cp &#x2F;root&#x2F;ps &#x2F;bin</span><br><span class="line"></span><br><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;bin&#x2F;netstat &amp;&amp; rm &#x2F;bin&#x2F;netstat -f </span><br><span class="line">cp &#x2F;root&#x2F;netstat &#x2F;bin</span><br><span class="line"></span><br><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;bin&#x2F;lsof &amp;&amp; rm &#x2F;usr&#x2F;sbin&#x2F;lsof -f </span><br><span class="line">cp &#x2F;root&#x2F;lsof &#x2F;usr&#x2F;sbin</span><br><span class="line"></span><br><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;usr&#x2F;sbin&#x2F;ss &amp;&amp; rm &#x2F;usr&#x2F;sbin&#x2F;ss -f </span><br><span class="line">cp &#x2F;root&#x2F;ss &#x2F;usr&#x2F;sbin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;bin&#x2F;ps &amp;&amp; rm &#x2F;bin&#x2F;ps -f </span><br><span class="line">yum reinstall procps -y</span><br><span class="line"></span><br><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;bin&#x2F;netstat &amp;&amp; rm &#x2F;bin&#x2F;netstat -f </span><br><span class="line">yum reinstall net-tools -y</span><br><span class="line"></span><br><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;bin&#x2F;lsof &amp;&amp; rm &#x2F;usr&#x2F;sbin&#x2F;lsof -f </span><br><span class="line">yum reinstall lsof -y</span><br><span class="line"></span><br><span class="line">&#x2F;root&#x2F;chattr -i -a &#x2F;usr&#x2F;sbin&#x2F;ss &amp;&amp; rm &#x2F;usr&#x2F;sbin&#x2F;ss -f </span><br><span class="line">yum -y reinstall iproute</span><br></pre></td></tr></table></figure>
+<h3 id="检查DNS"><a href="#检查DNS" class="headerlink" title="检查DNS"></a>检查DNS</h3><p>cat /etc/resolv.conf<br>nameserver 8.8.8.8<br>nameserver 8.8.4.4</p>
+<h3 id="杀毒工具扫描"><a href="#杀毒工具扫描" class="headerlink" title="杀毒工具扫描"></a>杀毒工具扫描</h3><h4 id="1、安装杀毒工具clamav"><a href="#1、安装杀毒工具clamav" class="headerlink" title="1、安装杀毒工具clamav"></a>1、安装杀毒工具clamav</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install clamav clamav-milter</span><br></pre></td></tr></table></figure>
+<h4 id="2、启动服务"><a href="#2、启动服务" class="headerlink" title="2、启动服务"></a>2、启动服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service clamd restart</span><br></pre></td></tr></table></figure>
+<h4 id="3、更新病毒库"><a href="#3、更新病毒库" class="headerlink" title="3、更新病毒库"></a>3、更新病毒库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">freshclam</span><br></pre></td></tr></table></figure>
+<h4 id="4、扫描方法"><a href="#4、扫描方法" class="headerlink" title="4、扫描方法"></a>4、扫描方法</h4><p>可以使用clamscan -h查看相应的帮助信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">clamscan -r &#x2F;etc --max-dir-recursion&#x3D;5 -l &#x2F;root&#x2F;etcclamav.log</span><br><span class="line">clamscan -r &#x2F;bin --max-dir-recursion&#x3D;5 -l &#x2F;root&#x2F;binclamav.log</span><br><span class="line">clamscan -r &#x2F;usr --max-dir-recursion&#x3D;5 -l &#x2F;root&#x2F;usrclamav.log</span><br><span class="line">clamscan -r --remove &#x2F;usr&#x2F;bin&#x2F;bsd-port</span><br><span class="line">clamscan -r --remove &#x2F;usr&#x2F;bin&#x2F;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/How-to-Place-Stop-Losses-and-Take-Profits-Using-a-Maximal-Strategy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1637,122 +1731,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Louis Cai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Give me five">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/" class="post-title-link" itemprop="url">要事为先原则 - 《高效能人士的七个习惯》</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-11-15 16:26:12" itemprop="dateCreated datePublished" datetime="2018-11-15T16:26:12+08:00">2018-11-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-15 18:23:34" itemprop="dateModified" datetime="2020-07-15T18:23:34+08:00">2020-07-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>自我意识、想象力和良知三天赋拟定计划，独立意识实施计划。
-</code></pre><p><strong>要事为先</strong>是自我管理的基本原则</p>
-<h1 id="四象限时间管理法"><a href="#四象限时间管理法" class="headerlink" title="四象限时间管理法"></a>四象限时间管理法</h1><p><strong><center>时间管理矩阵</center></strong><img data-src="https://i.loli.net/2020/07/15/T49HLgAPdhcuQar.png" alt="时间管理矩阵"></p>
-<hr>
-<h1 id="自我管理四步骤"><a href="#自我管理四步骤" class="headerlink" title="自我管理四步骤"></a>自我管理四步骤</h1><p>以原则为基础，<strong>以第二类事务为生活中心</strong>，对<strong>一周内</strong>的事务进行具体安排。</p>
-<h2 id="确认角色"><a href="#确认角色" class="headerlink" title="确认角色"></a>确认角色</h2><p>只需要确定下周的关键角色和任务即可</p>
-<h2 id="选择目标"><a href="#选择目标" class="headerlink" title="选择目标"></a>选择目标</h2><p>思考下一个周计划中每一任务栏下你最想做的一两件要事，作为你选定的目标，最好包括几个第二类事务，尽量让这些短期目标与长期目标相关联。</p>
-<h2 id="安排进度"><a href="#安排进度" class="headerlink" title="安排进度"></a>安排进度</h2><p>为每一项目标安排具体的实施时间。</p>
-<h2 id="每日调整"><a href="#每日调整" class="headerlink" title="每日调整"></a>每日调整</h2><p>具体实施的时候，突发事件之类的会对每天的要务适当调整。</p>
-<hr>
-<h1 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h1><p>授权是提高效率或效能的秘诀之一。</p>
-<h2 id="指令型授权"><a href="#指令型授权" class="headerlink" title="指令型授权"></a>指令型授权</h2><p>指令型授权是让别人“去做这个，去做那个，做完告诉我”。</p>
-<h2 id="责任型授权"><a href="#责任型授权" class="headerlink" title="责任型授权"></a>责任型授权</h2><p>责任型授权的关注重点是最终的结果。需要双方就一下五个方面达成共识，并做出承诺：</p>
-<ul>
-<li>预期结果</li>
-<li>指导方针</li>
-<li>可用资源</li>
-<li>责任归属</li>
-<li>明确奖惩</li>
-</ul>
-<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
-<li><a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People" target="_blank" rel="noopener">The 7 Habits of Highly Effective People wiki!</a></li>
-<li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
-<li><a href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" title="以终为始原则">以终为始原则</a></li>
-<li><a href="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/" title="要事为先原则">要事为先原则</a></li>
-<li><a href="/Think-win-win-The-7-Habits-of-Highly-Effective-People/" title="双赢思维">双赢思维</a></li>
-<li><a href="/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/" title="知彼解己">知彼解己</a></li>
-<li><a href="/Synergize-The-7-Habits-of-Highly-Effective-People/" title="统合综效">统合综效</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1822,7 +1800,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1835,7 +1813,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
