@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/05/17/6ahHENbeKoJQ7ZF.png">
 <meta property="og:image" content="https://forexop.com/assets/uploads/2013/12/martingale_strategy_typical_profit_history.png">
 <meta property="article:published_time" content="2021-05-19T02:09:00.000Z">
-<meta property="article:modified_time" content="2021-05-19T02:36:43.843Z">
+<meta property="article:modified_time" content="2021-05-19T03:00:16.101Z">
 <meta property="article:author" content="Louis Cai">
 <meta property="article:tag" content="网格交易">
 <meta property="article:tag" content="交易策略">
@@ -209,7 +209,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-19 10:09:00 / 修改时间：10:36:43" itemprop="dateCreated datePublished" datetime="2021-05-19T10:09:00+08:00">2021-05-19</time>
+              <time title="创建时间：2021-05-19 10:09:00 / 修改时间：11:00:16" itemprop="dateCreated datePublished" datetime="2021-05-19T10:09:00+08:00">2021-05-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
 <h3 id="一个简单的输赢游戏"><a href="#一个简单的输赢游戏" class="headerlink" title="一个简单的输赢游戏"></a>一个简单的输赢游戏</h3><p>这个简单的例子说明了这个基本思想。 想象一下一个交易游戏，有50:50的机会赢得失败的诗歌。<br><img data-src="https://i.loli.net/2021/05/17/hv1VbNdRPfE285Z.png" alt="表1：简单的下注示例。" title="表1：简单的下注示例。"></p>
 <p>我下注了1美元的交易。 每次获胜时，我的赌注保持不变，为$ 1。 如果我输了，我每次将赌注翻倍。 赌徒称之为加倍下注。</p>
 <p>如果赔率合理，那么最终结果将对我有利。 而且由于我每次都将赌注翻倍，因此当这种情况发生时，获胜者将恢复之前的所有损失以及原始赌注。</p>
-<p>这要归功于双重效应。 下注总是赢利。 由于$\ce{2^n = \sum\ 2^{n+1} + 1 }$的数学事实，这是正确的。 这意味着一连串的损失可以通过最后一次获胜的交易来弥补。</p>
+<p>这要归功于双重效应。 下注总是赢利。 由于$2^n=\sum2^{n+1}+1$的数学事实，这是正确的。 这意味着一连串的损失可以通过最后一次获胜的交易来弥补。</p>
 <p>如果您有兴趣尝试玩具系统，请参考以下简单的<a href="https://forexop.com/fxwplogin?redirect=https://forexop.com/martingale-trading-system-overview/" target="_blank" rel="noopener">博彩游戏电子表格</a></p>
 <h3 id="基本交易系统"><a href="#基本交易系统" class="headerlink" title="基本交易系统"></a>基本交易系统</h3><p>在真实交易中，没有严格的二元结果。 一笔交易可以带来一定的盈亏。 但这并没有改变基本策略。 您只需将基础价格的固定变动定义为止盈和止损水平。</p>
 <p>以下情况说明了这一点。 我将止盈和止损设在20点。<br><img data-src="https://i.loli.net/2021/05/17/FKPcID7h1LpAj4T.png" alt="表2：在下降的市场中平均降低的贸易进入水平。" title="表2：在下降的市场中平均降低的贸易进入水平。"></p>
@@ -285,11 +285,11 @@
 <p>另一方面，获胜交易的利润仅线性增加。 它与每笔交易利润的一半乘以交易总数成正比。</p>
 <p><img data-src="https://forexop.com/assets/uploads/2013/12/loss_probability_vs_double_down.png" alt=""></p>
 <p>获胜的交易总是会在这种策略中创造利润。 因此，如果您在50％的时间内（至少没有机会）选择获胜者，则获胜交易的总预期收益为：</p>
-<script type="math/tex; mode=display">\ce{ E ≈ \frac{1}{2}N \times B }</script><p>其中N是“交易”的数量，B是每笔交易的获利金额。</p>
+<script type="math/tex; mode=display">E≈\frac{1}{2}N \times B</script><p>其中N是“交易”的数量，B是每笔交易的获利金额。</p>
 <p>但是，您一笔大的亏损交易会将其设置为零。 例如，如果您的限制是10个双折交易，则最大交易为1024。只有连续11个亏损交易，您才会亏损此金额。 这样的可能性是（1/2）11。 这意味着，每2048个交易，您可能会亏损一次。</p>
 <p>因此，在2048次交易之后：</p>
 <ul>
-<li>您的预期奖金是$\ce{\frac{1}{2}\times2^{11}\times1 = 1024}$</li>
+<li>您的预期奖金是$\frac{1}{2}\times2^{11}\times1=1024$</li>
 <li>您的预期一次性亏损是-1024</li>
 <li>您的净利润为0<br>因此，在真实系统中，您的赔率始终保持在50:50。 前提是您的交易选择总比机会好。</li>
 </ul>
@@ -318,8 +318,8 @@
 <h3 id="计算您的提款限额"><a href="#计算您的提款限额" class="headerlink" title="计算您的提款限额"></a>计算您的提款限额</h3><p>一个很好的起点是确定您可以冒险的最大未平仓手数。 由此，您可以计算出其他参数。 为简单起见，我将使用2的幂。</p>
 <p>最大手数将设置在平仓之前可以通过的止损水平数量。 换句话说，这是该策略“加倍执行”的次数。 因此，例如，如果您的最大总持仓量为256手，这将允许翻倍8倍-或8脚。 关系是：</p>
 <script type="math/tex; mode=display">{max\ lots = 2^{Legs}}</script><p>如果您在第n个止损位平仓整个头寸，您的最大损失将是：</p>
-<script type="math/tex; mode=display">{max\ loss = (2^n -1) \times s }</script><p>s是止损距离（以点为单位），在该距离处您将头寸规模扩大一倍。 因此，如果有256手（微型手），止损为40点，那么在第8个止损水平收盘时，最大亏损为10,200点。 在第9个止损位收盘将亏损20,440点。</p>
-<p>提示*计算出亏损前您可以处理的平均交易数–使用公式$2^{Legs + 1}$。 因此，在这里的示例中，只有$2^9$笔交易，即512笔交易。 因此，在进行512笔交易后，您将有9位输家获得偶数赔率。 这会破坏您的系统。</p>
+<script type="math/tex; mode=display">{max\ loss = (2^n-1)\times s}</script><p>s是止损距离（以点为单位），在该距离处您将头寸规模扩大一倍。 因此，如果有256手（微型手），止损为40点，那么在第8个止损水平收盘时，最大亏损为10,200点。 在第9个止损位收盘将亏损20,440点。</p>
+<p>提示*计算出亏损前您可以处理的平均交易数–使用公式$2^{Legs+1}$。 因此，在这里的示例中，只有$2^9$笔交易，即512笔交易。 因此，在进行512笔交易后，您将有9位输家获得偶数赔率。 这会破坏您的系统。</p>
 <p>您可以使用Excel工作簿中的手数计算器来尝试不同的交易大小和设置。</p>
 <p>处理缩水的最佳方法是使用棘轮系统。 当您获利时，您应该逐步增加手数和提款限额。 例如，请参见下表。<br><img data-src="https://i.loli.net/2021/05/17/EucxPGZ7jIbFef1.png" alt="表5：随着利润的实现，增加提款额度。"></p>
 <p>该棘轮在交易电子表格中得到了展示。 您只需要将提款限额设置为已实现权益的百分比即可。</p>
@@ -595,6 +595,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
