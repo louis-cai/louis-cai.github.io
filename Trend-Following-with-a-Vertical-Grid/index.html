@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"louis-cai.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+  <meta name="description" content="原文地址 基本垂直网格概念到目前为止，我们涵盖的所有网格策略都是那些沿价格轴运动进入市场的网格策略。我们称这些水平或价格轴网格。 外汇交易者使用的另一类网格称为垂直网格。对于垂直网格，该技术涉及在时间轴而不是价格轴上以一定间隔放置交易。这是一种称为美元成本平均的旧投资技术的玩法。  美元成本平均论据如下。支持纵向网格策略的人认为，试图通过优化交易切入点为市场计时是徒劳的。他们提出这样的主张，即市场">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trend Following with a Vertical Grid">
+<meta property="og:url" content="http://louis-cai.github.io/Trend-Following-with-a-Vertical-Grid/index.html">
+<meta property="og:site_name" content="Give me five">
+<meta property="og:description" content="原文地址 基本垂直网格概念到目前为止，我们涵盖的所有网格策略都是那些沿价格轴运动进入市场的网格策略。我们称这些水平或价格轴网格。 外汇交易者使用的另一类网格称为垂直网格。对于垂直网格，该技术涉及在时间轴而不是价格轴上以一定间隔放置交易。这是一种称为美元成本平均的旧投资技术的玩法。  美元成本平均论据如下。支持纵向网格策略的人认为，试图通过优化交易切入点为市场计时是徒劳的。他们提出这样的主张，即市场">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/fibofan2.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/vertical-grid-entry-average.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/24/UaAR6BQXlyJ9c5P.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/fx_time_axis_grid.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/mean-divergence-optimization.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/fib-zones.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/grid-with-fib-timzones.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/24/afvC3NXrAqG5x82.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/24/dTHqGrm4xuspzy1.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/fibofan2.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/grid-fibfan_times.png">
+<meta property="og:image" content="https://forexop.com/assets/uploads/2015/04/trend_reversal_fibofan.png">
+<meta property="article:published_time" content="2021-05-24T06:59:05.000Z">
+<meta property="article:modified_time" content="2021-05-24T09:05:03.282Z">
+<meta property="article:author" content="Louis Cai">
+<meta property="article:tag" content="网格交易">
+<meta property="article:tag" content="交易策略">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://forexop.com/assets/uploads/2015/04/fibofan2.png">
+
+<link rel="canonical" href="http://louis-cai.github.io/Trend-Following-with-a-Vertical-Grid/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Trend Following with a Vertical Grid | Give me five</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128599571-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-128599571-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Give me five</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">随便写&使劲改</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Trend-Following-with-a-Vertical-Grid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Trend Following with a Vertical Grid
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-24 14:59:05 / 修改时间：17:05:03" itemprop="dateCreated datePublished" datetime="2021-05-24T14:59:05+08:00">2021-05-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">交易策略</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Trend-Following-with-a-Vertical-Grid/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Trend-Following-with-a-Vertical-Grid/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a href="https://forexop.com/strategy/trend-following-axis-grid/" target="_blank" rel="noopener">原文地址</a></p>
+<h1 id="基本垂直网格概念"><a href="#基本垂直网格概念" class="headerlink" title="基本垂直网格概念"></a>基本垂直网格概念</h1><p>到目前为止，我们涵盖的所有网格策略都是那些沿价格轴运动进入市场的网格策略。我们称这些水平或价格轴网格。</p>
+<p>外汇交易者使用的另一类网格称为垂直网格。对于垂直网格，该技术涉及在时间轴而不是价格轴上以一定间隔放置交易。这是一种称为美元成本平均的旧投资技术的玩法。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/04/fibofan2.png" alt="使用垂直网格作为趋势聚合器"></p>
+<h1 id="美元成本平均"><a href="#美元成本平均" class="headerlink" title="美元成本平均"></a>美元成本平均</h1><p>论据如下。支持纵向网格策略的人认为，试图通过优化交易切入点为市场计时是徒劳的。他们提出这样的主张，即市场本质上是随机游走（至少在短期内），因此不可能以任何可靠的方式预测短期价格走势。</p>
+<p>与其尝试在一个精确的时刻为市场计时，不如使用一个垂直网格，将交易块分割成相等大小的单位，并以一定间隔滴入市场。</p>
+<p>假设我们要持多头头寸，并使用1标准手的大小。使用具有5个级别的垂直网格，交易块被分为5个块，每个块的大小为0.2手。然后，我们以设定的时间间隔进入市场，每笔交易有0.2手的5笔交易。图1演示。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/04/vertical-grid-entry-average.png" alt="图1：使用入场成本平均的垂直网格"></p>
+<p>这5笔交易进入不同的点或市场水平。有些价格可能更高，有些则更低。总体而言，入场价将接近所选时间段内的平均价格。我们对交易区的划分越精细，平均进场价格将越接近该时间段内的平均价格收敛。</p>
+<p>打开网格后，一旦价格偏离平均线（在交易方向上），网格便会关闭以获利。重要的是，只要整个系统都处于盈利状态，网格交易者就不会在乎一两个交易是否亏损。这是网格均值的原理。</p>
+<h1 id="为什么错过了趋势的时机"><a href="#为什么错过了趋势的时机" class="headerlink" title="为什么错过了趋势的时机"></a>为什么错过了趋势的时机</h1><p>在所有时间范围内，趋势在货币市场中都很普遍。然而，交易者常常发现，几乎不可能从这些看似可预测的”自动扶梯”（”降电扶梯”）中获利。造成这种情况的主要原因是，市场动荡将导致头寸在获得利润之前就被“平仓”。</p>
+<p>在趋势中，交易的进入时机很关键，因此不要在突然调整之前就进入。在外汇交易中，这个问题变得更加复杂，因为交易者经常使用很高的杠杆作用，而承受不起大幅下跌的趋势。</p>
+<p>垂直网格解决了这个问题，因为它实际上保证了您将进入接近平均水平的市场。如果平均数正在上升（或以下降趋势下降），利润将随之而来。</p>
+<p>本文将更详细地研究垂直网格策略。</p>
+<h1 id="垂直网格示例"><a href="#垂直网格示例" class="headerlink" title="垂直网格示例"></a>垂直网格示例</h1><p>假设我们看到上升的趋势，并决定采取多头头寸以从上升趋势中获利。要捕获趋势，我们可以使用垂直（汇总）网格。垂直网格将由六笔交易组成，每笔交易量为0.2手（总计1.2手）。交易以相等的时间间隔间隔，即相等的时间间隔。</p>
+<p>订单表如下表所示。<br><img data-src="https://i.loli.net/2021/05/24/UaAR6BQXlyJ9c5P.png" alt=""></p>
+<p>与其他网格一样，我建议对整个系统设置一个止损，而不要尝试分别管理每笔交易。单独管理每笔交易会否定平均的整个概念。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/04/fx_time_axis_grid.png" alt="图2：外汇垂直网格设置"></p>
+<p>图2显示了相对于移动平均线绘制的价格图表。绿色阴影区域表示利润区域，红色/棕色阴影区域表示亏损区域。需要注意的重要一点是，对于每笔交易，网格系统的平均进入价格都趋近于移动平均价格。</p>
+<p>在上升的趋势下，我们可以放心进入接近平均水平的价格。当价格线上升到利润阈值之上（在T7时），整个网格关闭，利润为205.5点。</p>
+<h2 id="风险-收益权衡"><a href="#风险-收益权衡" class="headerlink" title="风险/收益权衡"></a>风险/收益权衡</h2><p>您可能会说，当价格恰好位于移动平均线时，为什么不购买一次？ 这将实现与网格几乎相同的P/L。但是关键的区别在于它不会提供相同程度的灵活性。在将最终交易放入集合中之前，网格交易器不会满仓。另一方面，一口气进行一次大宗交易的交易者从一开始就满仓。</p>
+<p>这是在风险与利润之间的权衡。如果在网格完全开放之前价格突然上涨，则网格交易商将失去潜在的利润。反之亦然。如果价格因一些不利的经济消息而暴跌，网格交易者可以在满仓之前放弃头寸，从而减少损失。</p>
+<h2 id="设置网格时间间隔"><a href="#设置网格时间间隔" class="headerlink" title="设置网格时间间隔"></a>设置网格时间间隔</h2><p>还要注意，交易条目的时间跨度必须与交易趋势的顺序相同。例如，假设您的目标是从小时图的趋势中获利。使用每隔五分钟的时间间隔进行五笔交易的网格完全没有用。这将仅在25分钟的时间段内平均。</p>
+<p>网格条目的跨度必须与趋势周期可比。因此，例如，如果您试图在1小时图上捕获趋势，则您的交易条目确实需要跨越几个小时。</p>
+<p>首先，确定您希望网格有多少笔交易。假设您通常交易单一标准手。您可以将此块分割成10个大小相等的单位，每个单位为0.1手。现在，如果您想在为期两天的趋势周期中获利，则您的交易条目至少需要跨越该时期的一半。所以：</p>
+<p>1天 = 24小时（以2.4小时为间隔，0.1手交易交易10次）</p>
+<p>10个网格条目可以每2.4小时输入一次，这将涵盖一天的时间。您的平均入场价格将是24小时内的平均入场价格。</p>
+<p>通常，市场波动性越大，平均时间跨度就需要越长（并且您将需要在网格中进行的交易越多）。波动性更高，您需要更多的样本才能接近平均价格。</p>
+<h1 id="变化"><a href="#变化" class="headerlink" title="变化"></a>变化</h1><h2 id="均值发散优化"><a href="#均值发散优化" class="headerlink" title="均值发散优化"></a>均值发散优化</h2><p>垂直网格策略有多种变体。一种被广泛使用的方法称为均值发散优化。这样的思路是利用价格偏离移动平均线的时间来增加或减少网格持仓。例如，当在上升趋势中做多时，该策略仅在价格低于移动平均线时才增加网格持仓，而仅在价格高于移动平均线时才降低网格持仓。图3说明了这个思路。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/04/mean-divergence-optimization.png" alt="图3：均方差优化"></p>
+<p>这种类型的网格经常被交易顾问使用，并且在累积并相应减少头寸的位置连续运行。方向仅根据长期趋势（例如4周移动平均线）变化（做多/做空）。</p>
+<p>退出条件（减少）基于首先平仓“最高利润”头寸并连续运行。这具有创建递增的已实现利润流的好处。网格还具有总止损，从而在达到该限制时关闭整个交易系统。如果趋势突然改变，则触发此操作。</p>
+<h2 id="斐波那契时区"><a href="#斐波那契时区" class="headerlink" title="斐波那契时区"></a>斐波那契时区</h2><p>垂直网格中的时间间隔不必一定是恒定的。一些交易者使用时间轴指示器来确定进入时间点。这样的指标之一就是斐波那契时区。斐波那契时区是交易平台和大多数其他图表软件包中的标准图表对象。</p>
+<p>支持这种观点的人说，重要的市场事件不会按固定的时间间隔发生。相反，它们以斐波那契数列定义的间隔发生。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/04/fib-zones.png" alt="图4：使用斐波纳契时区作为网格入口点"></p>
+<p>它的工作方式是使用斐波那契数沿时间轴标记回撤点。这些间隔标志着可能发生价格反转的关键枢纽区域。使用这种方法，网格的交易时机设置为与市场中可能的枢轴一致。</p>
+<p>对于斐波纳契时区，通常将参考点A和B选择为图表上的两个重要点，例如，在两个高/低价格水平之间。然后可以将斐波纳契区域扩展到将来，以提供网格进入时间。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/04/grid-with-fib-timzones.png" alt="图5：使用斐波那契时区"></p>
+<p>如果您没有软件，则可以通过手动或Excel轻松计算出斐波纳契时区。<br><img data-src="https://i.loli.net/2021/05/24/afvC3NXrAqG5x82.png" alt=""></p>
+<p>A点和B点是图表上的两个参考点，假设它们相距1小时。网格交易之间的时间间隔是前两次的总和。我们从1小时（1小时+0小时）开始。接下来也是一个小时。区域3是2小时（1小时+1小时），区域4是3小时（1小时+2小时），依此类推。</p>
+<p>对于此示例，网格入口点将如下所示：<br><img data-src="https://i.loli.net/2021/05/24/dTHqGrm4xuspzy1.png" alt=""></p>
+<p>重要的是要注意，对于斐波纳契变体，在大多数情况下，网格进入价格不会收敛到平均值，因为间隔大小不是恒定的。</p>
+<h2 id="扇形斐波那契技术"><a href="#扇形斐波那契技术" class="headerlink" title="扇形斐波那契技术"></a>扇形斐波那契技术</h2><p>扇形斐波那契（fibo fan）是交易者有时用来计时网格进出时间的另一个指标。</p>
+<p>扇形斐波那契是一种图表技术，可将支撑线和阻力线延伸到未来。它通过查找高峰和低谷对起作用。上升的扇区代表看涨图表。扇区标出了发展趋势可能会遇到的支撑线和阻力线。交易者经常将扇形斐波那契与其他支撑线和阻力线结合使用，以确定趋势是否完整或是否已改变。艾略特波浪和“干草叉”就是例子。<br><img data-src="https://forexop.com/assets/uploads/2015/04/fibofan2.png" alt="图6：组合斐波纳契风扇时区"></p>
+<p>图6显示了扇形斐波那契和斐波那契时区。扇区根据最后一部分的峰/谷指示趋势的可能趋势，而时区则指示潜在的入口/出口点。</p>
+<p>这种网格技术将确定价格在每个时区内的位置，并相应地累积或减少头寸。通常，使用50％线作为平均值，交易者在价格位于绿色区域内时累积头寸，而在红色区域内则减少头寸（见图6）。<br><img data-src="https://forexop.com/assets/uploads/2015/04/grid-fibfan_times.png" alt="图7：使用fibo风扇技术的网格设置"></p>
+<h2 id="当趋势逆转时"><a href="#当趋势逆转时" class="headerlink" title="当趋势逆转时"></a>当趋势逆转时</h2><p>无论使用哪种技术，都需要制定退出策略以在趋势突然变化的过程中关闭网格。</p>
+<p>对于手动交易，目视检查通常是最佳途径。如果您以专家顾问的身份对策略进行编程，则可以使用多种指标来帮助实现这一目标。在这种情况下，在损失增加之前将网格关闭。<br><img data-src="https://forexop.com/assets/uploads/2015/04/trend_reversal_fibofan.png" alt="图8：处理趋势反转"></p>
+<p>图8显示了一个示例。在这里，扇形斐波那契底部的支撑被打破，价格下降到新的看跌趋势。那时，网格交易者的最佳做法是在严重违反下支撑线后关闭网格。</p>
+<h1 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h1><p>垂直网格在趋势市场中效果很好。它们在平均成本上发挥作用，因为它们旨在在特定时间间隔内获得平均入场价。因此，交易者更有可能从短期内可能高度波动的上升（下降趋势）中获利。</p>
+<p>如果使用得当，与“大宗交易”相比，垂直网格可以降低风险。通过允许交易者以较小的单位进/出头寸，它还为交易程序增加了灵活性。适当使用网格随不能增加利润，而是一种减少波动市场中时间风险的方法。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Louis Cai 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Louis Cai 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Louis Cai
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://louis-cai.github.io/Trend-Following-with-a-Vertical-Grid/" title="Trend Following with a Vertical Grid">http://louis-cai.github.io/Trend-Following-with-a-Vertical-Grid/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E6%A0%BC%E4%BA%A4%E6%98%93/" rel="tag"># 网格交易</a>
+              <a href="/tags/%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5/" rel="tag"># 交易策略</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Martingale-Strategy-How-To-Use-It/" rel="prev" title="马丁策略–如何使用">
+      <i class="fa fa-chevron-left"></i> 马丁策略–如何使用
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本垂直网格概念"><span class="nav-number">1.</span> <span class="nav-text">基本垂直网格概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美元成本平均"><span class="nav-number">2.</span> <span class="nav-text">美元成本平均</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么错过了趋势的时机"><span class="nav-number">3.</span> <span class="nav-text">为什么错过了趋势的时机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垂直网格示例"><span class="nav-number">4.</span> <span class="nav-text">垂直网格示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#风险-收益权衡"><span class="nav-number">4.1.</span> <span class="nav-text">风险&#x2F;收益权衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置网格时间间隔"><span class="nav-number">4.2.</span> <span class="nav-text">设置网格时间间隔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变化"><span class="nav-number">5.</span> <span class="nav-text">变化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#均值发散优化"><span class="nav-number">5.1.</span> <span class="nav-text">均值发散优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斐波那契时区"><span class="nav-number">5.2.</span> <span class="nav-text">斐波那契时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扇形斐波那契技术"><span class="nav-number">5.3.</span> <span class="nav-text">扇形斐波那契技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当趋势逆转时"><span class="nav-number">5.4.</span> <span class="nav-text">当趋势逆转时</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概括"><span class="nav-number">6.</span> <span class="nav-text">概括</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Louis Cai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louis Cai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'ssHwRlzjF349FCusaitPcz7h-gzGzoHsz',
+      appKey     : 'IPldS7Ia63j7AiCdbNBv5gEN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
