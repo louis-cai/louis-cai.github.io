@@ -1,97 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://louis-cai.github.io/Martingale-Strategy-How-To-Use-It/</loc>
+    <lastmod>2021-09-07</lastmod>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/How-to-DYOR/</loc>
     <lastmod>2021-05-31</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Trend-Following-with-a-Vertical-Grid/</loc>
     <lastmod>2021-05-24</lastmod>
-  </url>  <url>
-    <loc>http://louis-cai.github.io/Martingale-Strategy-How-To-Use-It/</loc>
-    <lastmod>2021-05-19</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Meta-Scalper-%E2%80%93-A-Simple-Low-Risk-Scalping-Strategy/</loc>
     <lastmod>2021-05-17</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/How-to-Spot-an-Overbought-or-Oversold-Market/</loc>
     <lastmod>2021-05-17</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/trading-with-dual-grid-system/</loc>
     <lastmod>2021-05-17</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/The-Random-Walk/</loc>
     <lastmod>2021-05-17</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/How-to-Place-Stop-Losses-and-Take-Profits-Using-a-Maximal-Strategy/</loc>
     <lastmod>2021-05-17</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/NVIDIA-GRID-VGPU/</loc>
     <lastmod>2020-12-21</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/CleanGatesTrojan/</loc>
     <lastmod>2020-12-18</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Grid-Trading-%E2%80%93-Hedged-Grid-Strategy/</loc>
     <lastmod>2020-08-08</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-15</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Be-proactive-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-06</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-06</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Think-win-win-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-06</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-06</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/Synergize-The-7-Habits-of-Highly-Effective-People/</loc>
     <lastmod>2020-07-06</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E4%BD%BF%E7%94%A8Python%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7docker/</loc>
     <lastmod>2020-06-30</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/ios-device-ID/</loc>
     <lastmod>2020-06-30</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E6%AD%A3%E9%9D%A2%E7%AE%A1%E6%95%99/</loc>
     <lastmod>2020-06-30</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%99%E8%82%B2%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2019-04-30</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/30%E5%B2%81%E4%BD%A0%E8%BF%98%E8%83%BD%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98/</loc>
     <lastmod>2019-04-30</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/WKWebView-fix-pit/</loc>
     <lastmod>2018-12-15</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/html5-app-cache/</loc>
     <lastmod>2018-12-11</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E5%85%AB%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E7%8F%AD%E7%BA%A7%E7%AE%A1%E7%90%86%E4%B8%8E%E6%95%99%E5%B8%88%E5%BF%83%E7%90%86/</loc>
     <lastmod>2018-11-16</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E4%B8%83%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E5%BE%B7%E8%82%B2/</loc>
     <lastmod>2018-11-02</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E7%94%9F%E5%BF%83%E7%90%86%E8%BE%85%E5%AF%BC/</loc>
     <lastmod>2018-11-02</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E7%94%9F%E5%AD%A6%E4%B9%A0%E5%BF%83%E7%90%86/</loc>
     <lastmod>2018-11-02</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E6%95%99%E5%AD%A6/</loc>
     <lastmod>2018-11-02</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E8%AF%BE%E7%A8%8B/</loc>
     <lastmod>2018-11-02</lastmod>
-  </url>  <url>
+  </url>
+  <url>
     <loc>http://louis-cai.github.io/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%B8%AD%E5%AD%A6%E7%94%9F%E5%8F%91%E5%B1%95%E5%BF%83%E7%90%86/</loc>
     <lastmod>2018-11-02</lastmod>
   </url>
-</urlset>
+</urlset> 
