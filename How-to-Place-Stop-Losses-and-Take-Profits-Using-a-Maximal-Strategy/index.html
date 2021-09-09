@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"louis-cai.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="原文地址How to Place Stop Losses and Take Profits Using a Maximal Strategy 进行交易时，如何选择止损和止盈值是一个问题。该决策将直接影响您的交易盈利能力。实际上，设置退出位对盈利能力的影响远大于决策交易方向的能力。  在动荡的外汇市场上，这确实是事实。鉴于这一决定的重要性，令人惊讶的是，我们中的许多人很少对此方面给予任何考虑。 在本">
+<meta name="description" content="原文地址How to Place Stop Losses and Take Profits Using a Maximal Strategy  进行交易时，如何选择止损和止盈值是一个问题。该决策将直接影响您的交易盈利能力。实际上，设置退出位对盈利能力的影响远大于决策交易方向的能力。  在动荡的外汇市场上，这确实是事实。鉴于这一决定的重要性，令人惊讶的是，我们中的许多人很少对此方面给予任何考虑。 在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用最大值策略进行止损和获利（译文）">
 <meta property="og:url" content="http://louis-cai.github.io/How-to-Place-Stop-Losses-and-Take-Profits-Using-a-Maximal-Strategy/index.html">
 <meta property="og:site_name" content="Give me five">
-<meta property="og:description" content="原文地址How to Place Stop Losses and Take Profits Using a Maximal Strategy 进行交易时，如何选择止损和止盈值是一个问题。该决策将直接影响您的交易盈利能力。实际上，设置退出位对盈利能力的影响远大于决策交易方向的能力。  在动荡的外汇市场上，这确实是事实。鉴于这一决定的重要性，令人惊讶的是，我们中的许多人很少对此方面给予任何考虑。 在本">
+<meta property="og:description" content="原文地址How to Place Stop Losses and Take Profits Using a Maximal Strategy  进行交易时，如何选择止损和止盈值是一个问题。该决策将直接影响您的交易盈利能力。实际上，设置退出位对盈利能力的影响远大于决策交易方向的能力。  在动荡的外汇市场上，这确实是事实。鉴于这一决定的重要性，令人惊讶的是，我们中的许多人很少对此方面给予任何考虑。 在">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://forexop.com/assets/uploads/2018/11/stop_loss_take_profit_maximals3-304x198.png">
 <meta property="og:image" content="https://forexop.com/assets/uploads/2018/11/trade_example_usdjpy2.png">
@@ -134,7 +134,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">为什么猜测止损和获利是失败的计划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">使用SL&#x2F;TP作为代理风险回报的误区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">风险回报关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">使用最大值计算止损和获利</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E6%97%B6%E9%97%B4%E6%A1%86%E6%9E%B6"><span class="nav-number">4.1.</span> <span class="nav-text">步骤1：时间框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E5%B8%82%E5%9C%BA"><span class="nav-number">4.2.</span> <span class="nav-text">步骤2：市场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E8%8E%B7%E5%88%A9%E7%9B%AE%E6%A0%87"><span class="nav-number">4.3.</span> <span class="nav-text">步骤3：获利目标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">分析交易</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">金钱管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">止损计算器</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8C%9C%E6%B5%8B%E6%AD%A2%E6%8D%9F%E5%92%8C%E8%8E%B7%E5%88%A9%E6%98%AF%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%AE%A1%E5%88%92"><span class="nav-number">1.</span> <span class="nav-text">为什么猜测止损和获利是失败的计划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8SL-TP%E4%BD%9C%E4%B8%BA%E4%BB%A3%E7%90%86%E9%A3%8E%E9%99%A9%E5%9B%9E%E6%8A%A5%E7%9A%84%E8%AF%AF%E5%8C%BA"><span class="nav-number">2.</span> <span class="nav-text">使用SL&#x2F;TP作为代理风险回报的误区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A3%8E%E9%99%A9%E5%9B%9E%E6%8A%A5%E5%85%B3%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text">风险回报关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9C%80%E5%A4%A7%E5%80%BC%E8%AE%A1%E7%AE%97%E6%AD%A2%E6%8D%9F%E5%92%8C%E8%8E%B7%E5%88%A9"><span class="nav-number">4.</span> <span class="nav-text">使用最大值计算止损和获利</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E6%97%B6%E9%97%B4%E6%A1%86%E6%9E%B6"><span class="nav-number">4.1.</span> <span class="nav-text">步骤1：时间框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E5%B8%82%E5%9C%BA"><span class="nav-number">4.2.</span> <span class="nav-text">步骤2：市场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E8%8E%B7%E5%88%A9%E7%9B%AE%E6%A0%87"><span class="nav-number">4.3.</span> <span class="nav-text">步骤3：获利目标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E4%BA%A4%E6%98%93"><span class="nav-number">5.</span> <span class="nav-text">分析交易</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%91%E9%92%B1%E7%AE%A1%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">金钱管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A2%E6%8D%9F%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">止损计算器</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -258,15 +258,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><blockquote><footer><strong>原文地址</strong><cite><a target="_blank" rel="noopener" href="https://forexop.com/strategy/stop-loss-profit-placements-max-returns/">How to Place Stop Losses and Take Profits Using a Maximal Strategy</a></cite></footer></blockquote></p>
+        <blockquote><footer><strong>原文地址</strong><cite><a target="_blank" rel="noopener" href="https://forexop.com/strategy/stop-loss-profit-placements-max-returns/">How to Place Stop Losses and Take Profits Using a Maximal Strategy</a></cite></footer></blockquote>
+
 <p>进行交易时，如何选择止损和止盈值是一个问题。该决策将直接影响您的交易盈利能力。实际上，设置退出位对盈利能力的影响远大于决策交易方向的能力。</p>
-<p><img data-src="https://forexop.com/assets/uploads/2018/11/stop_loss_take_profit_maximals3-304x198.png" alt="如何选择止损和获利" title="如何选择止损和获利" /></p>
+<p><img data-src="https://forexop.com/assets/uploads/2018/11/stop_loss_take_profit_maximals3-304x198.png" alt="如何选择止损和获利" title="如何选择止损和获利"></p>
 <p>在动荡的外汇市场上，这确实是事实。鉴于这一决定的重要性，令人惊讶的是，我们中的许多人很少对此方面给予任何考虑。</p>
 <p>在本文中，我解释了一种避免随机选择，而是选择止损和止盈水平以获得最大利润的方法。</p>
 <p>我还展示了围绕风险回报设置对一些常见方法进行揭穿是多么容易，并展示了使用不良止损和获利如何轻易破坏潜在的良好交易系统。</p>
 <p>如果您只想尝试止损/止盈计算器，而对理论不感兴趣，<a target="_blank" rel="noopener" href="https://forexop.com/strategy/stop-loss-profit-placements-max-returns/#stoploss-calculator">请单击此处</a>。</p>
-<h1>为什么猜测止损和获利是失败的计划</h1>
-<p>交易头寸通常会在两个点之一退出。进入交易后，可以：</p>
+<h1 id="为什么猜测止损和获利是失败的计划"><a href="#为什么猜测止损和获利是失败的计划" class="headerlink" title="为什么猜测止损和获利是失败的计划"></a>为什么猜测止损和获利是失败的计划</h1><p>交易头寸通常会在两个点之一退出。进入交易后，可以：</p>
 <ul>
 <li>价格达到止盈（TP），交易获利出场</li>
 <li>价格达到止损（SL），交易亏损出场</li>
@@ -281,37 +281,27 @@
 <li>止损和获利设置需要成为策略不可或缺的一部分，而不是依靠自身。</li>
 </ul>
 <p>使用技术分析作为确定交易进场和退出时间的指南，或判断价格可能走多远没有错。相反，我在下面描述的方法可以与图表分析和基础分析一起使用。</p>
-<h1>使用SL/TP作为代理风险回报的误区</h1>
-<p>外汇交易论坛充满了美好的含义，但是关于风险回报设置以及如何设置止损的想法颇为错误。不幸的是，其中许多人不了解风险或回报的实际含义。</p>
+<h1 id="使用SL-TP作为代理风险回报的误区"><a href="#使用SL-TP作为代理风险回报的误区" class="headerlink" title="使用SL/TP作为代理风险回报的误区"></a>使用SL/TP作为代理风险回报的误区</h1><p>外汇交易论坛充满了美好的含义，但是关于风险回报设置以及如何设置止损的想法颇为错误。不幸的是，其中许多人不了解风险或回报的实际含义。</p>
 <p>仅将止损设置为小于止盈是一个黄金法则，可以实现一定的回报风险，这是完全无稽之谈，很容易被验证。</p>
 <p>除非您知道特定交易的胜率，否则使用风险/回报比来设置您的交易进场和退出没有任何意义。</p>
 <p>举这个简单的例子。假设有一张彩票花费1美元进入。奖金为100万美元。根据天真交易者的定义，它给出：</p>
-<p><strong>风险</strong>：1美元<br />
-<strong>薪酬</strong>：100万美元<br />
-<strong>奖励/风险比</strong>：1,000,000</p>
+<p><strong>风险</strong>：1美元<br><strong>薪酬</strong>：100万美元<br><strong>奖励/风险比</strong>：1,000,000</p>
 <p>按照这个定义，这似乎是一款很棒的游戏。但是，假设我们知道有200万人参加彩票。这使得获胜的几率是1：2,000,000（百万分之一）。现在我们知道了赔率，我们可以计算出真实的风险回报：</p>
-<p><strong>真实风险</strong>：p（损失）x E（损失）=（1- 1/2000000）x（$1）<br />
-<strong>真实奖励</strong>：p（赢）x E（赢）=（1/2000000）x（$1,000,000）</p>
+<p><strong>真实风险</strong>：p（损失）x E（损失）=（1- 1/2000000）x（$1）<br><strong>真实奖励</strong>：p（赢）x E（赢）=（1/2000000）x（$1,000,000）</p>
 <p><strong>真实回报/风险比</strong>：0.5</p>
 <p>换句话说，您每投入此彩票1美元，您都有望获得50美分的回报。现在大多数人都同意这不是一个很好的游戏。即使根据幼稚的交易者的估计，它的风险回报率也为100万。</p>
 <p>此示例突出显示了使用止损和获利来衡量您的风险/回报的误区。</p>
-<p>在交易中，我们的真实风险/回报定义为：<br />
-<strong>奖励</strong>：p（赢）x E（赢）<br />
-<strong>风险</strong>：p（损失）x E（损失）<br />
-<strong>奖励/风险比</strong>：p（赢）x E（赢）/ p（损失）x E（损失）</p>
+<p>在交易中，我们的真实风险/回报定义为：<br><strong>奖励</strong>：p（赢）x E（赢）<br><strong>风险</strong>：p（损失）x E（损失）<br><strong>奖励/风险比</strong>：p（赢）x E（赢）/ p（损失）x E（损失）</p>
 <p>E（赢）是交易中的预期收益，即您的获利金额。 E（亏损）是您的止损金额。</p>
-<h1>风险回报关系</h1>
-<p>关于设置交易退出点，我们需要接受的第一件事是，您想从交易中获利的数量与获取该获利所需承担的风险<strong>成正比</strong>。</p>
+<h1 id="风险回报关系"><a href="#风险回报关系" class="headerlink" title="风险回报关系"></a>风险回报关系</h1><p>关于设置交易退出点，我们需要接受的第一件事是，您想从交易中获利的数量与获取该获利所需承担的风险<strong>成正比</strong>。</p>
 <p>这不是一个假设，而是一个数学事实。</p>
 <p>采取以下交易方案。举例说，交易者在小时图上看到美元/日元的上涨趋势（请参见下表）。趋势已经存在了大约一天，因此交易者认为有很好的获利机会。</p>
 <p>他决定以下设置：</p>
-<p><strong>入场</strong>：买入美元/日元 @109.70<br />
-<strong>止损</strong>：109.50（20点）<br />
-<strong>止盈</strong>：110.40（70点）</p>
+<p><strong>入场</strong>：买入美元/日元 @109.70<br><strong>止损</strong>：109.50（20点）<br><strong>止盈</strong>：110.40（70点）</p>
 <p>让我们更详细地分析这种交易设置。首先要注意的是，交易者希望从交易中获得70点的利润。</p>
 <p>那么，此设置有什么问题呢？</p>
 <p>根据该货币对的最新价格数据，我们可以计算得出美元/日元的每小时波动率为26.4个点。这意味着，平均而言，一小时的价格变动为26.4点。有时更多，有时更少，但这只是平均值。</p>
-<p><img data-src="https://forexop.com/assets/uploads/2018/11/trade_example_usdjpy2.png" alt="图1：交易示例，止损/止盈设置错误" title="图1：交易示例，止损/止盈设置错误" /></p>
+<p><img data-src="https://forexop.com/assets/uploads/2018/11/trade_example_usdjpy2.png" alt="图1：交易示例，止损/止盈设置错误" title="图1：交易示例，止损/止盈设置错误"></p>
 <p>这意味着交易者试图从中获利70个点。实际上，他实际上是在押注市场，因为他依赖这样一个事实，即在交易存续期间，价格与开盘价的跌幅不会超过20个基点。如果当前趋势持续下去，则最多可能需要30个小时（图1）。</p>
 <p>鉴于当前美元/日元的小时波动率超过26个点，因此这种价格稳定的可能性极小。虽然该交易的最大亏损非常低（20个点），这似乎是一个加分，但获利的机会却非常低。</p>
 <p>平均而言，如果我们知道美元/日元的价格每小时上涨或下跌26.4个点，为什么对这种特殊交易会有什么不同呢？这意味着价格很可能在获利之前就触及止损。</p>
@@ -320,8 +310,7 @@
 <p>请记住，在外汇交易中，您不能通过谨慎地选择交易或采取明智的策略来避免波动。这是绝对的确定性。</p>
 <p>这就是为什么让波动对您有利而不是不利于您更好。</p>
 <p>然后的问题是，在进行交易时，除了进行大胆的猜测之外，您如何知道在哪里设置出口点？下面将说明如何执行此操作。</p>
-<h1>使用最大值计算止损和获利</h1>
-<p>我在此描述的方法基于一种称为最大值的技术。它的作用是为您提供一个精确的公式，以计算出在给定时间内价格与入场价有一定距离的概率。</p>
+<h1 id="使用最大值计算止损和获利"><a href="#使用最大值计算止损和获利" class="headerlink" title="使用最大值计算止损和获利"></a>使用最大值计算止损和获利</h1><p>我在此描述的方法基于一种称为最大值的技术。它的作用是为您提供一个精确的公式，以计算出在给定时间内价格与入场价有一定距离的概率。</p>
 <p>这样做的好处是，对于给定的波动率，它可以完整分配价格变动。它可以在任何时间范围，几分钟甚至几个月内工作。对于历史（过去）或隐含（未来）波动率，它也同样适用。</p>
 <p>在确定贸易退出点时，需要考虑三件事：</p>
 <ul>
@@ -330,50 +319,36 @@
 <li>利润目标</li>
 </ul>
 <p>让我们来看看这些。</p>
-<h2 id="步骤1：时间框架"><a class="header-anchor" href="#步骤1：时间框架">¶</a>步骤1：时间框架</h2>
-<p>您是哪种类型的交易者将影响您的交易需要保持开放以达到利润目标的时间。</p>
+<h2 id="步骤1：时间框架"><a href="#步骤1：时间框架" class="headerlink" title="步骤1：时间框架"></a>步骤1：时间框架</h2><p>您是哪种类型的交易者将影响您的交易需要保持开放以达到利润目标的时间。</p>
 <p>日间交易者或剥头皮交易者将持仓数小时，数分钟甚至数秒钟。在另一个极端，套利交易者持有仓位数周或数月。对于套利交易者而言，交易的资本收益可能不那么重要。目标是尽可能长时间保持头寸未平仓，以积累套利。</p>
 <p>显然，利润和时间是联系在一起的。在设置交易退出点时，第一步是准确地知道在给定的时间内价格可能会走多远。知道这一点后，您将能够确定一个现实的利润目标。</p>
 <p>请看下面的例子。下图2显示了五分钟间隔（M5）中的EUR/USD。该图表跨越24小时。</p>
-<p><img data-src="https://forexop.com/assets/uploads/2015/02/trading_example_eurusd_M5.png" alt="图2：EUR/USD 5分钟图（M5）– 24小时" title="图2：EUR/USD 5分钟图（M5）– 24小时" /></p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/02/trading_example_eurusd_M5.png" alt="图2：EUR/USD 5分钟图（M5）– 24小时" title="图2：EUR/USD 5分钟图（M5）– 24小时"></p>
 <p>接下来，我们需要计算选定时期内的波动率。根据开/关数据，我计算出每5分钟间隔仅超过10点。</p>
 <p>一旦我知道了市场的波动性，我就可以预测未来移动x小时（5分钟间隔的总和）的概率。</p>
 <p>为此，我需要计算所谓的最大曲线（有关说明，请参见<a href="/The-Random-Walk/" title="随机漫步">随机漫步</a>）。简而言之，将波动率作为输入，这些曲线将告诉我达到最大价格（上涨或下跌）的可能性。</p>
-<p>下面的图3显示了EUR / USD图表提前1到24小时计算的最大曲线。<br />
-<img data-src="https://forexop.com/assets/uploads/2018/11/stop_loss_take_profit_maximals3.png" alt="图3：欧元/美元（M5）的最大曲线-点移动与概率" title="图3：欧元/美元（M5）的最大曲线-点移动与概率" /></p>
+<p>下面的图3显示了EUR / USD图表提前1到24小时计算的最大曲线。<br><img data-src="https://forexop.com/assets/uploads/2018/11/stop_loss_take_profit_maximals3.png" alt="图3：欧元/美元（M5）的最大曲线-点移动与概率" title="图3：欧元/美元（M5）的最大曲线-点移动与概率"></p>
 <p>例如，查看24小时的最大曲线（顶线），我知道价格在24小时内移动50点或更多的可能性为76.8％。在同一时间范围内，它有40％的概率移动超过141点。</p>
 <p>这些统计数据如此重要的原因是，它们使您可以根据时间和获利准确地设置交易。曲线告诉您要赚取的利润量在时间跨度方面是否合理。</p>
 <p>例如，如果我想捕捉300点的波动，根据当前的波动水平，我可能要等待大约10天。这是因为从曲线来看，在任何24小时内，价格都只有10％的机会移动300点。</p>
-<h2 id="步骤2：市场"><a class="header-anchor" href="#步骤2：市场">¶</a>步骤2：市场</h2>
-<p>如果市场持平或朝某个方向发展，这将对您设定止损和获利的位置产生很大影响。就模型而言，这意味着我们具有不对称的价格变动分布。</p>
+<h2 id="步骤2：市场"><a href="#步骤2：市场" class="headerlink" title="步骤2：市场"></a>步骤2：市场</h2><p>如果市场持平或朝某个方向发展，这将对您设定止损和获利的位置产生很大影响。就模型而言，这意味着我们具有不对称的价格变动分布。</p>
 <p>换句话说，价格变动包含两个部分：</p>
 <ul>
 <li>随机成分–随机价格变化无法以任何方式预测</li>
 <li>确定性成分–确定性成分是可预测的偏移或趋势</li>
 </ul>
 <p>我们试图做的是预测确定性部分，但同时考虑到无法预测的随机元素。</p>
-<p>有几种方法可以做到这一点，但我最喜欢的最简单的方法是对上下价格模型使用不同的波动率。<br />
-<img data-src="https://forexop.com/assets/uploads/2018/01/chart_maxcurves_trending.png" alt="图4：图表上显示的价格信封，允许趋势" title="图4：图表上显示的价格信封，根据趋势" /></p>
+<p>有几种方法可以做到这一点，但我最喜欢的最简单的方法是对上下价格模型使用不同的波动率。<br><img data-src="https://forexop.com/assets/uploads/2018/01/chart_maxcurves_trending.png" alt="图4：图表上显示的价格信封，允许趋势" title="图4：图表上显示的价格信封，根据趋势"></p>
 <p>统计偏斜在这里很有用，因为它告诉您波动率分布的不对称程度，并允许您添加向上/向下漂移。</p>
-<p><strong>市场</strong><br />
-<strong>随机游走</strong>-没有趋势<br />
-<strong>趋势上升</strong>–正漂移<br />
-<strong>趋势下降</strong>–负漂移</p>
+<p><strong>市场</strong><br><strong>随机游走</strong>-没有趋势<br><strong>趋势上升</strong>–正漂移<br><strong>趋势下降</strong>–负漂移</p>
 <p>通过随机游走，价格上涨和下跌的可能性相同。趋势分析时，需要两组不同的最大曲线，一组用于向上移动，另一组用于向下移动。</p>
-<h2 id="步骤3：获利目标"><a class="header-anchor" href="#步骤3：获利目标">¶</a>步骤3：获利目标</h2>
-<p>在确定了时间范围和趋势特征之后，我现在可以选择适当的利润目标，这将给我的交易带来很高的获胜概率。</p>
+<h2 id="步骤3：获利目标"><a href="#步骤3：获利目标" class="headerlink" title="步骤3：获利目标"></a>步骤3：获利目标</h2><p>在确定了时间范围和趋势特征之后，我现在可以选择适当的利润目标，这将给我的交易带来很高的获胜概率。</p>
 <p>假设我已经检查了图表，并决定在当前市场水平上买入，并且我确定目标将是+40点，而下限将是-100点。</p>
-<p>下表给出了在三种市场条件下我都达到退出点的可能性。<br />
-<img data-src="https://i.loli.net/2020/06/30/NAhriZLCHERPz2x.png" alt="" /></p>
-<p>趋势+：朝同一方向发展<br />
-趋势–：趋势反转方向<br />
-单位：横盘</p>
+<p>下表给出了在三种市场条件下我都达到退出点的可能性。<br><img data-src="https://i.loli.net/2020/06/30/NAhriZLCHERPz2x.png"></p>
+<p>趋势+：朝同一方向发展<br>趋势–：趋势反转方向<br>单位：横盘</p>
 <p>我的交易设置是：</p>
-<p>获利+40点，在24小时内达到TP的可能性为82％<br />
-止损-100点，在24小时内达到SL的可能性为57％</p>
-<p>入门价格：购买1.1290<br />
-止盈：1.1330（+40点子）<br />
-止损：1.1190（-100点）</p>
+<p>获利+40点，在24小时内达到TP的可能性为82％<br>止损-100点，在24小时内达到SL的可能性为57％</p>
+<p>入门价格：购买1.1290<br>止盈：1.1330（+40点子）<br>止损：1.1190（-100点）</p>
 <p>这表明欧元/美元有一定的机会在我的交易时间内达到目标价格/止损水平。但这并没有告诉我先到达哪个。</p>
 <p>我还想看到的是，该交易实际产生利润或损失的可能性。价格可以先到达止损位，然后才能止盈。在这种情况下，我的交易将亏损。它可以替代地先达到止盈，在这种情况下获胜。或者，它既不能达到止损位，也不能达到获利水平，在这种情况下，交易保持开放。</p>
 <p>基于此分析，我可以使用标准概率论得出交易的每个结果：</p>
@@ -386,8 +361,7 @@
 <th>Trend-</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>p(win)</td>
 <td>63%</td>
 <td>42%</td>
@@ -411,34 +385,30 @@
 <td>47%</td>
 <td>90%</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>如果短期趋势反转，即市场上涨并使我的购买获利，我的最佳结果就会发生。如果趋势沿相同方向（趋势+）持续，则结果最差。在这种情况下，我有42％的机会以利润结束交易，而有47％的机会以亏损结束交易。</p>
 <p>当我进行交易时，我会发现一些值，使得达到止盈的机会至少是达到止损的机会的1.5倍。获胜率将达到70％左右或更高。</p>
 <p>请记住，如果您在交易开放时移动止损或获利，则会给您带来不同的结果。</p>
-<h1>分析交易</h1>
-<p>要了解不同交易时段的止损和止盈水平如何变化，我可以制定一个信封，这将给我带来固定的赢率。下面的图4中的图形显示了为我的示例交易绘制的图表。</p>
+<h1 id="分析交易"><a href="#分析交易" class="headerlink" title="分析交易"></a>分析交易</h1><p>要了解不同交易时段的止损和止盈水平如何变化，我可以制定一个信封，这将给我带来固定的赢率。下面的图4中的图形显示了为我的示例交易绘制的图表。</p>
 <p>由此可见，如果我的交易时间超过12小时，则可以选择设置：</p>
 <p><strong>SL = -67.3 / TP= +26.9</strong></p>
 <p>那将达到相同的赢率。利润也只会降低+26.9点。</p>
-<p><img data-src="https://forexop.com/assets/uploads/2018/11/prob_envelope3.png" alt="图5：固定贸易赢率的TP / SL信封" title="图5：固定贸易赢率的TP / SL信封" /></p>
+<p><img data-src="https://forexop.com/assets/uploads/2018/11/prob_envelope3.png" alt="图5：固定贸易赢率的TP / SL信封" title="图5：固定贸易赢率的TP / SL信封"></p>
 <p>通过24小时制，我还可以看到可能的结果会随着时间变化。</p>
 <p>图5中的图表显示了获胜，亏损或交易在24小时内仍未平仓的可能性–这是我的预期交易寿命。</p>
 <p>由此可见，它在开盘后的前90分钟内有最高的获利机会。此后，损失的机会大大增加。</p>
-<p><img data-src="https://forexop.com/assets/uploads/2015/02/trade_outcome_probability_2.png" alt="图6：24小时内的欧元/美元交易结果概率" title="图6：24小时内的欧元/美元交易结果概率" /></p>
+<p><img data-src="https://forexop.com/assets/uploads/2015/02/trade_outcome_probability_2.png" alt="图6：24小时内的欧元/美元交易结果概率" title="图6：24小时内的欧元/美元交易结果概率"></p>
 <p>这是因为最大曲线在更长的时间内变得更平坦。如果再次检查图3，您将看到24小时和18小时的曲线非常相似，而1小时和6小时曲线之间却有很大差异。最高的差异出现在曲线最陡峭的前几个间隔中。</p>
 <p>最后，根据上述数据，可以计算出远期预期收益，以从买方和卖方找到预期收益。</p>
-<p><img data-src="https://forexop.com/assets/uploads/2018/01/sltp_expectancy_v_time.png" alt="图7：最终预期：买入与卖出" title="图7：最终预期：买入与卖出" /></p>
-<h1>金钱管理</h1>
-<p>如上所示，止损距离必须根据获利目标和市场波动水平而定。</p>
+<p><img data-src="https://forexop.com/assets/uploads/2018/01/sltp_expectancy_v_time.png" alt="图7：最终预期：买入与卖出" title="图7：最终预期：买入与卖出"></p>
+<h1 id="金钱管理"><a href="#金钱管理" class="headerlink" title="金钱管理"></a>金钱管理</h1><p>如上所示，止损距离必须根据获利目标和市场波动水平而定。</p>
 <p>交易者通常通过设置非常严格的止损来弥补过度杠杆或过度敞口。但是，如此处所示，这可能会导致不良后果。</p>
 <p>通过交易规模（敞口）和分散管理风险比依靠止损更好。 <a target="_blank" rel="noopener" href="https://forexop.com/strategy/turtle-system/">Turtle方法</a>是风险管理中考虑波动性的一个很好的案例研究。</p>
 <p>假设您看到一个交易机会，并且潜在的亏损需要300点才能获得该利润。如果300点是不可接受的亏损，那么最好降低杠杆率并向下调整交易规模以提供更大的灵活性。</p>
 <p>与其交易一手，不如考虑交易十分之一或更低的手。</p>
 <p>最重要的是，应在帐户中管理交易的潜在损失（或提款额）。这应该是整体<a target="_blank" rel="noopener" href="https://forexop.com/risk-reward-in-money-management/">资金管理</a>计划的一部分，以便您知道自己的损失限额以及那些损失，即使连续发生也不会引起<a target="_blank" rel="noopener" href="https://forexop.com/trading/margin-calls-and-how-to-protect-yourself/">追加保证金</a>或炸毁帐户的情况。</p>
 <p>市场永远不会宽容<a target="_blank" rel="noopener" href="https://forexop.com/learning/how-to-use-forex-leverage-safely/">过度杠杆的交易者</a>。</p>
-<h1>止损计算器</h1>
-<p>如果您想自己尝试使用此系统，则下面提供了Excel电子表格和Metatrader指示器。</p>
+<h1 id="止损计算器"><a href="#止损计算器" class="headerlink" title="止损计算器"></a>止损计算器</h1><p>如果您想自己尝试使用此系统，则下面提供了Excel电子表格和Metatrader指示器。</p>
 <p><a target="_blank" rel="noopener" href="https://forexop.com/?wpdmact=4734">下载文件</a></p>
 <p>有关如何使用该表的说明，<a target="_blank" rel="noopener" href="https://forexop.com/tools/stop-loss-take-profit-optimizer/">请参见此处</a>。电子表格演示了一种简化的方法，其中指示符使用上述方法。</p>
 <p>MetaTrader指标还使用实际价格数据。请参阅下面的更多细节。</p>

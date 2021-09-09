@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"louis-cai.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。 $$\ce{Y_t &#x3D; Y_{t-1} + α}$$ 使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为 $$\ce{p(Y_n &#x3D; m) &#x3D; \left(\frac{(m + n)n}{2}\right){\frac{1}{2">
+<meta name="description" content="我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。$$\ce{Y_t &#x3D; Y_{t-1} + α}$$ 使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为$$\ce{p(Y_n &#x3D; m) &#x3D; \left(\frac{(m + n)^n}{2}\right){\frac{1}{2^">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机漫步（译文）">
 <meta property="og:url" content="http://louis-cai.github.io/The-Random-Walk/index.html">
 <meta property="og:site_name" content="Give me five">
-<meta property="og:description" content="我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。 $$\ce{Y_t &#x3D; Y_{t-1} + α}$$ 使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为 $$\ce{p(Y_n &#x3D; m) &#x3D; \left(\frac{(m + n)n}{2}\right){\frac{1}{2">
+<meta property="og:description" content="我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。$$\ce{Y_t &#x3D; Y_{t-1} + α}$$ 使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为$$\ce{p(Y_n &#x3D; m) &#x3D; \left(\frac{(m + n)^n}{2}\right){\frac{1}{2^">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png">
 <meta property="article:published_time" content="2020-06-30T00:55:34.000Z">
@@ -126,7 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">原文</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">原文</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -250,24 +250,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。<br />
-$$\ce{Y_t = Y_{t-1} + α}$$</p>
-<p>使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为<br />
-$$\ce{p(Y_n = m) = \left(\frac{(m + n)<sup>n}{2}\right){\frac{1}{2</sup>n}}} $$</p>
+        <p>我们拥有的最简单的市场模型之一就是随机步伐或随机游走。这仅意味着市场在每个间隔内都会随机波动。价格可以通过漂移参数向上升趋势或下降趋势倾斜。<br>$$\ce{Y_t = Y_{t-1} + α}$$</p>
+<p>使用离散unit步函数对这些价格走势建模，可以发现价格随时达到某个最大值的概率为<br>$$\ce{p(Y_n = m) = \left(\frac{(m + n)^n}{2}\right){\frac{1}{2^n}}} $$</p>
 <p>然后，我们使用波动率将价格Z转换为标准单位变量，以便与逐步过程进行比较。据此，我们为不同的时间范围创建了一组曲线。</p>
 <p>从本质上讲，时间间隔越长，波动性越大，价格可以从现有水平移动得越远。</p>
 <p>从这些我们可以计算出在任何时间长度内价格变动的可能性。</p>
-<hr />
-<h1>原文</h1>
-<p>The Random Walk</p>
+<hr>
+<h1 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h1><p>The Random Walk</p>
 <p>One of the simplest market models we have for forex is the random step process or random walk.</p>
 <p>This just means that in every interval, the market moves by a random step value. The price can slant towards an uptrend or a downtrend with a drift parameter.</p>
 <p>Yt = Yt-1 + α</p>
-<p>Using a discrete unitary step function to model these price moves, the probability that price reaches a certain maximum at any time can be found as<br />
-<img data-src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png" alt="" /></p>
+<p>Using a discrete unitary step function to model these price moves, the probability that price reaches a certain maximum at any time can be found as<br><img data-src="https://forexop.com/assets/uploads/2015/02/rand_proc_eq1.png"></p>
 <p>We then transform the price Z, using the volatility into a standard unit variable for comparison against the step process. From this we create a set of curves for different timeframes.</p>
 <p>In essence, the longer the time interval and the greater the volatility, the further the price can move from the existing level.</p>
-<p>From these we can calculate the probability of a price change over any length of time.</p>
+<p>From these we can calculate the probability of a price change over any length of time. </p>
 
     </div>
 
