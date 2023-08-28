@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -253,7 +253,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">manifest</span>=<span class="string">‘demo.appcache</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
 <p>标签所在的页面以及demo.appcache文件里面所规定的静态资源一并存入 application Cache 之中。<br>当用户再一次访问该页面时，demo.appcache文件之中CACHE MANIFEST所指向的资源就不需要重新进行加载了，但是问题是，当前的html页面也会跟着cache直接读出来了，可能会造成即使 我们的页面更新了，但是用户还是看的老旧版本页面（因为更新mainfest的时候，页面加载已经开始了，但是缓存更新却尚未完成，浏览器还是会使用缓存的资源，当浏览器检测到了Application Cache有更新时，本次不会使用新的资源，下一次才会进行使用）</p>
 <p>解决方案：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.addEventListener(<span class="string">&quot;updateready&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    applicationCache.swapCache();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.reload();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">applicationCache.<span class="title function_">addEventListener</span>(<span class="string">&quot;updateready&quot;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    applicationCache.<span class="title function_">swapCache</span>();      <span class="comment">// 手工更新本地缓存</span></span><br><span class="line">    location.<span class="title function_">reload</span>();    <span class="comment">//重新加载页面页面</span></span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
 <h1 id="重点三"><a href="#重点三" class="headerlink" title="重点三"></a>重点三</h1><p>永远不要使用传统 GET 参数(例如 other-cached-page.html?parameterName=value) 来访问缓存文件。这会使浏览器绕过缓存，直接从网络获取。<br>若想链接一个参数需要在 JavaScript 中解析的资源，你可以将参数放到链接的 hash 部分，例如 other-cached-page.html#whatever?parameterName=value。<br>注：需要额外的解析</p>
@@ -322,7 +322,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -366,7 +366,7 @@
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
     .then(() => NexT.utils.getScript(
-      'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
       { condition: window.Valine }
     ))
     .then(() => {

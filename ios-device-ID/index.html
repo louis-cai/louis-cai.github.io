@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -253,7 +253,7 @@
 
 <h3 id="每次安装APP都会变更"><a href="#每次安装APP都会变更" class="headerlink" title="每次安装APP都会变更"></a>每次安装APP都会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *idfv = [[<span class="built_in">UIDevice</span> currentDevice].identifierForVendor UUIDString];  </span><br></pre></td></tr></table></figure>
 
-<h3 id="跟随广告设置，新启动和新安装都不会变更"><a href="#跟随广告设置，新启动和新安装都不会变更" class="headerlink" title="跟随广告设置，新启动和新安装都不会变更"></a>跟随广告设置，新启动和新安装都不会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;AdSupport/ASIdentifierManager.h&gt;  </span></span></span><br><span class="line">ASIdentifierManager *asIM = [[ASIdentifierManager alloc] init];  </span><br><span class="line"><span class="built_in">NSString</span> *idfa = [asIM.advertisingIdentifier UUIDString];  </span><br></pre></td></tr></table></figure>
+<h3 id="跟随广告设置，新启动和新安装都不会变更"><a href="#跟随广告设置，新启动和新安装都不会变更" class="headerlink" title="跟随广告设置，新启动和新安装都不会变更"></a>跟随广告设置，新启动和新安装都不会变更</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;AdSupport/ASIdentifierManager.h&gt;  </span></span></span><br><span class="line">ASIdentifierManager *asIM = [[ASIdentifierManager alloc] init];  </span><br><span class="line"><span class="built_in">NSString</span> *idfa = [asIM.advertisingIdentifier UUIDString];  </span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -317,7 +317,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -361,7 +361,7 @@
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
     .then(() => NexT.utils.getScript(
-      'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
       { condition: window.Valine }
     ))
     .then(() => {
