@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -142,7 +142,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -171,6 +171,118 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/NVIDIA-GRID-VGPU/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/NVIDIA-GRID-VGPU/" class="post-title-link" itemprop="url">GPU虚拟化技术</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-19 17:56:08" itemprop="dateCreated datePublished" datetime="2020-12-19T17:56:08+08:00">2020-12-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-21 10:00:57" itemprop="dateModified" datetime="2020-12-21T10:00:57+08:00">2020-12-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">软件开发</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/NVIDIA-GRID-VGPU/" class="post-meta-item leancloud_visitors" data-flag-title="GPU虚拟化技术" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="什么是NVIDIA-GRID技术"><a href="#什么是NVIDIA-GRID技术" class="headerlink" title="什么是NVIDIA GRID技术"></a>什么是NVIDIA GRID技术</h1><p>NVIDIA GRID是一种共享GPU技术，能够在多个虚拟桌面或应用程序实例之间共享虚拟GPU（vGPU）。</p>
+<h1 id="什么是vGPU"><a href="#什么是vGPU" class="headerlink" title="什么是vGPU"></a>什么是vGPU</h1><p>使用软件虚拟出GPU来进行图形计算。</p>
+<p>早期把vGPU的图形工作指令发给物理<strong>CPU</strong>来做的一种技术。</p>
+<p>现在可以为虚拟提供CPU一样，提供GPU支持。并且能够把物理GPU查分成多个vGPU或者把多个物理GPU合成一个vGPU供应虚拟客户端使用。</p>
+<p>虚拟技术的发展，</p>
+<h1 id="NVIDIA-vGPU的授权类型"><a href="#NVIDIA-vGPU的授权类型" class="headerlink" title="NVIDIA vGPU的授权类型"></a>NVIDIA vGPU的授权类型</h1><p>NVIDIA vGPU产品组合共包含四种类型：</p>
+<ul>
+<li>NVIDIA Quadro® Virtual Data Center Workstation (Quadro vDWS)<ul>
+<li>适用于专业级图形应用程序；包含 NVIDIA Quadro 驱动。</li>
+</ul>
+</li>
+<li>NVIDIA GRID® Virtual PC (GRID vPC)<ul>
+<li>适用于提供标准 PC 应用程序、浏览器和多媒体的虚拟桌面。</li>
+</ul>
+</li>
+<li>NVIDIA GRID Virtual Applications (GRID vApps)<ul>
+<li>与 Citrix XenApp 或其他 RDSH 解决方案（例如 VMware Horizon 应用程序）配合使用。</li>
+</ul>
+</li>
+<li>NVIDIA Virtual Compute Server (vCS)<ul>
+<li>适用于 AI、深度学习和数据科学工作负载；包含 NVIDIA 计算驱动。</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://pic3.zhimg.com/v2-9a9bef4c6aaed18b9852897483bdba16_r.jpg"></p>
+<h1 id="什么是VDI环境"><a href="#什么是VDI环境" class="headerlink" title="什么是VDI环境"></a>什么是VDI环境</h1><h1 id="什么是Hypervisor"><a href="#什么是Hypervisor" class="headerlink" title="什么是Hypervisor"></a>什么是Hypervisor</h1><h1 id="什么是Device-Module"><a href="#什么是Device-Module" class="headerlink" title="什么是Device Module"></a>什么是Device Module</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1588,147 +1700,6 @@
 <h1 id="重点二"><a href="#重点二" class="headerlink" title="重点二"></a>重点二</h1><p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法。</p>
 <h1 id="重点三"><a href="#重点三" class="headerlink" title="重点三"></a>重点三</h1><p>永远不要使用传统 GET 参数(例如 other-cached-page.html?parameterName=value) 来访问缓存文件。这会使浏览器绕过缓存，直接从网络获取。<br>若想链接一个参数需要在 JavaScript 中解析的资源，你可以将参数放到链接的 hash 部分，例如 other-cached-page.html#whatever?parameterName=value。<br>注：需要额外的解析</p>
 <h1 id="重点四"><a href="#重点四" class="headerlink" title="重点四"></a>重点四</h1><p>当应用被缓存后，仅仅更新在 web 页面中使用的资源(文件)还不足以更新被缓存的文件。<br>你需要在浏览器获取和使用更新的文件前，去更新缓存清单文件本身。<br>你可以使用 window.applicationCache.swapCache() 以编程的方式完成上述目的，虽然这无法影响到已经加载完毕的资源。<br>为了保证资源从应用缓存的最新版本中加载，最理想的办法就是刷新页面。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Think-win-win-The-7-Habits-of-Highly-Effective-People/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Louis Cai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Give me five">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Think-win-win-The-7-Habits-of-Highly-Effective-People/" class="post-title-link" itemprop="url">双赢思维 - 《高效能人士的七个习惯》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-03 19:36:17" itemprop="dateCreated datePublished" datetime="2018-12-03T19:36:17+08:00">2018-12-03</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-07-06 16:18:31" itemprop="dateModified" datetime="2020-07-06T16:18:31+08:00">2020-07-06</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/Think-win-win-The-7-Habits-of-Highly-Effective-People/" class="post-meta-item leancloud_visitors" data-flag-title="双赢思维 - 《高效能人士的七个习惯》" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在生活中经常被提及要有双赢思维，但大家的理解和实践往往都停滞在字面意思上。</p>
-<hr>
-<h1 id="人际交往的六种模式"><a href="#人际交往的六种模式" class="headerlink" title="人际交往的六种模式"></a>人际交往的六种模式</h1><p>双赢不是什么技巧，而是人际交往的哲学，是六个交往模式之一，这六个模式分别是：</p>
-<ul>
-<li>利人利己（双赢） </li>
-<li>损人利己（赢/输）</li>
-<li>舍己为人（输/赢）</li>
-<li>两败俱伤（输/输）</li>
-<li>独善其身（赢）</li>
-<li>好聚好散（无交易）</li>
-</ul>
-<p>不难看出最好的模式当然是双赢模式，但其实最好是依情况而定，关键是认清形式，而不是教条的把某一模式应用的各种情况中。<br>当然，大部分情况下双赢模式是最好的选择，如果实在不能达成共识，好聚好散也是不错的选择，再不行就只有做一定的妥协。</p>
-<hr>
-<h1 id="实践双赢思维的五个要领"><a href="#实践双赢思维的五个要领" class="headerlink" title="实践双赢思维的五个要领"></a>实践双赢思维的五个要领</h1><pre><code>“双赢品德”是基础，接着建立“双赢关系”，由此衍生“双赢协议”，以“双赢体系”为培养环境，通过“双赢过程”实现双赢。
-</code></pre>
-<h2 id="双赢品德"><a href="#双赢品德" class="headerlink" title="双赢品德"></a>双赢品德</h2><h3 id="特征一：诚信"><a href="#特征一：诚信" class="headerlink" title="特征一：诚信"></a>特征一：诚信</h3><p>诚信是双赢品德的基础。</p>
-<h3 id="特征二：成熟"><a href="#特征二：成熟" class="headerlink" title="特征二：成熟"></a>特征二：成熟</h3><pre><code>“成熟就是在表达自己的情感和信念的同时又能体谅他人的想法和感受的能力。”
-    —— 赫兰德·萨克森年（Hrand Saxenian）教授
-</code></pre>
-<p>成熟，是敢作敢为与善解人意之间的一种平衡状态。<br>这种平衡能力是人际交往、管理和领导能力的精髓，是产出/产能平衡的深度表现。</p>
-<h3 id="特征三：知足"><a href="#特征三：知足" class="headerlink" title="特征三：知足"></a>特征三：知足</h3><p>知足，即相信资源充足，人人有份。</p>
-<p>匮乏心态（Scarcity Mentality），担心资源稀缺，认为世界如同一块大饼，并非人人得而食之。</p>
-<p>富足的心态（Abundance Mentality），源自厚实的个人价值观与安全感。</p>
-<h2 id="双赢关系"><a href="#双赢关系" class="headerlink" title="双赢关系"></a>双赢关系</h2><p>基于双赢品德才能建立双赢关系。<strong>双赢关系的精髓是信用，即情感账户</strong>。</p>
-<h2 id="双赢协议"><a href="#双赢协议" class="headerlink" title="双赢协议"></a>双赢协议</h2><p>在双赢协议中，对以下五要素应该有明确的规定：</p>
-<ul>
-<li>预期结果：确认目标和时限，方法不计。</li>
-<li>指导方针：确认实现目标的原则、方针和行为限度。</li>
-<li>可用资源：包括人力、财力、技术或者组织资源。</li>
-<li>任务考核：建立业绩评估标准和时间。</li>
-<li>奖惩制度：根据任务考核确定奖惩。</li>
-</ul>
-<h2 id="双赢体系"><a href="#双赢体系" class="headerlink" title="双赢体系"></a>双赢体系</h2><h3 id="双赢管理培训"><a href="#双赢管理培训" class="headerlink" title="双赢管理培训"></a>双赢管理培训</h3><h3 id="双赢绩效协议"><a href="#双赢绩效协议" class="headerlink" title="双赢绩效协议"></a>双赢绩效协议</h3><p>双赢体系是为双赢协议创造环境。</p>
-<h2 id="双赢过程"><a href="#双赢过程" class="headerlink" title="双赢过程"></a>双赢过程</h2><p>双赢过程的四个步骤：</p>
-<ul>
-<li>首先，从对方的角度看问题。真正理解对方的想法、需要和顾虑，有时甚至比对方理解得更透彻。</li>
-<li>其次，认清主要问题和顾虑（而非立场）。</li>
-<li>再次，确定大家都能接受的结果。</li>
-<li>最后，找到实现这种结果的各种可能途径。</li>
-</ul>
-<pre><code>双赢来自诚信、成熟和知足的人格，是高度互信的结果；
-它体现在能有效阐明并管理人们的期望和成就的协议中；
-在起支持作用的双赢体系里蓬勃生长；
-经由必要的双赢过程来实现。
-</code></pre>
-<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People">The 7 Habits of Highly Effective People wiki!</a></li>
-<li><a href="/Be-proactive-The-7-Habits-of-Highly-Effective-People/" title="积极主动原则">积极主动原则</a></li>
-<li><a href="/Begin-with-the-end-in-mind-The-7-Habits-of-Highly-Effective-People/" title="以终为始原则">以终为始原则</a></li>
-<li><a href="/Put-first-things-first-The-7-Habits-of-Highly-Effective-People/" title="要事为先原则">要事为先原则</a></li>
-<li><a href="/Think-win-win-The-7-Habits-of-Highly-Effective-People/" title="双赢思维">双赢思维</a></li>
-<li><a href="/Seek-first-to-understand-then-to-be-understood-The-7-Habits-of-Highly-Effective-People/" title="知彼解己">知彼解己</a></li>
-<li><a href="/Synergize-The-7-Habits-of-Highly-Effective-People/" title="统合综效">统合综效</a></li>
-</ul>
 
       
     </div>
