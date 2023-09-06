@@ -21,31 +21,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"louis-cai.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="什么是NVIDIA GRID技术NVIDIA GRID是一种共享GPU技术，能够在多个虚拟桌面或应用程序实例之间共享虚拟GPU（vGPU）。 什么是vGPU使用软件虚拟出GPU来进行图形计算。 早期把vGPU的图形工作指令发给物理CPU来做的一种技术。 现在可以为虚拟提供CPU一样，提供GPU支持。并且能够把物理GPU查分成多个vGPU或者把多个物理GPU合成一个vGPU供应虚拟客户端使用。 虚拟">
+<meta name="description" content="“First principles” is a foundational concept in various fields, including philosophy, science, and problem-solving. It involves breaking down complex ideas, systems, or problems into their most basic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GPU虚拟化技术">
-<meta property="og:url" content="http://louis-cai.github.io/NVIDIA-GRID-VGPU/index.html">
+<meta property="og:title" content="More principle like &#39;First Principles&#39;">
+<meta property="og:url" content="http://louis-cai.github.io/more-principle-such-as-First-Principles/index.html">
 <meta property="og:site_name" content="Give me five">
-<meta property="og:description" content="什么是NVIDIA GRID技术NVIDIA GRID是一种共享GPU技术，能够在多个虚拟桌面或应用程序实例之间共享虚拟GPU（vGPU）。 什么是vGPU使用软件虚拟出GPU来进行图形计算。 早期把vGPU的图形工作指令发给物理CPU来做的一种技术。 现在可以为虚拟提供CPU一样，提供GPU支持。并且能够把物理GPU查分成多个vGPU或者把多个物理GPU合成一个vGPU供应虚拟客户端使用。 虚拟">
+<meta property="og:description" content="“First principles” is a foundational concept in various fields, including philosophy, science, and problem-solving. It involves breaking down complex ideas, systems, or problems into their most basic">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-9a9bef4c6aaed18b9852897483bdba16_r.jpg">
-<meta property="article:published_time" content="2020-12-19T09:56:08.000Z">
-<meta property="article:modified_time" content="2020-12-21T02:00:57.601Z">
+<meta property="article:published_time" content="2023-09-06T06:26:59.000Z">
+<meta property="article:modified_time" content="2023-09-06T06:27:26.305Z">
 <meta property="article:author" content="Louis Cai">
-<meta property="article:tag" content="开发">
-<meta property="article:tag" content="NVIDIA. GPU">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic3.zhimg.com/v2-9a9bef4c6aaed18b9852897483bdba16_r.jpg">
 
 
-<link rel="canonical" href="http://louis-cai.github.io/NVIDIA-GRID-VGPU/">
+<link rel="canonical" href="http://louis-cai.github.io/more-principle-such-as-First-Principles/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://louis-cai.github.io/NVIDIA-GRID-VGPU/","path":"NVIDIA-GRID-VGPU/","title":"GPU虚拟化技术"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://louis-cai.github.io/more-principle-such-as-First-Principles/","path":"more-principle-such-as-First-Principles/","title":"More principle like 'First Principles'"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>GPU虚拟化技术 | Give me five</title>
+<title>More principle like 'First Principles' | Give me five</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128599571-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-128599571-1","only_pageview":false}</script>
@@ -114,7 +110,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -127,7 +123,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNVIDIA-GRID%E6%8A%80%E6%9C%AF"><span class="nav-number">1.</span> <span class="nav-text">什么是NVIDIA GRID技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFvGPU"><span class="nav-number">2.</span> <span class="nav-text">什么是vGPU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NVIDIA-vGPU%E7%9A%84%E6%8E%88%E6%9D%83%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">NVIDIA vGPU的授权类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFVDI%E7%8E%AF%E5%A2%83"><span class="nav-number">4.</span> <span class="nav-text">什么是VDI环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHypervisor"><span class="nav-number">5.</span> <span class="nav-text">什么是Hypervisor</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFDevice-Module"><span class="nav-number">6.</span> <span class="nav-text">什么是Device Module</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,7 +185,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/NVIDIA-GRID-VGPU/">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/more-principle-such-as-First-Principles/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +198,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          GPU虚拟化技术
+          More principle like 'First Principles'
         </h1>
 
         <div class="post-meta-container">
@@ -213,28 +208,13 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2020-12-19 17:56:08" itemprop="dateCreated datePublished" datetime="2020-12-19T17:56:08+08:00">2020-12-19</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-21 10:00:57" itemprop="dateModified" datetime="2020-12-21T10:00:57+08:00">2020-12-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">软件开发</span></a>
-        </span>
+      <time title="创建时间：2023-09-06 14:26:59 / 修改时间：14:27:26" itemprop="dateCreated datePublished" datetime="2023-09-06T14:26:59+08:00">2023-09-06</time>
     </span>
 
   
-    <span id="/NVIDIA-GRID-VGPU/" class="post-meta-item leancloud_visitors" data-flag-title="GPU虚拟化技术" title="阅读次数">
+    <span id="/more-principle-such-as-First-Principles/" class="post-meta-item leancloud_visitors" data-flag-title="More principle like 'First Principles'" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -251,32 +231,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="什么是NVIDIA-GRID技术"><a href="#什么是NVIDIA-GRID技术" class="headerlink" title="什么是NVIDIA GRID技术"></a>什么是NVIDIA GRID技术</h1><p>NVIDIA GRID是一种共享GPU技术，能够在多个虚拟桌面或应用程序实例之间共享虚拟GPU（vGPU）。</p>
-<h1 id="什么是vGPU"><a href="#什么是vGPU" class="headerlink" title="什么是vGPU"></a>什么是vGPU</h1><p>使用软件虚拟出GPU来进行图形计算。</p>
-<p>早期把vGPU的图形工作指令发给物理<strong>CPU</strong>来做的一种技术。</p>
-<p>现在可以为虚拟提供CPU一样，提供GPU支持。并且能够把物理GPU查分成多个vGPU或者把多个物理GPU合成一个vGPU供应虚拟客户端使用。</p>
-<p>虚拟技术的发展，</p>
-<h1 id="NVIDIA-vGPU的授权类型"><a href="#NVIDIA-vGPU的授权类型" class="headerlink" title="NVIDIA vGPU的授权类型"></a>NVIDIA vGPU的授权类型</h1><p>NVIDIA vGPU产品组合共包含四种类型：</p>
-<ul>
-<li>NVIDIA Quadro® Virtual Data Center Workstation (Quadro vDWS)<ul>
-<li>适用于专业级图形应用程序；包含 NVIDIA Quadro 驱动。</li>
-</ul>
+        <p>“First principles” is a foundational concept in various fields, including philosophy, science, and problem-solving. It involves breaking down complex ideas, systems, or problems into their most basic and fundamental components to better understand and solve them. Here are some related principles and concepts:</p>
+<ol>
+<li><p><strong>Occam’s Razor:</strong> This principle suggests that among competing hypotheses or explanations, the simplest one is usually the best. In other words, when faced with multiple possible solutions, the one with the fewest assumptions is often the most accurate.</p>
 </li>
-<li>NVIDIA GRID® Virtual PC (GRID vPC)<ul>
-<li>适用于提供标准 PC 应用程序、浏览器和多媒体的虚拟桌面。</li>
-</ul>
+<li><p><strong>Reductionism:</strong> Reductionism is the approach of explaining complex phenomena by reducing them to the interactions and properties of their most fundamental components. For example, in biology, it involves studying organisms by examining their cells and molecules.</p>
 </li>
-<li>NVIDIA GRID Virtual Applications (GRID vApps)<ul>
-<li>与 Citrix XenApp 或其他 RDSH 解决方案（例如 VMware Horizon 应用程序）配合使用。</li>
-</ul>
+<li><p><strong>Systems Thinking:</strong> Systems thinking takes the opposite approach to reductionism. It focuses on understanding how various components of a system interact and influence each other. Instead of breaking things down into their simplest parts, systems thinking looks at the whole picture.</p>
 </li>
-<li>NVIDIA Virtual Compute Server (vCS)<ul>
-<li>适用于 AI、深度学习和数据科学工作负载；包含 NVIDIA 计算驱动。</li>
-</ul>
+<li><p><strong>Holism:</strong> Holism is the idea that complex systems should be viewed as wholes, and their properties cannot be fully understood by examining their individual components in isolation. It’s the opposite of reductionism and emphasizes the importance of considering the entire system.</p>
 </li>
-</ul>
-<p><img data-src="https://pic3.zhimg.com/v2-9a9bef4c6aaed18b9852897483bdba16_r.jpg"></p>
-<h1 id="什么是VDI环境"><a href="#什么是VDI环境" class="headerlink" title="什么是VDI环境"></a>什么是VDI环境</h1><h1 id="什么是Hypervisor"><a href="#什么是Hypervisor" class="headerlink" title="什么是Hypervisor"></a>什么是Hypervisor</h1><h1 id="什么是Device-Module"><a href="#什么是Device-Module" class="headerlink" title="什么是Device Module"></a>什么是Device Module</h1>
+<li><p><strong>Deductive Reasoning:</strong> Deductive reasoning is a logical process where one starts with a general statement or hypothesis and examines the possibilities to reach a specific conclusion. It’s often associated with mathematical and formal logic.</p>
+</li>
+<li><p><strong>Inductive Reasoning:</strong> Inductive reasoning involves making generalized conclusions based on specific observations or evidence. It’s used in scientific research when drawing broader conclusions from a set of empirical observations.</p>
+</li>
+<li><p><strong>Abductive Reasoning:</strong> Abductive reasoning is a form of logical inference where the most likely explanation is inferred from a set of observed facts. It’s often used in diagnostic medicine and detective work.</p>
+</li>
+<li><p><strong>Critical Thinking:</strong> Critical thinking is a cognitive process that involves evaluating information, arguments, or problems in a systematic and rational way. It often involves questioning assumptions, analyzing evidence, and considering alternative viewpoints.</p>
+</li>
+<li><p><strong>Scientific Method:</strong> The scientific method is a systematic approach to inquiry that involves making observations, forming hypotheses, conducting experiments, and drawing conclusions. It’s a key principle in the natural sciences.</p>
+</li>
+<li><p><strong>Ethical Frameworks:</strong> Various ethical principles and frameworks, such as utilitarianism, deontology, and virtue ethics, provide guidance for making moral decisions and evaluating ethical dilemmas.</p>
+</li>
+<li><p><strong>Pareto Principle (80/20 Rule):</strong> This principle suggests that roughly 80% of effects come from 20% of causes. It’s often used in business and time management to prioritize tasks and resources effectively.</p>
+</li>
+<li><p><strong>Hierarchy of Needs:</strong> Maslow’s Hierarchy of Needs is a psychological theory that arranges human needs into a hierarchy, with basic physiological needs at the bottom (e.g., food, shelter) and self-actualization at the top (e.g., personal growth and fulfillment).</p>
+</li>
+<li><p><strong>Marginal Analysis:</strong> In economics, this principle involves examining the incremental costs and benefits of a decision to determine whether it’s worthwhile. It helps make informed choices about resource allocation.</p>
+</li>
+</ol>
+<p>These principles and concepts are used in various disciplines to analyze, understand, and solve complex problems, make decisions, and develop a deeper understanding of the world around us. They provide a structured and systematic approach to thinking and decision-making.</p>
+
     </div>
 
     
@@ -302,23 +287,16 @@
   </div>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/%E5%BC%80%E5%8F%91/" rel="tag"># 开发</a>
-              <a href="/tags/NVIDIA-GPU/" rel="tag"># NVIDIA. GPU</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/CleanGatesTrojan/" rel="prev" title="CleanGatesTrojan">
-                  <i class="fa fa-chevron-left"></i> CleanGatesTrojan
+                <a href="/Summarize-of-How-to-brainstorm-great-business-ideas/" rel="prev" title="Summarize of <How to brainstorm great business ideas>">
+                  <i class="fa fa-chevron-left"></i> Summarize of <How to brainstorm great business ideas>
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/trading-with-dual-grid-system/" rel="next" title="外汇双重网格策略">
-                  外汇双重网格策略 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -379,7 +357,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"ssHwRlzjF349FCusaitPcz7h-gzGzoHsz","appKey":"IPldS7Ia63j7AiCdbNBv5gEN","serverURLs":"https://sshwrlzj.api.lncldglobal.com","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":true,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/NVIDIA-GRID-VGPU/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"ssHwRlzjF349FCusaitPcz7h-gzGzoHsz","appKey":"IPldS7Ia63j7AiCdbNBv5gEN","serverURLs":"https://sshwrlzj.api.lncldglobal.com","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":true,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/more-principle-such-as-First-Principles/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
