@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"louis-cai.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="The importance and potential of voice-to-text conversion in various fields and use-cases cannot be overstated, especially in light of technological advancements and the increasing digitization of many">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Best Practices for Voice to Text Conversion(2)">
+<meta property="og:url" content="http://louis-cai.github.io/Best-Practices-for-Voice-to-Text-Conversion-2/index.html">
+<meta property="og:site_name" content="Give me five">
+<meta property="og:description" content="The importance and potential of voice-to-text conversion in various fields and use-cases cannot be overstated, especially in light of technological advancements and the increasing digitization of many">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-07T07:17:55.000Z">
+<meta property="article:modified_time" content="2023-09-07T07:18:57.119Z">
+<meta property="article:author" content="Louis Cai">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://louis-cai.github.io/Best-Practices-for-Voice-to-Text-Conversion-2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://louis-cai.github.io/Best-Practices-for-Voice-to-Text-Conversion-2/","path":"Best-Practices-for-Voice-to-Text-Conversion-2/","title":"Best Practices for Voice to Text Conversion(2)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Best Practices for Voice to Text Conversion(2) | Give me five</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128599571-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-128599571-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Give me five</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">随便写&使劲改</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Acknowledge-the-maturity-of-technology"><span class="nav-number">1.</span> <span class="nav-text">Acknowledge the maturity of technology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Embrace-Real-time-Transcription-Capabilities-and-Streaming-ASR"><span class="nav-number">2.</span> <span class="nav-text">Embrace Real-time Transcription Capabilities and Streaming ASR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leverage-End-to-End-Machine-Learning-Models"><span class="nav-number">3.</span> <span class="nav-text">Leverage End-to-End Machine Learning Models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exploit-Niche-Specific-Options"><span class="nav-number">4.</span> <span class="nav-text">Exploit Niche-Specific Options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Utilize-Advanced-Features-For-Better-Efficiency"><span class="nav-number">5.</span> <span class="nav-text">Utilize Advanced Features For Better Efficiency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accessibility-Use-Cases"><span class="nav-number">6.</span> <span class="nav-text">Accessibility Use-Cases</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References:</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Louis Cai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://louis-cai.github.io/Best-Practices-for-Voice-to-Text-Conversion-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Louis Cai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Give me five">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Best Practices for Voice to Text Conversion(2)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-09-07 15:17:55 / 修改时间：15:18:57" itemprop="dateCreated datePublished" datetime="2023-09-07T15:17:55+08:00">2023-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/Best-Practices-for-Voice-to-Text-Conversion-2/" class="post-meta-item leancloud_visitors" data-flag-title="Best Practices for Voice to Text Conversion(2)" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>The importance and potential of voice-to-text conversion in various fields and use-cases cannot be overstated, especially in light of technological advancements and the increasing digitization of many industries. This report focuses on the best practices for voice-to-text conversion, based on the information gathered from various sources.</p>
+<p>Before we dive into the key takeaways, it is crucial to note that none of the examined sources explicitly mentioned “best practices for voice to text conversion.” However, through analyzing the trends, applications, reviews of different software tools, and innovations in the voice-to-text industry, we can infer several essential practices that can optimize the use of voice-to-text technologies.</p>
+<h2 id="Acknowledge-the-maturity-of-technology"><a href="#Acknowledge-the-maturity-of-technology" class="headerlink" title="Acknowledge the maturity of technology"></a>Acknowledge the maturity of technology</h2><p>Although the specifics of how to harness speech-to-text apps and services to their fullest potential are not explicitly stated in the sources, one common theme emerges: the maturity of the technology. As mentioned on Speechify.com, the technology has advanced to the point where transcription mistakes are relatively rare, with some services boasting a staggering 99.9% success rate from clear audio. This indicates that the technology’s reliability and accuracy are now sophisticated enough to be confidently used in a wide range of environments – from dictating notes on mobile devices to providing real-time transcription in professional settings.</p>
+<h2 id="Embrace-Real-time-Transcription-Capabilities-and-Streaming-ASR"><a href="#Embrace-Real-time-Transcription-Capabilities-and-Streaming-ASR" class="headerlink" title="Embrace Real-time Transcription Capabilities and Streaming ASR"></a>Embrace Real-time Transcription Capabilities and Streaming ASR</h2><p>The advancements in Automatic Speech Recognition (ASR) technology, most notably streaming ASR, have stylistic implications for voice-to-text conversion. Streaming ASR provides real-time transcription capabilities crucial for modern applications like live event captioning, creating conversational user interfaces, and making a more immersive gaming experience, according to rev.com. Real-time transcoding of audio to text is now a desirable feature in any setting where lectures, interviews, and even customer service interactions are conducted. Consequently, choosing tools with real-time transcription capacity should be a priority.</p>
+<h2 id="Leverage-End-to-End-Machine-Learning-Models"><a href="#Leverage-End-to-End-Machine-Learning-Models" class="headerlink" title="Leverage End-to-End Machine Learning Models"></a>Leverage End-to-End Machine Learning Models</h2><p>As mentioned on rev.com and Forbes, End-to-End (E2E) machine learning models are becoming a trend in the industry. These models morph multiple functionalities into one algorithm, thereby simplifying the application and increasing speed and accuracy. Implementing applications with E2E machine learning models may lead to quicker response times and reduced errors. These models also make training in foreign languages more efficient and can differentiate between multiple speakers.</p>
+<h2 id="Exploit-Niche-Specific-Options"><a href="#Exploit-Niche-Specific-Options" class="headerlink" title="Exploit Niche-Specific Options"></a>Exploit Niche-Specific Options</h2><p>The versatility of voice-to-text apps and tools is another essential aspect. For instance, Dragon Anywhere, iTranslate Converse, and Braina, as mentioned on pcmag.com, were designed to cater to professional, translation, and personal AI needs, respectively. Therefore, one best practice would be looking for niche-specific options when selecting a speech-to-text tool, ensuring that it can handle industry-specific vocabulary and use-cases efficiently.</p>
+<h2 id="Utilize-Advanced-Features-For-Better-Efficiency"><a href="#Utilize-Advanced-Features-For-Better-Efficiency" class="headerlink" title="Utilize Advanced Features For Better Efficiency"></a>Utilize Advanced Features For Better Efficiency</h2><p>Voice-to-text tools have evolved past simple transcription capabilities to provide more advanced features. Some software even offers customizable vocabularies, cloud-based transcription, and multi-device support as observed on techradar. These advanced features are not just attractive; they can significantly improve the efficiency and effectiveness of the software. Therefore, one should choose software that includes features aligning with their specific needs.</p>
+<h2 id="Accessibility-Use-Cases"><a href="#Accessibility-Use-Cases" class="headerlink" title="Accessibility Use-Cases"></a>Accessibility Use-Cases</h2><p>One of the innovative uses of speech-to-text technology is to improve accessibility, as noted by rev.com. From podcasting to business meetings and lectures, voice-to-text conversion ensures that content can be accessed in various formats and by a broader audience. Therefore, a highly recommended practice is to make use of these technologies to improve content accessibility, consequently reaching a wider audience and benefiting more users.</p>
+<p>In conclusion, although these sources did not provide a singular “best practice” for voice-to-text conversion, various practices could greatly benefit users and businesses’ particular needs and contexts. The best practice generally involves choosing a voice-to-text application or service based not only on transcription accuracy but also on the specific features it offers - features including real-time transcription, language options, and options for customization to the user’s specific needs. It’s also important to remember that technology is continually advancing, and keeping up with advancements like streaming ASR and E2E ML models is a best practice in itself.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h2><ul>
+<li>Speechify.com. (n.d.). Voice text converter. <a target="_blank" rel="noopener" href="https://speechify.com/blog/voice-text-converter/">https://speechify.com/blog/voice-text-converter/</a></li>
+<li>Rev. (n.d.). Speech recognition trends to watch in 2021 and beyond: 3 use cases. <a target="_blank" rel="noopener" href="https://www.rev.com/blog/speech-to-text-technology/speech-recognition-trends-to-watch-in-2021-and-beyond-3-use-cases">https://www.rev.com/blog/speech-to-text-technology/speech-recognition-trends-to-watch-in-2021-and-beyond-3-use-cases</a></li>
+<li>Forbes.com. (n.d.). How voice technology will drive business communications in 2022. <a target="_blank" rel="noopener" href="https://www.forbes.com/sites/forbestechcouncil/2022/02/04/how-voice-technology-will-drive-business-communications-in-2022/">https://www.forbes.com/sites/forbestechcouncil/2022/02/04/how-voice-technology-will-drive-business-communications-in-2022/</a></li>
+<li>Techradar. (n.d.). Best speech-to-text app. <a target="_blank" rel="noopener" href="https://www.techradar.com/news/best-speech-to-text-app">https://www.techradar.com/news/best-speech-to-text-app</a></li>
+<li>PCMag. (n.d.). The best speech-to-text software for 2021. <a target="_blank" rel="noopener" href="https://www.pcmag.com/picks/bas">https://www.pcmag.com/picks/bas</a> best-speech-to-text-apps-and-tools</li>
+<li>Rev. (n.d.). Innovative uses of speech recognition technology in 2021. <a target="_blank" rel="noopener" href="https://www.rev.com/blog/speech-to-text-technology/innovative-uses-of-speech-recognition-technology-in-2021">https://www.rev.com/blog/speech-to-text-technology/innovative-uses-of-speech-recognition-technology-in-2021</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Louis Cai 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Louis Cai 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Best-Practices-for-Voice-to-Text-Conversion-1/" rel="prev" title="Best Practices for Voice to Text Conversion(1)">
+                  <i class="fa fa-chevron-left"></i> Best Practices for Voice to Text Conversion(1)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louis Cai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"ssHwRlzjF349FCusaitPcz7h-gzGzoHsz","appKey":"IPldS7Ia63j7AiCdbNBv5gEN","serverURLs":"https://sshwrlzj.api.lncldglobal.com","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":true,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/Best-Practices-for-Voice-to-Text-Conversion-2/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
+</script>
+
+</body>
+</html>
