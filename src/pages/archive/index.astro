@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('posts')).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+const cats = [...new Set(posts.flatMap(p => (Array.isArray(p.data.categories) ? p.data.categories : [p.data.categories]).filter(Boolean)))].sort();
+---
+<Base title="Archive — Louis Cai">
+  <h1>Archive</h1>
+  <p class="muted">The old blog (2018–2021), imported from the Hexo era. Mostly trading notes, engineering notes, and reading notes.</p>
+
+  <h2>Categories</h2>
+  <p>{cats.join(' · ')}</p>
+
+  <h2>All posts ({posts.length})</h2>
+  <ul class="posts">
+    {posts.map(p => (
+      <li>
+        <a href={`/archive/${p.id}/`}>{p.data.title}</a>
+        <span class="d">{p.data.date.slice(0, 10)}</span>
+      </li>
+    ))}
+  </ul>
+</Base>
