@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postmortem: MailIELTS — an AI writing coach nobody used</title>
+<meta name="description" content="714 commits, 467 blog posts in 3 languages, 21 months, $0 revenue. I built an AI IELTS writing coach and nobody ever asked for it.">
+<meta property="og:title" content="Postmortem: MailIELTS — an AI writing coach nobody used">
+<meta property="og:description" content="714 commits, 467 posts, 3 languages, 21 months, $0 revenue. An autopsy of my dead project.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://louis-cai.github.io/postmortems/mailielts.html">
+<style>
+  :root { --ink:#222; --paper:#fafaf8; --muted:#777; --line:#e4e4e0; --blood:#8b0000; }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 17px/1.7 -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--paper); }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 80px; }
+  h1 { font-size:34px; line-height:1.25; letter-spacing:-.5px; margin:0 0 8px; }
+  .sub { color:var(--muted); font-size:15px; margin-bottom:32px; }
+  .meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+  .chip { border:1px solid var(--line); border-radius:999px; padding:4px 14px; font-size:13px; color:var(--muted); background:#fff; }
+  .chip.red { border-color:var(--blood); color:var(--blood); background:#fff5f5; font-weight:600; }
+  h2 { font-size:22px; margin:48px 0 12px; letter-spacing:-.3px; }
+  p { margin:0 0 16px; }
+  pre { background:#fff; border:1px solid var(--line); border-radius:8px; padding:20px; overflow-x:auto; font-size:13.5px; line-height:1.55; }
+  .mono { font-family:ui-monospace, "SF Mono", Menlo, monospace; }
+  blockquote { margin:24px 0; padding:16px 20px; border-left:3px solid var(--blood); background:#fff; color:var(--muted); font-style:italic; }
+  table { border-collapse:collapse; width:100%; font-size:14.5px; margin:16px 0 24px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 12px; text-align:left; }
+  th { background:#f4f4f1; font-weight:600; }
+  hr { border:none; border-top:1px solid var(--line); margin:48px 0; }
+  .foot { color:var(--muted); font-size:13.5px; }
+  a { color:var(--blood); }
+  .kicker { font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Postmortem #001</div>
+  <h1>MailIELTS — an AI writing coach nobody used</h1>
+  <div class="sub">I built it, it died, and I read all 714 commits to figure out why.</div>
+
+  <div class="meta">
+    <span class="chip">Dec 2024 – Jul 2026</span>
+    <span class="chip">21 months</span>
+    <span class="chip">6 repos</span>
+    <span class="chip">714 commits</span>
+    <span class="chip">467 posts · 3 languages</span>
+    <span class="chip red">$0 revenue</span>
+  </div>
+
+  <p><strong>Cause of death: nobody ever asked for it.</strong> This is autopsy #001 in an ongoing series. Full text, source material, and future autopsies live in the <a href="https://github.com/louis-cai/postmortems">postmortems repo</a>.</p>
+
+  <h2>What it was</h2>
+  <p>An email-based IELTS General Training writing coach: subscribe with your email, get one letter-writing prompt per day, reply with your letter, get AI band feedback within 24 hours. Trilingual site (English / Chinese / Arabic). Working product, zero friction.</p>
+  <p>It fully worked. That was never the problem.</p>
+
+  <h2>The timeline, told by commit counts</h2>
+<pre>Dec 2024  ████████████████████  186   idea → working MVP in 13 days
+Jan 2025  ██████████████        129   production: domain, trilingual site, Redis, GA, blog
+Feb 2025  █                      11   first death
+Mar 2025  ████████               80   resurrection #1: automated article factory
+Apr–Jun   ████ each              ~32  content tsunami (90–105 posts/month at peak)
+Jul 2025  ██████████████        125   resurrection #2: growth infra (Workers, GA4, n8n, Jira)
+Aug 2025  ████                   30
+Sep 2025  ██                     16   second death
+Nov 2025  ██                     18   resurrection #3: docs (OpenSpec, BMAD, a PRD)
+Dec 2025  █                      6
+Jan–Jun   (crickets)              2   six months of silence
+Jul 18    ███                    17   one Saturday: interactive letter-structure tool
+Jul 22    ——————  my wife's Canadian study permit was refused.
+                   The project never moved again.</pre>
+
+  <p>I only understood the shape of this after reading the git history. The project's lifecycle was my immigration application's lifecycle. I started it while preparing our file, worked hardest during application season, wrote exactly one Chinese-language article (titled <em>"5 tricks to boost your immigration application acceptance rate"</em> — my own anxiety leaking into the product), shipped one last feature the Saturday before the decision, and it died the same week the permit was refused.</p>
+  <p>It was never a product for IELTS students. It was a diary for one specific immigrant: me.</p>
+
+  <h2>What the data said (and when it said it)</h2>
+  <p>From my own Google Search Console, December 2025:</p>
+  <table>
+    <tr><th>Keyword</th><th>Impressions</th><th>Clicks</th></tr>
+    <tr><td>urgent tone</td><td>244</td><td>0</td></tr>
+    <tr><td>letter of urgency</td><td>219</td><td>0</td></tr>
+    <tr><td>suggestive language</td><td>168</td><td>0</td></tr>
+    <tr><td>urgent letter</td><td>155</td><td>0</td></tr>
+    <tr><td>urgent letter sample</td><td>12</td><td>1</td></tr>
+  </table>
+  <p>People were literally asking Google <em>"how do I write an urgent letter"</em> — and my 467 articles answered with <em>"techniques for using adverbs in letters."</em> My own December brainstorm document diagnosed this precisely: content mismatch, GT/Academic confusion, busy adult users, language mismatch. Execution rate of that document: zero.</p>
+
+  <h2>Six causes of death</h2>
+
+  <p><strong>1. The core hypothesis was never tested.</strong> 714 commits answered engineering questions. Zero commits answered "will a stranger subscribe?" The cheapest test — sending the link to one real IELTS candidate — costs under an hour. I never ran it in 21 months.</p>
+
+  <p><strong>2. Free wasn't a strategy; it was avoidance of pricing.</strong> There is no payment code anywhere in six repos. No price = no willingness-to-pay signal = I threw away the only honest validation metric. Meanwhile I was paying LLM API bills to grade letters nobody sent.</p>
+
+  <p><strong>3. Supply was fully automated; demand acquisition was zero.</strong> An article factory (generate → translate → commit → deploy) ran daily across three languages. The promotion plan listed 10 channels: social media, newsletters, schools, communities. Channels executed: <strong>zero</strong>. Not one account created, not one external post.</p>
+
+  <p><strong>4. Engineering prosperity as progress.</strong> Every time "no users" hurt, I answered with a build. No conversions → GA4 funnel. Ops fatigue → Cloudflare Workers. Still no users → a Jira board. Still no users → BMAD, OpenSpec, a conversion PRD targeting "300% lift." Putting a Jira board on a zero-user project is performance art. The rule I learned: <em>if an action doesn't change what a user sees, it's my entertainment, not the project's progress.</em></p>
+
+  <p><strong>5. Every resurrection was a mood, not a hypothesis.</strong> Three resurrections (Mar 2025, Jul 2025, Dec 2025), all triggered by renewed hope, all adding supply-side tooling, all dead within weeks — because the one signal that mattered (zero signups) never changed.</p>
+
+  <p><strong>6. It was a product for me, labeled as a product for others.</strong> "Busy adult immigration applicants" was just me. When the visa was refused, the emotional engine died, and so did the project — it had no independent reason to exist.</p>
+
+  <h2>What I'd tell past me</h2>
+  <p>1. Launch day is not validation day. Shipping in 13 days proves you can build. It says nothing about whether anyone wants it.</p>
+  <p>2. Charging isn't about revenue; it's about hearing the truth. A price tag is the cheapest honest interview ever invented.</p>
+  <p>3. Growth happens outside your own codebase. A 100%-complete article factory with zero readers is a very efficient way to decorate a graveyard.</p>
+  <p>4. Keyword data is users talking to you. 244 impressions and zero clicks is a product requirement written by the market. Read it before you write another 50 articles.</p>
+  <p>5. Toolchain upgrades are adult LEGO. They're fun, they're not progress.</p>
+  <p>6. If it's for you, label it honestly. Building for yourself is fine — but it's a hobby, not a startup.</p>
+
+  <blockquote>This project used world-class engineering execution to perfectly answer a question nobody asked.</blockquote>
+
+  <hr>
+
+  <div class="foot">
+    Written Sept 2026 · <a href="https://github.com/louis-cai/postmortems">More autopsies →</a> · <a href="https://github.com/louis-cai">Louis Cai</a>, over-the-hill coder, builder of dead things and a few live ones.
+  </div>
+
+</div>
+</body>
+</html>
