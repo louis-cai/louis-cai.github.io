@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postmortem: NanoPhotoStudio — the launch that never happened</title>
+<meta name="description" content="1,648 commits, 282 PRs, 27 weekly visitors, $0 revenue. I built an AI portrait studio in six months and never told a stranger it existed.">
+<meta property="og:title" content="Postmortem: NanoPhotoStudio — the launch that never happened">
+<meta property="og:description" content="1,648 commits, 27 weekly visitors, $0 revenue. An autopsy of my dead project.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://louis-cai.github.io/postmortems/nanophoto.html">
+<style>
+  :root { --ink:#222; --paper:#fafaf8; --muted:#777; --line:#e4e4e0; --blood:#8b0000; }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 17px/1.7 -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--paper); }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 80px; }
+  h1 { font-size:34px; line-height:1.25; letter-spacing:-.5px; margin:0 0 8px; }
+  .sub { color:var(--muted); font-size:15px; margin-bottom:32px; }
+  .meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+  .chip { border:1px solid var(--line); border-radius:999px; padding:4px 14px; font-size:13px; color:var(--muted); background:#fff; }
+  .chip.red { border-color:var(--blood); color:var(--blood); background:#fff5f5; font-weight:600; }
+  h2 { font-size:22px; margin:48px 0 12px; letter-spacing:-.3px; }
+  p { margin:0 0 16px; }
+  pre { background:#fff; border:1px solid var(--line); border-radius:8px; padding:20px; overflow-x:auto; font-size:13.5px; line-height:1.55; }
+  .mono { font-family:ui-monospace, "SF Mono", Menlo, monospace; }
+  blockquote { margin:24px 0; padding:16px 20px; border-left:3px solid var(--blood); background:#fff; color:var(--muted); font-style:italic; }
+  table { border-collapse:collapse; width:100%; font-size:14.5px; margin:16px 0 24px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 12px; text-align:left; }
+  th { background:#f4f4f1; font-weight:600; }
+  hr { border:none; border-top:1px solid var(--line); margin:48px 0; }
+  .foot { color:var(--muted); font-size:13.5px; }
+  a { color:var(--blood); }
+  .kicker { font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Postmortem #002</div>
+  <h1>NanoPhotoStudio — the launch that never happened</h1>
+  <div class="sub">Six months, 1,648 commits, and an ad budget that never met a dollar.</div>
+
+  <div class="meta">
+    <span class="chip">Dec 2025 – Jun 2026</span>
+    <span class="chip">6 months</span>
+    <span class="chip">1,648 commits</span>
+    <span class="chip">~282 PRs</span>
+    <span class="chip">27 weekly visitors</span>
+    <span class="chip red">$0 revenue</span>
+  </div>
+
+  <p><strong>Cause of death: nobody ever found out it existed.</strong> This is autopsy #002 in an ongoing series. #001, the <a href="/postmortems/mailielts.html">MailIELTS postmortem</a>, is on this site; full source material lives in the <a href="https://github.com/louis-cai/postmortems">postmortems repo</a>.</p>
+
+  <h2>What it was</h2>
+  <p>An AI portrait studio: pick a style, upload a selfie, get a studio-quality portrait back. $1 per portrait, or $4.99 a month for unlimited generations. Under the hood: Next.js 16, Cloudflare Workers, D1, R2, durable generation workflows, magic-link auth, an admin dashboard, face detection, 4K upscaling. Unit, contract, and e2e tests. Every PR through CI.</p>
+  <p>It fully worked. That was never the problem here either.</p>
+
+  <h2>The timeline, told by commit counts</h2>
+<pre>Dec 2025  ██████████████        358   idea → full SaaS scaffold in weeks
+Jan 2026  ██████████████████████  562   peak: payments, workflows, admin, test pyramid
+Feb 2026  ████████████████      400   freemium launches: $4.99 unlimited plan
+Mar 2026  ██████                140   $10/day Meta ads test designed, $0 spent
+Apr 2026  █████                 116   scoreboard finally built: 27 visitors, 0 orders
+May 2026  ███                   70    polish: drawer, headers, contrast, flaky e2e
+Jun 2026  █                     2     last commit</pre>
+
+  <p>The curve says it in one line: the month I finally built a scoreboard was the second-to-last month of the project. For five months I had measured everything (test coverage, Lighthouse scores, commit velocity) except whether anyone wanted the thing.</p>
+
+  <h2>What the data said, when it finally spoke</h2>
+  <p>From my own weekly scoreboard, April 2026:</p>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Landing sessions per week</td><td>27</td></tr>
+    <tr><td>Clicks on the main CTA</td><td>0</td></tr>
+    <tr><td>Paid orders, ever</td><td>0</td></tr>
+  </table>
+  <p>The $4.99 unlimited plan had been live for two months at that point. Total conversions: zero. My own freemium strategy doc opens by admitting this in its first line. Pricing went on to get redesigned three times, and all three designs faced the same audience: twenty-seven people a week.</p>
+
+  <h2>The market never had a gap</h2>
+  <p>Paid AI headshots in 2026: HeadshotPro, 196k customers. Aragon, ~2M users. BetterPic, $2.5M seed. And Google's Nano Banana will turn one selfie into a decent portrait, free.</p>
+  <p>I priced at $1 per portrait. In a market of premium leaders, a dollar doesn't read as accessible. It reads as a trial price. Because it was one.</p>
+
+  <h2>Four causes of death</h2>
+
+  <p><strong>1. Distribution was a checkbox, never a spend.</strong> In March I designed a $10/day Meta ads test: three angles, six creatives, a production checklist, an ROAS spreadsheet. I never spent a dollar. Building the plan felt like progress. Spending felt like risk. I chose the feeling over the outcome.</p>
+
+  <p><strong>2. The scoreboard arrived on life support.</strong> Five months into a six-month project, I finally measured the only metric that mattered. Twenty-seven weekly visitors. Every conversion experiment before that point was astrology.</p>
+
+  <p><strong>3. Death by comfort.</strong> May, one month after the scoreboard said dead: I redesigned the navigation drawer. Aligned headers to prototypes. Fixed color contrast. Stabilized flaky e2e tests. Polishing CSS for a product nobody visits is not work, it is hiding. I did it for a month.</p>
+
+  <p><strong>4. "Practice project" as shelter.</strong> The practice was real: the stack and the discipline carried into what I build now. But "practice" is also what I hid behind when the data said stop. Same words, two jobs, and I let the honest one cover for the other.</p>
+
+  <p>For symmetry with autopsy #001: that one died because I built for an audience of one and called it a market. This one died because I built for everyone and told no one. Same ending either way. The building was real; the contact with humans wasn't.</p>
+
+  <h2>What I'd tell past me</h2>
+  <p>1. The first 10 hours of a project go to distribution. Not the last 10, if any.</p>
+  <p>2. A scoreboard built on day one is a compass. Built on month five, it is an autopsy kit.</p>
+  <p>3. If nobody knows your product exists, conversion optimization is astrology.</p>
+  <p>4. Working code is not a launch. Neither is a pricing page.</p>
+
+  <blockquote>The product was finished. The launch was never scheduled.</blockquote>
+
+  <hr>
+
+  <div class="foot">
+    Written Sept 2026 · <a href="https://github.com/louis-cai/postmortems">More autopsies →</a> · <a href="https://github.com/louis-cai">Louis Cai</a>, over-the-hill coder, builder of dead things and a few live ones.
+  </div>
+
+</div>
+</body>
+</html>

@@ -12,6 +12,7 @@ I build small things: indie tools, trading systems, experiments. Some of them li
 This blog is the home of my postmortem series — honest autopsies of my own dead projects, with real numbers: commits, revenue, traffic, and the exact reasons they died.
 
 - **#001 — MailIELTS**: an AI IELTS writing coach nobody used. 714 commits, 467 blog posts in 3 languages, 21 months, $0 revenue. [Read the autopsy](/postmortems/mailielts.html)
+- **#002 — NanoPhotoStudio**: an AI portrait studio whose launch never happened. 1,648 commits, 282 PRs, 27 weekly visitors, $0 revenue. [Read the autopsy](/postmortems/nanophoto.html)
 
 More autopsies are in the oven.
 

@@ -15,3 +15,6 @@
 
 # Ignore MDX files
 *.mdx
+# Archive content & standalone artifact pages: keep as-is (same policy as *.mdx)
+/src/content/posts/
+/public/postmortems/
