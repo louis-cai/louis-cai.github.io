@@ -41,7 +41,7 @@ Long-term algorithmic trend-following strategies (Turtle-based rules) running co
 
 | Attribute                  | Details                                                                                           |
 | :------------------------- | :------------------------------------------------------------------------------------------------ |
-| **Full Name**              | Louis Cai (蔡路)                                                                                  |
+| **Full Name**              | Louis Cai                                                                                         |
 | **Current Role**           | Software Architect & Independent Indie Developer                                                  |
 | **Engineering Background** | 17+ years (Java, Distributed Systems, Cloud-Native, TypeScript)                                   |
 | **Flagship Publication**   | _Project Postmortems_ (Open-source failure retrospectives)                                        |
