@@ -3,7 +3,10 @@ title: "About"
 description: "Louis Cai — 17-year software architect, indie builder, and author of the open Postmortems series."
 ---
 
-**Louis Cai** is an independent software architect and indie maker documenting transparent project postmortems, SEO utility tools, and systematic trading experiments for builders navigating the realities of indie development.
+**Louis Cai** is an independent software architect and indie maker. 17 years across Java, mobile, full-stack; now architect by day, indie builder by night. I ship tools, run trading bots, and autopsy everything that dies — with real numbers, no survivor-bias. Some of it works (most days).
+
+- **Stack**: Java · TypeScript · Docker · Cloudflare Pages · Playwright · Astro
+- **Currently building**: [The Sift Guide](https://thesiftguide.com), the [Postmortems series](/posts/), and a [Turtle trading engine](/projects/) that's been running since 2015
 
 ---
 
