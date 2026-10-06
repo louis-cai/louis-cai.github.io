@@ -1,10 +1,23 @@
-/* Inline tech icons inside prose (ruru.build-style inline images) */
+/* Inline tech icons inside prose (ruru.build-style inline images)
+
+   Dark-mode safety: Simple-Icons SVGs are single-path fills that default
+   to black, which disappear on dark backgrounds. Instead of shipping two
+   color variants, render each icon as a CSS mask filled with the theme's
+   foreground color — monochrome dark on light theme, light on dark theme.
+   The mask URL is passed per-icon via an inline custom property:
+     <img src="/icons/x.svg" class="inline-icon" style="--icon-url:url(/icons/x.svg)" alt="X" />
+*/
 .app-prose {
   img.inline-icon {
     @apply mx-0.5 inline-block h-4 w-4 border-0 align-[-0.15em];
-  }
-
-  .tech-row img.inline-icon {
-    @apply opacity-70 grayscale transition-all duration-200 hover:opacity-100 hover:grayscale-0;
+    background-color: var(--color-foreground);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-image: var(--icon-url);
+    mask-image: var(--icon-url);
   }
 }
