@@ -1,0 +1,10 @@
+/* Inline tech icons inside prose (ruru.build-style inline images) */
+.app-prose {
+  img.inline-icon {
+    @apply mx-0.5 inline-block h-4 w-4 border-0 align-[-0.15em];
+  }
+
+  .tech-row img.inline-icon {
+    @apply opacity-70 grayscale transition-all duration-200 hover:opacity-100 hover:grayscale-0;
+  }
+}
