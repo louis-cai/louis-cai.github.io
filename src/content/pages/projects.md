@@ -9,6 +9,8 @@ Everything I'm running right now. Some of it makes money. Most of it just teache
 
 **[The Sift Guide](https://thesiftguide.com)** ~ wiki, dimension map & portal calculator for The Sift — Minecraft's first official 4th dimension in 14 years. <img src="/icons/cloudflare.svg" alt="Cloudflare" class="inline-icon" style="--icon-url:url(/icons/cloudflare.svg)" /> _Cloudflare Pages · vanilla JS · Playwright E2E_
 
+**[Prime Settlement Refund](https://primesettlementrefund.com)** ~ verification tool & eligibility checker for the $2.5B FTC Amazon Prime subscription settlement. <img src="/icons/cloudflare.svg" alt="Cloudflare" class="inline-icon" style="--icon-url:url(/icons/cloudflare.svg)" /> _Cloudflare Pages · vanilla JS · Playwright E2E_
+
 **[IARC Pre-Check](https://iarc.everythingisok.top)** ~ instant age-rating pre-check for indie devs submitting games to global app stores. _19 rule sets · zero-cost stack_
 
 **Turtle trading engine** <img src="/icons/binance.svg" alt="Binance" class="inline-icon" style="--icon-url:url(/icons/binance.svg)" /> ~ algorithmic trend-following running 24/7 on Binance crypto pairs since 2015. _Freqtrade · <img src="/icons/docker.svg" alt="Docker" class="inline-icon" style="--icon-url:url(/icons/docker.svg)" /> Docker · cross margin_
